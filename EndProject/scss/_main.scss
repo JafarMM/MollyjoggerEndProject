@@ -28,14 +28,19 @@ main{
         margin-bottom: 100px;
     }
     .featuredproducts{
+        font-family: $firstfontfamily;
         text-align: center;
+        padding-top: 40px;
         h4{
             margin-top: 30px;
+            font-size: 1.2875em;
             margin-bottom: 30px;
-            color: #646569;
+            color: $second_text_color;
         }
         a{
-         border-style: solid;
+        font-size: smaller;
+        border-color: $main_text_color;
+        border: 1px solid;
          padding: 10px;
         text-decoration: none;
         color: $main_text_color;
@@ -44,6 +49,7 @@ main{
         font-size: 12px;
         }
         a:hover{
+            border-color: $second_text_color;
             color:$second_text_color;
         }
     }
@@ -51,7 +57,10 @@ main{
         margin-top: 35px;
         a{
             text-decoration: none;
+            font-family: $secondfontfamily;
             color: $main_text_color;
+            font-size: 1.125em;
+            font-weight: bold;
         }
         img{
             max-width: 100%;
@@ -183,6 +192,29 @@ main{
             max-width: 100%;
         }
         .textaboutus{
+            a{
+                border: 1px solid;
+                padding: 6px;
+                border-color: $main_text_color;
+                text-decoration: none;
+                color: $main_text_color;
+                font-size: small;
+            }
+            
+            h3{
+                font-family: $secondfontfamily;
+                color: #818185;
+                font-weight: bolder;
+            }
+            h2{
+                font-family: $firstfontfamily;
+                color: $main_text_color;
+                font-weight: bolder;
+            }
+            p{
+                font-family: $secondfontfamily;
+                color: #818185; 
+            }
         padding-top: 18%;
         padding-bottom: 30px;
         }

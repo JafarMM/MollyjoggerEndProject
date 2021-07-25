@@ -1,0 +1,88 @@
+footer{
+    color: $second_text_color;
+    background-image: url(	https://cdn.shopify.com/s/files/1/0283/5820/t/9/assets/footer.jpg?31526322267640576) ;
+    .firstpartfooter{
+        .footerlogo{
+            img{
+                padding: 50px;
+            }
+        }
+        .footeremail{
+            padding-top: 50px;
+            h4{
+                text-align: center;
+            }
+            p{
+                color: $third_text_color;
+            }
+            button{
+                background-color: $second_text_color;
+            }
+        }
+        .footerlinks{
+            h4{
+                text-align: center;
+            }
+            padding-top: 50px;
+            ul{
+                color: $third_text_color;
+                padding-right: 30px;
+                text-align: center;
+                list-style-type: none;
+            }
+        }
+        .footercontact{
+            padding-top: 50px;
+            h4{
+                padding-left: 40px;
+            }
+            p{
+                color: $third_text_color;
+            }
+            a{
+                text-decoration: none;
+                color: $third_text_color;
+            }
+        }
+        .footeraddress{
+            img{
+                padding-top: 20px;
+                padding-left: 20px;
+            }
+        }
+        .socialmedia{
+            display: flex;
+            width: 100px;
+            margin-left: 70px;
+            img{
+                max-width: 100%;
+            }
+        }
+        
+        img{
+            max-width: 100%;
+        }
+    }
+    .secondpartfooter{
+        a{
+            text-decoration: none;
+            color: $second_text_color;
+        }
+        p{
+            text-align: center;
+        }
+        .bankcards{
+            display: flex;
+            justify-content: center;
+            p{
+                padding-top: 50px;
+            }
+            img{
+                justify-content: center;
+                max-width: 4%;
+                padding: 6px;
+            }
+        }
+    }
+}
+ 

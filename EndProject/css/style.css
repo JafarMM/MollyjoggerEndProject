@@ -23,6 +23,7 @@ header .navbarm .logo img {
 }
 
 header .navbarm .navbarright {
+  font-family: "Uchen", serif;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -75,17 +76,22 @@ main .btn4 {
 }
 
 main .featuredproducts {
+  font-family: "Uchen", serif;
   text-align: center;
+  padding-top: 40px;
 }
 
 main .featuredproducts h4 {
   margin-top: 30px;
+  font-size: 1.2875em;
   margin-bottom: 30px;
-  color: #646569;
+  color: #a8a476;
 }
 
 main .featuredproducts a {
-  border-style: solid;
+  font-size: smaller;
+  border-color: #007580 !important;
+  border: 1px solid;
   padding: 10px;
   text-decoration: none;
   color: #007580 !important;
@@ -95,6 +101,7 @@ main .featuredproducts a {
 }
 
 main .featuredproducts a:hover {
+  border-color: #a8a476;
   color: #a8a476;
 }
 
@@ -104,7 +111,10 @@ main .products {
 
 main .products a {
   text-decoration: none;
+  font-family: "STIX Two Math", serif;
   color: #007580 !important;
+  font-size: 1.125em;
+  font-weight: bold;
 }
 
 main .products img {
@@ -224,4 +234,138 @@ main .aboutus img {
 main .aboutus .textaboutus {
   padding-top: 18%;
   padding-bottom: 30px;
+}
+
+main .aboutus .textaboutus a {
+  border: 1px solid;
+  padding: 6px;
+  border-color: #007580 !important;
+  text-decoration: none;
+  color: #007580 !important;
+  font-size: small;
+}
+
+main .aboutus .textaboutus h3 {
+  font-family: "STIX Two Math", serif;
+  color: #818185;
+  font-weight: bolder;
+}
+
+main .aboutus .textaboutus h2 {
+  font-family: "Uchen", serif;
+  color: #007580 !important;
+  font-weight: bolder;
+}
+
+main .aboutus .textaboutus p {
+  font-family: "STIX Two Math", serif;
+  color: #818185;
+}
+
+footer {
+  color: #a8a476;
+  background-image: url(https://cdn.shopify.com/s/files/1/0283/5820/t/9/assets/footer.jpg?31526322267640576);
+}
+
+footer .firstpartfooter .footerlogo img {
+  padding: 50px;
+}
+
+footer .firstpartfooter .footeremail {
+  padding-top: 50px;
+}
+
+footer .firstpartfooter .footeremail h4 {
+  text-align: center;
+}
+
+footer .firstpartfooter .footeremail p {
+  color: #c2c2b4 !important;
+}
+
+footer .firstpartfooter .footeremail button {
+  background-color: #a8a476;
+}
+
+footer .firstpartfooter .footerlinks {
+  padding-top: 50px;
+}
+
+footer .firstpartfooter .footerlinks h4 {
+  text-align: center;
+}
+
+footer .firstpartfooter .footerlinks ul {
+  color: #c2c2b4 !important;
+  padding-right: 30px;
+  text-align: center;
+  list-style-type: none;
+}
+
+footer .firstpartfooter .footercontact {
+  padding-top: 50px;
+}
+
+footer .firstpartfooter .footercontact h4 {
+  padding-left: 40px;
+}
+
+footer .firstpartfooter .footercontact p {
+  color: #c2c2b4 !important;
+}
+
+footer .firstpartfooter .footercontact a {
+  text-decoration: none;
+  color: #c2c2b4 !important;
+}
+
+footer .firstpartfooter .footeraddress img {
+  padding-top: 20px;
+  padding-left: 20px;
+}
+
+footer .firstpartfooter .socialmedia {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100px;
+  margin-left: 70px;
+}
+
+footer .firstpartfooter .socialmedia img {
+  max-width: 100%;
+}
+
+footer .firstpartfooter img {
+  max-width: 100%;
+}
+
+footer .secondpartfooter a {
+  text-decoration: none;
+  color: #a8a476;
+}
+
+footer .secondpartfooter p {
+  text-align: center;
+}
+
+footer .secondpartfooter .bankcards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+footer .secondpartfooter .bankcards p {
+  padding-top: 50px;
+}
+
+footer .secondpartfooter .bankcards img {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  max-width: 4%;
+  padding: 6px;
 }
