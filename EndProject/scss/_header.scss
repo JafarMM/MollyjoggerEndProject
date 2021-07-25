@@ -1,0 +1,43 @@
+   header{
+    .freeshopping{
+        background-color: $main_text_color;
+        height: 50px;
+        p{
+            color: white;
+            text-align: center;
+            padding-top: 17px;
+         }
+      }
+
+    .navbarm{
+        background-color: white;
+        .logo{
+           width: 350px;
+           padding: 25px;
+                img{
+                   max-width: 100%;
+                }
+             
+        }
+        .navbarright{
+           display: flex;
+           justify-content: flex-end;
+           padding: 20px;
+                a{
+                    color: $second_text_color;
+                    text-decoration: none;
+                    padding: 20px;
+                }
+                a:hover{
+                    color: $main_text_color;
+                }
+            
+            
+        }
+       
+        
+    }
+     
+   }
+    
+ 

@@ -1,0 +1,179 @@
+main{
+    .btn1{
+        border-color: $second_text_color;
+        color: $second_text_color;
+        padding: 32px 48px 28px;
+        margin-left: 640px;
+        margin-bottom: 100px;
+    }
+    .btn2{
+        border-color: $second_text_color;
+        color: $second_text_color;
+        padding: 32px 48px 28px;
+        margin-right: 640px;
+        margin-bottom: 100px;
+    }
+    .btn3{
+        border-color: $second_text_color;
+        color: $second_text_color;
+        padding: 32px 48px 28px;
+        margin-right: 640px;
+        margin-bottom: 100px;
+    }
+    .btn4{
+        border-color: $second_text_color;
+        color: $second_text_color;
+        padding: 32px 48px 28px;
+        margin-left: 640px;
+        margin-bottom: 100px;
+    }
+    .featuredproducts{
+        text-align: center;
+        h4{
+            margin-top: 30px;
+            margin-bottom: 30px;
+            color: #646569;
+        }
+        a{
+         border-style: solid;
+         padding: 10px;
+        text-decoration: none;
+        color: $main_text_color;
+        border-color: black;
+        border-width: 1px;
+        font-size: 12px;
+        }
+        a:hover{
+            color:$second_text_color;
+        }
+    }
+    .products{
+        margin-top: 35px;
+        a{
+            text-decoration: none;
+            color: $main_text_color;
+        }
+        img{
+            max-width: 100%;
+            margin-bottom: 5px;
+        }
+        .hoverimg1{
+            img{
+                display: none;
+            }
+        }
+        .hoverimg2{
+            img{
+                display: none;
+            }
+        }
+        .hoverimg3{
+            img{
+                display: none;
+            }
+        }
+        .hoverimg4{
+            img{
+                display: none;
+            }
+        }
+        .hoverimg5{
+            img{
+                display: none;
+            }
+        }
+        .hoverimg6{
+            img{
+                display: none;
+            }
+        }
+        .hoverimg7{
+            img{
+                display: none;
+            }
+        }
+        .hoverimg8{
+            img{
+                display: none;
+            }
+        }
+        a{
+            display: block;
+            text-align: center;
+            margin-top: 40px;
+        }
+        a:hover{
+            img{
+                display: none;
+            }
+            .hoverimg1{
+                img{
+                    display: block;
+                }
+            }
+            .hoverimg2{
+                img{
+                    display: block;
+                }
+            }
+            .hoverimg3{
+                img{
+                    display: block;
+                }
+            }
+            .hoverimg4{
+                img{
+                    display: block;
+                }
+            }
+            .hoverimg5{
+                img{
+                    display: block;
+                }
+            }
+            .hoverimg6{
+                img{
+                    display: block;
+                }
+            }
+            .hoverimg7{
+                img{
+                    display: block;
+                }
+            }
+            .hoverimg8{
+                img{
+                    display: block;
+                }
+            }
+            
+        }
+    }
+    .shoppart{
+        margin-top: 60px;
+        img{
+            width: 100%;
+        }
+        .shopimg1{
+            a{
+                position: absolute;
+                min-width: 240px;
+                z-index: 1;
+                left: 14%;
+                bottom: -153%;
+                text-decoration: none;
+                 
+            }
+        }
+        .shopimg3{
+            a{
+                position: absolute;
+                min-width: 240px;
+                z-index: 1;
+                right: 1%;
+                bottom: -153%;
+            }
+        }
+         
+    }
+}

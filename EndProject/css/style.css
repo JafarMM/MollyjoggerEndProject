@@ -1,0 +1,212 @@
+header .freeshopping {
+  background-color: #007580 !important;
+  height: 50px;
+}
+
+header .freeshopping p {
+  color: white;
+  text-align: center;
+  padding-top: 17px;
+}
+
+header .navbarm {
+  background-color: white;
+}
+
+header .navbarm .logo {
+  width: 350px;
+  padding: 25px;
+}
+
+header .navbarm .logo img {
+  max-width: 100%;
+}
+
+header .navbarm .navbarright {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding: 20px;
+}
+
+header .navbarm .navbarright a {
+  color: #a8a476;
+  text-decoration: none;
+  padding: 20px;
+}
+
+header .navbarm .navbarright a:hover {
+  color: #007580 !important;
+}
+
+main .btn1 {
+  border-color: #a8a476;
+  color: #a8a476;
+  padding: 32px 48px 28px;
+  margin-left: 640px;
+  margin-bottom: 100px;
+}
+
+main .btn2 {
+  border-color: #a8a476;
+  color: #a8a476;
+  padding: 32px 48px 28px;
+  margin-right: 640px;
+  margin-bottom: 100px;
+}
+
+main .btn3 {
+  border-color: #a8a476;
+  color: #a8a476;
+  padding: 32px 48px 28px;
+  margin-right: 640px;
+  margin-bottom: 100px;
+}
+
+main .btn4 {
+  border-color: #a8a476;
+  color: #a8a476;
+  padding: 32px 48px 28px;
+  margin-left: 640px;
+  margin-bottom: 100px;
+}
+
+main .featuredproducts {
+  text-align: center;
+}
+
+main .featuredproducts h4 {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  color: #646569;
+}
+
+main .featuredproducts a {
+  border-style: solid;
+  padding: 10px;
+  text-decoration: none;
+  color: #007580 !important;
+  border-color: black;
+  border-width: 1px;
+  font-size: 12px;
+}
+
+main .featuredproducts a:hover {
+  color: #a8a476;
+}
+
+main .products {
+  margin-top: 35px;
+}
+
+main .products a {
+  text-decoration: none;
+  color: #007580 !important;
+}
+
+main .products img {
+  max-width: 100%;
+  margin-bottom: 5px;
+}
+
+main .products .hoverimg1 img {
+  display: none;
+}
+
+main .products .hoverimg2 img {
+  display: none;
+}
+
+main .products .hoverimg3 img {
+  display: none;
+}
+
+main .products .hoverimg4 img {
+  display: none;
+}
+
+main .products .hoverimg5 img {
+  display: none;
+}
+
+main .products .hoverimg6 img {
+  display: none;
+}
+
+main .products .hoverimg7 img {
+  display: none;
+}
+
+main .products .hoverimg8 img {
+  display: none;
+}
+
+main .products a {
+  display: block;
+  text-align: center;
+  margin-top: 40px;
+}
+
+main .products a:hover img {
+  display: none;
+}
+
+main .products a:hover .hoverimg1 img {
+  display: block;
+}
+
+main .products a:hover .hoverimg2 img {
+  display: block;
+}
+
+main .products a:hover .hoverimg3 img {
+  display: block;
+}
+
+main .products a:hover .hoverimg4 img {
+  display: block;
+}
+
+main .products a:hover .hoverimg5 img {
+  display: block;
+}
+
+main .products a:hover .hoverimg6 img {
+  display: block;
+}
+
+main .products a:hover .hoverimg7 img {
+  display: block;
+}
+
+main .products a:hover .hoverimg8 img {
+  display: block;
+}
+
+main .shoppart {
+  margin-top: 60px;
+}
+
+main .shoppart img {
+  width: 100%;
+}
+
+main .shoppart .shopimg1 a {
+  position: absolute;
+  min-width: 240px;
+  z-index: 1;
+  left: 14%;
+  bottom: -153%;
+  text-decoration: none;
+}
+
+main .shoppart .shopimg3 a {
+  position: absolute;
+  min-width: 240px;
+  z-index: 1;
+  right: 1%;
+  bottom: -153%;
+}
