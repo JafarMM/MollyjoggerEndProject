@@ -199,7 +199,7 @@ main .shoppart .shopimg1 a {
   min-width: 240px;
   z-index: 1;
   left: 14%;
-  bottom: -153%;
+  bottom: -115%;
   text-decoration: none;
 }
 
@@ -208,5 +208,20 @@ main .shoppart .shopimg3 a {
   min-width: 240px;
   z-index: 1;
   right: 1%;
-  bottom: -153%;
+  bottom: -115%;
+}
+
+main .aboutus {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+main .aboutus img {
+  max-width: 100%;
+}
+
+main .aboutus .textaboutus {
+  padding-top: 18%;
+  padding-bottom: 30px;
 }

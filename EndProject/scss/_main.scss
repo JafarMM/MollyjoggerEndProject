@@ -150,6 +150,7 @@ main{
         }
     }
     .shoppart{
+    
         margin-top: 60px;
         img{
             width: 100%;
@@ -160,7 +161,7 @@ main{
                 min-width: 240px;
                 z-index: 1;
                 left: 14%;
-                bottom: -153%;
+                bottom: -115%;
                 text-decoration: none;
                  
             }
@@ -171,9 +172,19 @@ main{
                 min-width: 240px;
                 z-index: 1;
                 right: 1%;
-                bottom: -153%;
+                bottom: -115%;
             }
         }
          
+    }
+    .aboutus{
+        display: flex;
+        img{
+            max-width: 100%;
+        }
+        .textaboutus{
+        padding-top: 18%;
+        padding-bottom: 30px;
+        }
     }
 }
