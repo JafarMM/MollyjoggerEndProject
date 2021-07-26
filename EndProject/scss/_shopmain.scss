@@ -1,0 +1,69 @@
+.shopsection{
+
+    .productscategory{
+        ul{
+            list-style-type: none;
+            a{
+                text-decoration: none;
+            }
+        }
+    }
+
+    .products{
+        a{
+            display: block;
+            text-align: center;
+            margin-top: 40px;
+        }
+        a:hover{
+            img{
+                display: none;
+            }
+            .hoverimg1{
+                img{
+                    display: block;
+                }
+            }
+            .hoverimg2{
+                img{
+                    display: block;
+                }
+            }
+            .hoverimg3{
+                img{
+                    display: block;
+                }
+            }
+            .hoverimg4{
+                img{
+                    display: block;
+                }
+            }
+        }
+        img{
+            max-width: 100%;
+        }
+        .hoverimg1{
+            img{
+                display: none;
+            }
+        }
+        .hoverimg2{
+            img{
+                display: none;
+            }
+        }
+        .hoverimg3{
+            img{
+                display: none;
+            }
+        }
+        .hoverimg4{
+            img{
+                display: none;
+            }
+        }
+    }
+}
+
+ 

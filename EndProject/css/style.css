@@ -43,6 +43,10 @@ header .navbarm .navbarright a:hover {
   color: #007580 !important;
 }
 
+header .navbarm .navbarright a:hover .shopnavbar {
+  display: block;
+}
+
 main .btn1 {
   border-color: #a8a476;
   color: #a8a476;
@@ -368,4 +372,58 @@ footer .secondpartfooter .bankcards img {
           justify-content: center;
   max-width: 4%;
   padding: 6px;
+}
+
+.shopsection .productscategory ul {
+  list-style-type: none;
+}
+
+.shopsection .productscategory ul a {
+  text-decoration: none;
+}
+
+.shopsection .products a {
+  display: block;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.shopsection .products a:hover img {
+  display: none;
+}
+
+.shopsection .products a:hover .hoverimg1 img {
+  display: block;
+}
+
+.shopsection .products a:hover .hoverimg2 img {
+  display: block;
+}
+
+.shopsection .products a:hover .hoverimg3 img {
+  display: block;
+}
+
+.shopsection .products a:hover .hoverimg4 img {
+  display: block;
+}
+
+.shopsection .products img {
+  max-width: 100%;
+}
+
+.shopsection .products .hoverimg1 img {
+  display: none;
+}
+
+.shopsection .products .hoverimg2 img {
+  display: none;
+}
+
+.shopsection .products .hoverimg3 img {
+  display: none;
+}
+
+.shopsection .products .hoverimg4 img {
+  display: none;
 }
