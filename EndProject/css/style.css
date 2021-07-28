@@ -428,10 +428,40 @@ footer .secondpartfooter .bankcards img {
   display: none;
 }
 
-.ourstory .ourstory2 img {
+#aboutmollyjogger {
+  padding-left: 30px;
+  padding-right: 20px;
+}
+
+#aboutmollyjogger .ourstory .ourstory2 img {
   max-width: 100%;
 }
 
-.ourstory .ourstory3 img {
+#aboutmollyjogger .ourstory .ourstory3 img {
   max-width: 100%;
+}
+
+#aboutmollyjogger .ourstory .bigtext {
+  text-align: center;
+}
+
+#aboutmollyjogger .ourstory .fishpng img {
+  max-width: 100%;
+}
+
+#aboutmollyjogger .aboutshopkeeper .textshopkeeper {
+  text-align: center;
+}
+
+#aboutmollyjogger .aboutshopkeeper .shopkeeperphotos img {
+  max-width: 100%;
+}
+
+#aboutmollyjogger .brands .brandrow3 {
+  padding-bottom: 100px;
+}
+
+#aboutmollyjogger .brands img {
+  max-width: 100%;
+  padding-top: 70px;
 }
