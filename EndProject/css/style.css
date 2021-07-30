@@ -465,3 +465,19 @@ footer .secondpartfooter .bankcards img {
   max-width: 100%;
   padding-top: 70px;
 }
+
+#contact .contactus {
+  max-width: 440px;
+  margin: 0 auto 20px;
+}
+
+#contact .contactus .button {
+  border: solid 1px;
+  background-color: #007580 !important;
+  color: white;
+  padding: 8px 25px 8px 25px;
+}
+
+#contact .contactus .contactbutton {
+  padding-top: 30px;
+}
