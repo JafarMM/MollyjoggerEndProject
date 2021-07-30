@@ -114,6 +114,63 @@ header .navbarm .navbarright a:hover .shopnavbar {
   display: block;
 }
 
+header nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 15px;
+}
+
+header nav .hamburger {
+  background-color: transparent;
+  border: 0;
+  color: black;
+  cursor: pointer;
+  font-size: 20px;
+  display: none;
+}
+
+header nav .hamburger:focus {
+  outline: none;
+}
+
+header nav img {
+  width: 50%;
+}
+
+header nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0;
+  list-style-type: none;
+}
+
+header nav ul li {
+  display: inline-block;
+  color: #fff;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  padding: 10px 20px;
+}
+
+header nav ul li a {
+  text-decoration: none;
+}
+
 main .btn1 {
   border-color: #a8a476;
   color: #a8a476;
@@ -547,4 +604,35 @@ footer .secondpartfooter .bankcards img {
 
 #contact .contactus .contactbutton {
   padding-top: 30px;
+}
+
+@media only screen and (max-width: 768px) {
+  header nav img {
+    width: 280px;
+  }
+  header nav .hamburger {
+    display: block;
+  }
+  header nav .nav-ul {
+    display: none;
+    width: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  header nav .nav-ul.show {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  header .navbarm img {
+    width: 220px;
+  }
+  header .navbarm .navbarright {
+    display: none;
+  }
 }

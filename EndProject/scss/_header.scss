@@ -93,6 +93,44 @@
         
     }
      
+    nav{
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 15px;
+        .hamburger{
+            background-color: transparent;
+            border: 0;
+            color: black;
+            cursor: pointer;
+            font-size: 20px;
+            display: none;
+        }
+        .hamburger:focus{
+            outline: none;
+        }
+        img{
+            width: 50%;
+        }
+        ul{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            list-style-type: none;
+            
+            li{
+                display: inline-block;
+                color: #fff;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                padding: 10px 20px;
+                a{
+                    text-decoration: none;
+                }
+            }
+        }
+    }
      
    }
     

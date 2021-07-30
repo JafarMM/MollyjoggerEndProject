@@ -1,0 +1,34 @@
+@media only screen and (max-width: 768px) {
+    header {
+        nav{
+            img{
+                width: 280px;
+            }
+            .hamburger{
+                display: block;
+            }
+            .nav-ul{
+                display: none;
+                width: 100%;
+                flex-direction: column;
+            }
+            .nav-ul.show{
+                display: flex;
+            }
+            
+        }
+      }
+    }
+  
+  @media only screen and (max-width: 400px) {
+    header {
+      .navbarm{
+          img{
+              width: 220px;
+          }
+          .navbarright{
+              display: none;
+          }
+      }
+    }
+  }
