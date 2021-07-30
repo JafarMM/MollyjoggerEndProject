@@ -1,3 +1,70 @@
+header .flexbox {
+  font-family: 'Libre Franklin', sans-serif;
+  font-weight: 400;
+  font-size: smaller;
+  background-color: #252823;
+  height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .flexbox .searchpart {
+  padding-left: 40px;
+  -webkit-box-flex: 10;
+      -ms-flex-positive: 10;
+          flex-grow: 10;
+}
+
+header .flexbox .searchpart img {
+  width: 20px;
+}
+
+header .flexbox .searchpart a {
+  text-decoration: none;
+  color: #a8a476;
+}
+
+header .flexbox .logincreatepart {
+  padding-right: 15px;
+}
+
+header .flexbox .logincreatepart a {
+  text-decoration: none;
+  color: #a8a476;
+}
+
+header .flexbox .cart {
+  width: 90px;
+  height: 30px;
+  padding-top: 3px;
+  padding-right: 15px;
+}
+
+header .flexbox .cart a {
+  text-decoration: none;
+}
+
+header .flexbox .cart a .cart1 {
+  border: solid 2px #a8a476;
+  width: 80px;
+}
+
+header .flexbox .cart img {
+  width: 18px;
+}
+
+header .flexbox .cart span {
+  color: #a8a476;
+}
+
 header .freeshopping {
   background-color: #007580 !important;
   height: 50px;
