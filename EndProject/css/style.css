@@ -494,12 +494,40 @@ footer .secondpartfooter .bankcards img {
   padding: 6px;
 }
 
+.shopsection {
+  padding-bottom: 80px;
+}
+
+.shopsection .productscategory h5 {
+  padding-left: 30px;
+  padding-top: 100px;
+}
+
 .shopsection .productscategory ul {
   list-style-type: none;
 }
 
 .shopsection .productscategory ul a {
   text-decoration: none;
+  color: black;
+}
+
+.shopsection .links h5 {
+  padding-left: 30px;
+}
+
+.shopsection .links ul {
+  list-style-type: none;
+}
+
+.shopsection .links ul a {
+  text-decoration: none;
+  color: black;
+}
+
+.shopsection .products h1 {
+  padding-top: 50px;
+  padding-left: 30px;
 }
 
 .shopsection .products a {
@@ -622,4 +650,18 @@ footer .secondpartfooter .bankcards img {
     display: -ms-flexbox;
     display: flex;
   }
+}
+
+h1 {
+  text-align: center;
+  color: #626545;
+}
+
+h4 {
+  color: #646569;
+  padding-top: 20px;
+}
+
+p {
+  color: #646569;
 }

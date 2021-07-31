@@ -1,15 +1,37 @@
 .shopsection{
-
+     padding-bottom: 80px;
     .productscategory{
+        h5{
+            padding-left: 30px;
+            padding-top: 100px;
+        }
         ul{
             list-style-type: none;
             a{
                 text-decoration: none;
+                color: black;
             }
         }
     }
+    .links{
+        h5{
+            padding-left: 30px; 
+        }
+        ul{
+            list-style-type: none;
+            a{
+                text-decoration: none;
+                color: black;
+            }
+        }
+    
+    }
 
     .products{
+        h1{
+            padding-top: 50px;
+            padding-left: 30px;
+        }
         a{
             display: block;
             text-align: center;
