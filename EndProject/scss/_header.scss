@@ -59,40 +59,7 @@
          }
       }
 
-    .navbarm{
-        background-color: white;
-        .logo{
-           width: 350px;
-           padding: 25px;
-                img{
-                   max-width: 100%;
-                }
-              
-        }
-        .navbarright{
-            font-family: $firstfontfamily;
-           display: flex;
-           justify-content: flex-end;
-           padding: 20px;
-                a{
-                    color: $second_text_color;
-                    text-decoration: none;
-                    padding: 20px;
-                }
-                a:hover{
-                    color: $main_text_color;
-                    .shopnavbar{
-                        display: block;
-                    }
-                }
-            
-            
-        }
-       
-        
-        
-    }
-     
+  
     nav{
         display: flex;
         align-items: center;
@@ -114,12 +81,47 @@
             width: 50%;
         }
         ul{
+            .sub-menu{
+                display: none;
+                width: 120px;
+                position: absolute;
+                z-index: 1000;
+               
+                ul{
+                    #firstchild{
+                        padding-top: 6px;
+                        border-top: 4px solid #d0d0cf;
+                    }
+                    display: block;
+                    margin: 10px;
+                    font-family: 'Libre Franklin', sans-serif;
+                    font-size: 11px;
+                    font-weight: bold;
+                }
+                a{
+                   text-decoration: none;
+                }
+                
+            }
+            .shop{
+                :hover{
+                  .sub-menu{
+                      display: block;
+                      position: absolute;
+                      background:#fcf9f4;
+                      margin-top: 5px;
+                      margin-left: -25px;
+                     
+                  }
+                }  
+            }
+            
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 0;
             list-style-type: none;
-            
+           
             li{
                 display: inline-block;
                 color: #fff;
@@ -127,8 +129,12 @@
                 padding: 10px 20px;
                 a{
                     text-decoration: none;
+                    color: $second_text_color;
+                    font-family: $firstfontfamily;
                 }
             }
+            
+           
         }
     }
      

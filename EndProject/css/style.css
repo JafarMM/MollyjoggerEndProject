@@ -76,44 +76,6 @@ header .freeshopping p {
   padding-top: 17px;
 }
 
-header .navbarm {
-  background-color: white;
-}
-
-header .navbarm .logo {
-  width: 350px;
-  padding: 25px;
-}
-
-header .navbarm .logo img {
-  max-width: 100%;
-}
-
-header .navbarm .navbarright {
-  font-family: "Uchen", serif;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  padding: 20px;
-}
-
-header .navbarm .navbarright a {
-  color: #a8a476;
-  text-decoration: none;
-  padding: 20px;
-}
-
-header .navbarm .navbarright a:hover {
-  color: #007580 !important;
-}
-
-header .navbarm .navbarright a:hover .shopnavbar {
-  display: block;
-}
-
 header nav {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -160,6 +122,38 @@ header nav ul {
   list-style-type: none;
 }
 
+header nav ul .sub-menu {
+  display: none;
+  width: 120px;
+  position: absolute;
+  z-index: 1000;
+}
+
+header nav ul .sub-menu ul {
+  display: block;
+  margin: 10px;
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+header nav ul .sub-menu ul #firstchild {
+  padding-top: 6px;
+  border-top: 4px solid #d0d0cf;
+}
+
+header nav ul .sub-menu a {
+  text-decoration: none;
+}
+
+header nav ul .shop :hover .sub-menu {
+  display: block;
+  position: absolute;
+  background: #fcf9f4;
+  margin-top: 5px;
+  margin-left: -25px;
+}
+
 header nav ul li {
   display: inline-block;
   color: #fff;
@@ -169,6 +163,8 @@ header nav ul li {
 
 header nav ul li a {
   text-decoration: none;
+  color: #a8a476;
+  font-family: "Uchen", serif;
 }
 
 main .btn1 {
@@ -625,14 +621,5 @@ footer .secondpartfooter .bankcards img {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-  }
-}
-
-@media only screen and (max-width: 400px) {
-  header .navbarm img {
-    width: 220px;
-  }
-  header .navbarm .navbarright {
-    display: none;
   }
 }
