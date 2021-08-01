@@ -187,11 +187,13 @@ main{
          
     }
     .aboutus{
+        padding: 50px 0 50px 0;
         display: flex;
         img{
             max-width: 100%;
         }
         .textaboutus{
+            
             a{
                 border: 1px solid;
                 padding: 6px;
@@ -213,6 +215,7 @@ main{
             }
             p{
                 font-family: $secondfontfamily;
+                text-align: start;
                 color: #818185; 
             }
         padding-top: 18%;
