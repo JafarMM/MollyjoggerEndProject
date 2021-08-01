@@ -18,5 +18,48 @@
             
         }
       }
-    }
+      main{
+          .aboutus{
+              text-align: center;
+          }
+      }
+      footer{
+          .footeremail{   
+              .emailinput{
+                  display: flex;
+                  justify-content: center;
+              }
+              
+          }
+          .footercontact{
+              text-align: center;
+               .socialmedia{
+                    display: flex;
+                    justify-content: center;
+               }
+          }
+          .footerlogo{
+              display: flex;
+              justify-content: center;
+          }
+          
+      }
+ }
+
+ @media only screen and (min-width: 768px) {
+     footer{
+        .footerlogo{
+            padding-top: 30px;
+            img{
+                max-width: 120%;
+                 
+            }
+        }
+        .footeremail{
+            .emailinput{
+                 
+            }
+        }
+     }
+ }
   

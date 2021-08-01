@@ -14,6 +14,7 @@ footer{
             }
             p{
                 color: $third_text_color;
+                text-align: center;
             }
             button{
                 background-color: $second_text_color;
@@ -51,12 +52,24 @@ footer{
             }
         }
         .socialmedia{
-            display: flex;
-            width: 100px;
-            margin-left: 70px;
-            img{
-                max-width: 100%;
-            }
+             ul{
+                 list-style-type: none;
+                 margin: 0;
+                 padding: 0;
+                 overflow: hidden;
+                 li{
+                     float: left;
+                     a{
+                        
+                         text-align: center;
+                         padding: 40px;
+                         text-decoration: none;
+                         img{
+                             max-width: 20px;
+                         }
+                     }
+                 }
+             }
         }
         
         img{

@@ -405,6 +405,7 @@ footer .firstpartfooter .footeremail h4 {
 
 footer .firstpartfooter .footeremail p {
   color: #c2c2b4 !important;
+  text-align: center;
 }
 
 footer .firstpartfooter .footeremail button {
@@ -448,16 +449,25 @@ footer .firstpartfooter .footeraddress img {
   padding-left: 20px;
 }
 
-footer .firstpartfooter .socialmedia {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100px;
-  margin-left: 70px;
+footer .firstpartfooter .socialmedia ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 }
 
-footer .firstpartfooter .socialmedia img {
-  max-width: 100%;
+footer .firstpartfooter .socialmedia ul li {
+  float: left;
+}
+
+footer .firstpartfooter .socialmedia ul li a {
+  text-align: center;
+  padding: 40px;
+  text-decoration: none;
+}
+
+footer .firstpartfooter .socialmedia ul li a img {
+  max-width: 20px;
 }
 
 footer .firstpartfooter img {
@@ -649,6 +659,45 @@ footer .secondpartfooter .bankcards img {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+  }
+  main .aboutus {
+    text-align: center;
+  }
+  footer .footeremail .emailinput {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  footer .footercontact {
+    text-align: center;
+  }
+  footer .footercontact .socialmedia {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  footer .footerlogo {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  footer .footerlogo {
+    padding-top: 30px;
+  }
+  footer .footerlogo img {
+    max-width: 120%;
   }
 }
 
