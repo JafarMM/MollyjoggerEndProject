@@ -60,83 +60,91 @@
       }
 
   
-    nav{
-        display: flex;
-        align-items: center;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        padding: 15px;
-        .hamburger{
-            background-color: transparent;
-            border: 0;
-            color: black;
-            cursor: pointer;
-            font-size: 20px;
-            display: none;
-        }
-        .hamburger:focus{
-            outline: none;
-        }
-        img{
-            width: 50%;
-        }
-        ul{
-            .sub-menu{
-                display: none;
-                width: 120px;
-                position: absolute;
-                z-index: 1000;
-               
-                ul{
-                    #firstchild{
-                        padding-top: 6px;
-                        border-top: 4px solid #d0d0cf;
-                    }
-                    display: block;
-                    margin: 10px;
-                    font-family: 'Libre Franklin', sans-serif;
-                    font-size: 11px;
-                    font-weight: bold;
-                }
-                a{
-                   text-decoration: none;
-                }
-                
-            }
-            .shop{
+     nav{
+         .fa{
+             display: none;
+         }
+         display: flex;
+         padding: 2% 6%;
+         justify-content: space-between;
+         align-items: center;
+         img{
+             width: 350px;
+         }
+         .nav-links{
+             a{
+                 color: $second_text_color;
+                 text-decoration: none;
+                 font-size: 15px;
+             }
+             flex: 1;
+             text-align: right;
+             li{
+                 list-style: none;
+                 display: inline-block;
+                 padding:8px 12px;
+                 position: relative;
+                 ::after{
+                     content: '';
+                     width: 0%;
+                     height: 2px;
+                     background: $main_text_color;
+                     display: block;
+                     margin: auto;
+                     transition: 0.4s;
+                 }
+                 :hover::after{
+                     width: 100%;
+                 }
+             }
+             .shop{
+                 display: inline-block;
                 :hover{
                   .sub-menu{
                       display: block;
                       position: absolute;
                       background:#fcf9f4;
                       margin-top: 5px;
-                      margin-left: -25px;
+                      margin-left: -30px;
                      
                   }
                 }  
-            }
-            
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0;
-            list-style-type: none;
-           
-            li{
-                display: inline-block;
-                color: #fff;
-                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-                padding: 10px 20px;
-                a{
-                    text-decoration: none;
-                    color: $second_text_color;
-                    font-family: $firstfontfamily;
+                .sub-menu{
+                    display: none;
+                    width: 120px;
+                    position: absolute;
+                    z-index: 1000;
+                   
+                    ul{
+                        #firstchild{
+                            padding-top: 6px;
+                            border-top: 4px solid #d0d0cf;
+                        }
+                        display: block;
+                        margin: 10px;
+                        font-family: 'Libre Franklin', sans-serif;
+                        font-size: 11px;
+                        font-weight: bold;
+                        li{
+                            :hover::after{
+                                width: 0%;
+                            }
+                        }
+                    }
+                    a{
+                       text-decoration: none;
+                    }
+                    
                 }
             }
-            
-           
-        }
-    }
+            .about{
+                display: inline-block;
+            }
+            .contact{
+                display: inline-block;
+            }
+         }
+     }
      
    }
     

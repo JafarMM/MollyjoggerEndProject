@@ -1,4 +1,8 @@
+
 @media only screen and (max-width: 768px) {
+    body{
+        overflow-x: hidden;
+    }
     header {
         .freeshopping{
             font-size: smaller;
@@ -22,18 +26,47 @@
             img{
                 width: 280px;
             }
-            .hamburger{
+            
+            .nav-links{
+               position: absolute;
+               background: $main_text_color;
+               height: 100vh;
+               width: 200px;
+               top: 0;
+               right: 0;
+               text-align: left;
+               z-index: 2;
+               transition: 1s;
+               ul{
+                   padding: 20px;
+               }
+               li{
+                   display: block;
+               }
+               .shop{
+                   padding-left: 30px;
+               }
+               .about{
+                   padding-left: 30px;
+               }
+               .contact{
+                   padding-left: 30px;
+               }
+              
+            }
+            .fa{
                 display: block;
-            }
-            .nav-ul{
-                display: none;
-                width: 100%;
-                flex-direction: column;
-            }
-            .nav-ul.show{
-                display: flex;
+                color: #fff;
+                margin: 10px;
+                font-size: 22px;
+                cursor: pointer;
             }
             
+            
+        }
+        #fa1{
+            display: block;
+            color: black;
         }
       }
       main{
@@ -76,6 +109,9 @@
       }
  }
 
+ 
+ 
+
  @media only screen and (min-width: 768px) {
      footer{
         .footerlogo{
@@ -92,4 +128,6 @@
         }
      }
  }
+ 
+ 
   

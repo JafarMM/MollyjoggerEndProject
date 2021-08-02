@@ -80,56 +80,78 @@ header nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  padding: 2% 6%;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 15px;
-}
-
-header nav .hamburger {
-  background-color: transparent;
-  border: 0;
-  color: black;
-  cursor: pointer;
-  font-size: 20px;
-  display: none;
-}
-
-header nav .hamburger:focus {
-  outline: none;
-}
-
-header nav img {
-  width: 50%;
-}
-
-header nav ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  padding: 0;
-  list-style-type: none;
 }
 
-header nav ul .sub-menu {
+header nav .fa {
+  display: none;
+}
+
+header nav img {
+  width: 350px;
+}
+
+header nav .nav-links {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  text-align: right;
+}
+
+header nav .nav-links a {
+  color: #a8a476;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+header nav .nav-links li {
+  list-style: none;
+  display: inline-block;
+  padding: 8px 12px;
+  position: relative;
+}
+
+header nav .nav-links li ::after {
+  content: '';
+  width: 0%;
+  height: 2px;
+  background: #007580 !important;
+  display: block;
+  margin: auto;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+header nav .nav-links li :hover::after {
+  width: 100%;
+}
+
+header nav .nav-links .shop {
+  display: inline-block;
+}
+
+header nav .nav-links .shop :hover .sub-menu {
+  display: block;
+  position: absolute;
+  background: #fcf9f4;
+  margin-top: 5px;
+  margin-left: -30px;
+}
+
+header nav .nav-links .shop .sub-menu {
   display: none;
   width: 120px;
   position: absolute;
   z-index: 1000;
 }
 
-header nav ul .sub-menu ul {
+header nav .nav-links .shop .sub-menu ul {
   display: block;
   margin: 10px;
   font-family: 'Libre Franklin', sans-serif;
@@ -137,34 +159,25 @@ header nav ul .sub-menu ul {
   font-weight: bold;
 }
 
-header nav ul .sub-menu ul #firstchild {
+header nav .nav-links .shop .sub-menu ul #firstchild {
   padding-top: 6px;
   border-top: 4px solid #d0d0cf;
 }
 
-header nav ul .sub-menu a {
+header nav .nav-links .shop .sub-menu ul li :hover::after {
+  width: 0%;
+}
+
+header nav .nav-links .shop .sub-menu a {
   text-decoration: none;
 }
 
-header nav ul .shop :hover .sub-menu {
-  display: block;
-  position: absolute;
-  background: #fcf9f4;
-  margin-top: 5px;
-  margin-left: -25px;
-}
-
-header nav ul li {
+header nav .nav-links .about {
   display: inline-block;
-  color: #fff;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  padding: 10px 20px;
 }
 
-header nav ul li a {
-  text-decoration: none;
-  color: #a8a476;
-  font-family: "Uchen", serif;
+header nav .nav-links .contact {
+  display: inline-block;
 }
 
 main .btn1 {
@@ -652,6 +665,9 @@ footer .secondpartfooter .bankcards img {
 }
 
 @media only screen and (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
   header .freeshopping {
     font-size: smaller;
   }
@@ -667,21 +683,43 @@ footer .secondpartfooter .bankcards img {
   header nav img {
     width: 280px;
   }
-  header nav .hamburger {
+  header nav .nav-links {
+    position: absolute;
+    background: #007580 !important;
+    height: 100vh;
+    width: 200px;
+    top: 0;
+    right: 0;
+    text-align: left;
+    z-index: 2;
+    -webkit-transition: 1s;
+    transition: 1s;
+  }
+  header nav .nav-links ul {
+    padding: 20px;
+  }
+  header nav .nav-links li {
     display: block;
   }
-  header nav .nav-ul {
-    display: none;
-    width: 100%;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+  header nav .nav-links .shop {
+    padding-left: 30px;
   }
-  header nav .nav-ul.show {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+  header nav .nav-links .about {
+    padding-left: 30px;
+  }
+  header nav .nav-links .contact {
+    padding-left: 30px;
+  }
+  header nav .fa {
+    display: block;
+    color: #fff;
+    margin: 10px;
+    font-size: 22px;
+    cursor: pointer;
+  }
+  header #fa1 {
+    display: block;
+    color: black;
   }
   main .aboutus {
     text-align: center;
