@@ -333,7 +333,7 @@ main .shoppart .shopimg1 a {
   min-width: 240px;
   z-index: 1;
   left: 14%;
-  bottom: -115%;
+  bottom: -235%;
   text-decoration: none;
 }
 
@@ -410,6 +410,10 @@ footer .firstpartfooter .footeremail p {
   text-align: center;
 }
 
+footer .firstpartfooter .footeremail input {
+  padding-left: 30px;
+}
+
 footer .firstpartfooter .footeremail button {
   background-color: #a8a476;
 }
@@ -427,6 +431,11 @@ footer .firstpartfooter .footerlinks ul {
   padding-right: 30px;
   text-align: center;
   list-style-type: none;
+}
+
+footer .firstpartfooter .footerlinks ul li a {
+  text-decoration: none;
+  color: #a8a476;
 }
 
 footer .firstpartfooter .footercontact {
@@ -643,6 +652,18 @@ footer .secondpartfooter .bankcards img {
 }
 
 @media only screen and (max-width: 768px) {
+  header .freeshopping {
+    font-size: smaller;
+  }
+  header .searchpart a {
+    font-size: smaller;
+  }
+  header .logincreatepart a {
+    font-size: smaller;
+  }
+  header .cart {
+    font-size: smaller;
+  }
   header nav img {
     width: 280px;
   }
@@ -664,6 +685,22 @@ footer .secondpartfooter .bankcards img {
   }
   main .aboutus {
     text-align: center;
+  }
+  main .browse {
+    display: block;
+  }
+  main .browseul {
+    display: none;
+    width: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  main .browseul.show {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
   footer .footeremail .emailinput {
     display: -webkit-box;

@@ -1,5 +1,23 @@
 @media only screen and (max-width: 768px) {
     header {
+        .freeshopping{
+            font-size: smaller;
+        }
+        .searchpart{
+            
+           a{
+               font-size: smaller;
+           }
+        }
+        .logincreatepart{
+            a{
+                font-size: smaller;
+            }
+        }
+        .cart{
+            font-size: smaller;
+        }
+        
         nav{
             img{
                 width: 280px;
@@ -22,6 +40,18 @@
           .aboutus{
               text-align: center;
           }
+           .browse{
+            display: block;
+        }
+           
+          .browseul{
+            display: none;
+            width: 100%;
+            flex-direction: column;
+        }
+        .browseul.show{
+            display: flex;
+        }
       }
       footer{
           .footeremail{   
