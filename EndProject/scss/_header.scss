@@ -75,7 +75,6 @@
              a{
                  color: $second_text_color;
                  text-decoration: none;
-                 font-size: 15px;
              }
              flex: 1;
              text-align: right;
@@ -98,6 +97,7 @@
                  }
              }
              .shop{
+                 font-size: 20px;
                  display: inline-block;
                 :hover{
                   .sub-menu{
@@ -106,7 +106,6 @@
                       background:#fcf9f4;
                       margin-top: 5px;
                       margin-left: -30px;
-                     
                   }
                 }  
                 .sub-menu{
@@ -114,18 +113,19 @@
                     width: 120px;
                     position: absolute;
                     z-index: 1000;
-                   
+                    font-size: 11px;
                     ul{
                         #firstchild{
                             padding-top: 6px;
                             border-top: 4px solid #d0d0cf;
                         }
                         display: block;
-                        margin: 10px;
+                        padding-right: 40px;
                         font-family: 'Libre Franklin', sans-serif;
-                        font-size: 11px;
+                         
                         font-weight: bold;
                         li{
+                             
                             :hover::after{
                                 width: 0%;
                             }
@@ -138,10 +138,18 @@
                 }
             }
             .about{
+                font-size: 20px;
                 display: inline-block;
             }
             .contact{
+                font-size: 20px;
                 display: inline-block;
+            }
+            .loginacc{
+                display: none;
+            }
+            .createacc{
+                display: none;
             }
          }
      }

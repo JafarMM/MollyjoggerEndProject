@@ -107,7 +107,6 @@ header nav .nav-links {
 header nav .nav-links a {
   color: #a8a476;
   text-decoration: none;
-  font-size: 15px;
 }
 
 header nav .nav-links li {
@@ -133,6 +132,7 @@ header nav .nav-links li :hover::after {
 }
 
 header nav .nav-links .shop {
+  font-size: 20px;
   display: inline-block;
 }
 
@@ -149,13 +149,13 @@ header nav .nav-links .shop .sub-menu {
   width: 120px;
   position: absolute;
   z-index: 1000;
+  font-size: 11px;
 }
 
 header nav .nav-links .shop .sub-menu ul {
   display: block;
-  margin: 10px;
+  padding-right: 40px;
   font-family: 'Libre Franklin', sans-serif;
-  font-size: 11px;
   font-weight: bold;
 }
 
@@ -173,11 +173,21 @@ header nav .nav-links .shop .sub-menu a {
 }
 
 header nav .nav-links .about {
+  font-size: 20px;
   display: inline-block;
 }
 
 header nav .nav-links .contact {
+  font-size: 20px;
   display: inline-block;
+}
+
+header nav .nav-links .loginacc {
+  display: none;
+}
+
+header nav .nav-links .createacc {
+  display: none;
 }
 
 main .btn1 {
@@ -668,6 +678,9 @@ footer .secondpartfooter .bankcards img {
   body {
     overflow-x: hidden;
   }
+  header .logincreatepart {
+    display: none;
+  }
   header .freeshopping {
     font-size: smaller;
   }
@@ -684,16 +697,16 @@ footer .secondpartfooter .bankcards img {
     width: 280px;
   }
   header nav .nav-links {
-    position: absolute;
+    position: fixed;
     background: #007580 !important;
     height: 100vh;
     width: 200px;
     top: 0;
-    right: 0;
+    right: -100%;
     text-align: left;
     z-index: 2;
-    -webkit-transition: 1s;
-    transition: 1s;
+    -webkit-transition: 0.8s;
+    transition: 0.8s;
   }
   header nav .nav-links ul {
     padding: 20px;
@@ -702,12 +715,26 @@ footer .secondpartfooter .bankcards img {
     display: block;
   }
   header nav .nav-links .shop {
+    font-size: 15px;
     padding-left: 30px;
+  }
+  header nav .nav-links .shop :hover .sub-menu {
+    display: none;
   }
   header nav .nav-links .about {
     padding-left: 30px;
+    font-size: 15px;
   }
   header nav .nav-links .contact {
+    font-size: 15px;
+    padding-left: 30px;
+  }
+  header nav .nav-links .loginacc {
+    display: block;
+    padding-left: 30px;
+  }
+  header nav .nav-links .createacc {
+    display: block;
     padding-left: 30px;
   }
   header nav .fa {
@@ -802,4 +829,111 @@ p {
 
 img {
   max-width: 100%;
+}
+
+.small-img-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.small-img-group .small-img-col {
+  -ms-flex-preferred-size: 24%;
+      flex-basis: 24%;
+  cursor: pointer;
+}
+
+.productright1 .productinfo p {
+  text-align: left;
+}
+
+.productright1 .button1 {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.productright1 .button1 .add-btn {
+  width: 95%;
+  height: 40px;
+  border-color: #007580 !important;
+  background: #007580 !important;
+  color: white;
+}
+
+.productright1 .button2 {
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+.productright1 .button2 .buy-btn {
+  width: 95%;
+  height: 40px;
+  border-color: #007580 !important;
+  background: #007580 !important;
+  color: white;
+}
+
+.allproducts {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.allproducts h4 {
+  text-align: center;
+}
+
+.allproducts h1 {
+  padding-top: 50px;
+  padding-left: 30px;
+}
+
+.allproducts a {
+  display: block;
+  text-align: center;
+  margin-top: 40px;
+  text-decoration: none;
+  color: #007580 !important;
+}
+
+.allproducts a:hover img {
+  display: none;
+}
+
+.allproducts a:hover .hoverimg1 img {
+  display: block;
+}
+
+.allproducts a:hover .hoverimg2 img {
+  display: block;
+}
+
+.allproducts a:hover .hoverimg3 img {
+  display: block;
+}
+
+.allproducts a:hover .hoverimg4 img {
+  display: block;
+}
+
+.allproducts img {
+  max-width: 100%;
+}
+
+.allproducts .hoverimg1 img {
+  display: none;
+}
+
+.allproducts .hoverimg2 img {
+  display: none;
+}
+
+.allproducts .hoverimg3 img {
+  display: none;
+}
+
+.allproducts .hoverimg4 img {
+  display: none;
 }

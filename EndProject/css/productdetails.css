@@ -1,0 +1,19 @@
+ul {
+  float: left;
+}
+
+ul li {
+  margin-bottom: 10px;
+}
+
+ul li img {
+  width: 70px;
+  height: 70px;
+}
+
+.big_img {
+  width: 350px;
+  height: 400px;
+  float: left;
+  margin-top: 20px;
+}
