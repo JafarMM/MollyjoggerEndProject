@@ -1,0 +1,226 @@
+main{
+    
+    .btn1{
+        border-color: $second_text_color;
+        color: $second_text_color;
+        padding: 32px 48px 28px;
+        margin-left: 640px;
+        margin-bottom: 100px;
+    }
+    .btn2{
+        border-color: $second_text_color;
+        color: $second_text_color;
+        padding: 32px 48px 28px;
+        margin-right: 640px;
+        margin-bottom: 100px;
+    }
+    .btn3{
+        border-color: $second_text_color;
+        color: $second_text_color;
+        padding: 32px 48px 28px;
+        margin-right: 640px;
+        margin-bottom: 100px;
+    }
+    .btn4{
+        border-color: $second_text_color;
+        color: $second_text_color;
+        padding: 32px 48px 28px;
+        margin-left: 640px;
+        margin-bottom: 100px;
+    }
+    .featuredproducts{
+        font-family: $firstfontfamily;
+        text-align: center;
+        padding-top: 40px;
+        h4{
+            margin-top: 30px;
+            font-size: 1.2875em;
+            margin-bottom: 30px;
+            color: $second_text_color;
+        }
+        a{
+        font-size: smaller;
+        border-color: $main_text_color;
+        border: 1px solid;
+         padding: 10px;
+        text-decoration: none;
+        color: $main_text_color;
+        border-color: black;
+        border-width: 1px;
+        font-size: 12px;
+        }
+        a:hover{
+            border-color: $second_text_color;
+            color:$second_text_color;
+        }
+    }
+    .products{
+        margin-top: 35px;
+        a{
+            text-decoration: none;
+            font-family: $secondfontfamily;
+            color: $main_text_color;
+            font-size: 1.125em;
+            font-weight: bold;
+        }
+        img{
+            max-width: 100%;
+            margin-bottom: 5px;
+        }
+        .hoverimg1{
+            img{
+                display: none;
+            }
+        }
+        .hoverimg2{
+            img{
+                display: none;
+            }
+        }
+        .hoverimg3{
+            img{
+                display: none;
+            }
+        }
+        .hoverimg4{
+            img{
+                display: none;
+            }
+        }
+        .hoverimg5{
+            img{
+                display: none;
+            }
+        }
+        .hoverimg6{
+            img{
+                display: none;
+            }
+        }
+        .hoverimg7{
+            img{
+                display: none;
+            }
+        }
+        .hoverimg8{
+            img{
+                display: none;
+            }
+        }
+        a{
+            display: block;
+            text-align: center;
+            margin-top: 40px;
+        }
+        a:hover{
+            img{
+                display: none;
+            }
+            .hoverimg1{
+                img{
+                    display: block;
+                }
+            }
+            .hoverimg2{
+                img{
+                    display: block;
+                }
+            }
+            .hoverimg3{
+                img{
+                    display: block;
+                }
+            }
+            .hoverimg4{
+                img{
+                    display: block;
+                }
+            }
+            .hoverimg5{
+                img{
+                    display: block;
+                }
+            }
+            .hoverimg6{
+                img{
+                    display: block;
+                }
+            }
+            .hoverimg7{
+                img{
+                    display: block;
+                }
+            }
+            .hoverimg8{
+                img{
+                    display: block;
+                }
+            }
+            
+        }
+    }
+    .shoppart{
+    
+        margin-top: 60px;
+        img{
+            width: 100%;
+        }
+        .shopimg1{
+            a{
+                position: absolute;
+                min-width: 240px;
+                z-index: 1;
+                left: 14%;
+                bottom: -235%;
+                text-decoration: none;
+                 
+            }
+        }
+        .shopimg3{
+            a{
+                position: absolute;
+                min-width: 240px;
+                z-index: 1;
+                right: 1%;
+                bottom: -115%;
+            }
+        }
+         
+    }
+    .aboutus{
+        padding: 50px 0 50px 0;
+        display: flex;
+        img{
+            max-width: 100%;
+        }
+        .textaboutus{
+            
+            a{
+                border: 1px solid;
+                padding: 6px;
+                border-color: $main_text_color;
+                text-decoration: none;
+                color: $main_text_color;
+                font-size: small;
+            }
+            
+            h3{
+                font-family: $secondfontfamily;
+                color: #818185;
+                font-weight: bolder;
+            }
+            h2{
+                font-family: $firstfontfamily;
+                color: $main_text_color;
+                font-weight: bolder;
+            }
+            p{
+                font-family: $secondfontfamily;
+                text-align: start;
+                color: #818185; 
+            }
+        padding-top: 18%;
+        padding-bottom: 30px;
+        }
+    }
+}

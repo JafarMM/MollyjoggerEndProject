@@ -1,0 +1,159 @@
+   header{
+   .flexbox{
+       font-family: 'Libre Franklin', sans-serif;
+       font-weight: 400;
+       font-size: smaller;
+       background-color: #252823;
+       height: 40px;
+       display: flex;
+       flex-direction: row;
+       align-items:center;
+       .searchpart{
+           padding-left: 40px;
+           img{
+               width: 20px;
+           }
+            flex-grow: 10;
+            a{
+                text-decoration: none;
+                color: $second_text_color;
+            }
+       }
+       
+       .logincreatepart{
+           padding-right: 15px;
+        a{
+            text-decoration: none;
+            color: $second_text_color;
+        }
+       }
+      .cart{
+        width: 90px;
+        height: 30px;
+         padding-top: 3px;
+         padding-right: 15px;
+         a{
+             text-decoration: none;
+            .cart1{
+                border: solid 2px $second_text_color;
+                width: 80px;
+            }
+         }
+        
+         img{
+             width: 18px;
+         }
+          span{
+              color: $second_text_color;
+          }
+      }
+        
+   }
+    .freeshopping{
+        background-color: $main_text_color;
+        height: 50px;
+        p{
+            color: white;
+            text-align: center;
+            padding-top: 17px;
+         }
+      }
+
+  
+     nav{
+         .fa{
+             display: none;
+         }
+         display: flex;
+         padding: 2% 6%;
+         justify-content: space-between;
+         align-items: center;
+         img{
+             width: 350px;
+         }
+         .nav-links{
+             a{
+                 color: $second_text_color;
+                 text-decoration: none;
+             }
+             flex: 1;
+             text-align: right;
+             li{
+                 list-style: none;
+                 display: inline-block;
+                 padding:8px 12px;
+                 position: relative;
+                 ::after{
+                     content: '';
+                     width: 0%;
+                     height: 2px;
+                     background: $main_text_color;
+                     display: block;
+                     margin: auto;
+                     transition: 0.4s;
+                 }
+                 :hover::after{
+                     width: 100%;
+                 }
+             }
+             .shop{
+                 font-size: 20px;
+                 display: inline-block;
+                :hover{
+                  .sub-menu{
+                      display: block;
+                      position: absolute;
+                      background:#fcf9f4;
+                      margin-top: 5px;
+                      margin-left: -30px;
+                  }
+                }  
+                .sub-menu{
+                    display: none;
+                    width: 120px;
+                    position: absolute;
+                    z-index: 1000;
+                    font-size: 11px;
+                    ul{
+                        #firstchild{
+                            padding-top: 6px;
+                            border-top: 4px solid #d0d0cf;
+                        }
+                        display: block;
+                        padding-right: 40px;
+                        font-family: 'Libre Franklin', sans-serif;
+                         
+                        font-weight: bold;
+                        li{
+                             
+                            :hover::after{
+                                width: 0%;
+                            }
+                        }
+                    }
+                    a{
+                       text-decoration: none;
+                    }
+                    
+                }
+            }
+            .about{
+                font-size: 20px;
+                display: inline-block;
+            }
+            .contact{
+                font-size: 20px;
+                display: inline-block;
+            }
+            .loginacc{
+                display: none;
+            }
+            .createacc{
+                display: none;
+            }
+         }
+     }
+     
+   }
+    
+ 

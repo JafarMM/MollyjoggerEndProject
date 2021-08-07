@@ -1,0 +1,153 @@
+
+@media only screen and (max-width: 768px) {
+    body{
+        overflow-x: hidden;
+    }
+    header {
+        .logincreatepart{
+            display: none;
+        }
+        .freeshopping{
+            font-size: smaller;
+        }
+        .searchpart{
+            
+           a{
+               font-size: smaller;
+           }
+        }
+        .logincreatepart{
+            a{
+                font-size: smaller;
+            }
+        }
+        .cart{
+            font-size: smaller;
+        }
+        
+        nav{
+            img{
+                width: 280px;
+            }
+            
+            .nav-links{
+               position: fixed;
+               background: $main_text_color;
+               height: 100vh;
+               width: 200px;
+               top: 0;
+               right: -100%;
+               text-align: left;
+               z-index: 2;
+               transition: 0.8s;
+               ul{
+                   padding: 20px;
+               }
+               li{
+                   display: block;
+               }
+               .shop{
+                   font-size: 15px;
+                   padding-left: 30px;
+                  :hover{
+                      .sub-menu{
+                          display: none;
+                      }
+                  }
+               }
+               .about{
+                   padding-left: 30px;
+                   font-size: 15px;
+               }
+               .contact{
+                   font-size: 15px;
+                   padding-left: 30px;
+               }
+               .loginacc{
+                display: block;
+                padding-left: 30px;
+               }
+               .createacc{
+                display: block;
+                padding-left: 30px;
+               }
+              
+            }
+            .fa{
+                display: block;
+                color: #fff;
+                margin: 10px;
+                font-size: 22px;
+                cursor: pointer;
+            }
+            
+            
+        }
+        #fa1{
+            display: block;
+            color: black;
+        }
+      }
+      main{
+          .aboutus{
+              text-align: center;
+          }
+           .browse{
+            display: block;
+        }
+           
+          .browseul{
+            display: none;
+            width: 100%;
+            flex-direction: column;
+        }
+        .browseul.show{
+            display: flex;
+        }
+      }
+      footer{
+          .footeremail{   
+              .emailinput{
+                  display: flex;
+                  justify-content: center;
+              }
+              
+          }
+          .footercontact{
+              text-align: center;
+               .socialmedia{
+                    display: flex;
+                    justify-content: center;
+               }
+          }
+          .footerlogo{
+              display: flex;
+              justify-content: center;
+          }
+          
+      }
+
+ }
+
+ 
+ 
+
+ @media only screen and (min-width: 768px) {
+     footer{
+        .footerlogo{
+            padding-top: 30px;
+            img{
+                max-width: 120%;
+                 
+            }
+        }
+        .footeremail{
+            .emailinput{
+                 
+            }
+        }
+     }
+ }
+ 
+ 
+  

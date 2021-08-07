@@ -1,0 +1,16 @@
+#contact{
+   .contactus{
+       max-width: 440px;
+       margin: 0 auto 20px;
+
+       .button{
+           border: solid 1px;
+           background-color: $main_text_color;
+           color: white;
+           padding:8px 25px 8px 25px;
+       }
+       .contactbutton{
+          padding-top: 30px;
+       }
+   }
+}
