@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using MollyjoggerBackend.DataAccesLayer;
 using MollyjoggerBackend.Models;
+using MollyjoggerBackend.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -11,27 +13,26 @@ namespace MollyjoggerBackend.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        private readonly AppDbContext _dbContext;
+
+        public HomeController(AppDbContext dbContext)
         {
-            _logger = logger;
+            _dbContext = dbContext;
         }
 
         public IActionResult Index()
         {
-            return View();
+            var sliderimages = _dbContext.SliderImages.ToList();
+            var products = _dbContext.Products.ToList();
+            var homeViewModel = new HomeViewModel
+            {
+                sliderImages = sliderimages,
+                Products=products
+            };
+            return View(homeViewModel);
         }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
+       
     }
 }

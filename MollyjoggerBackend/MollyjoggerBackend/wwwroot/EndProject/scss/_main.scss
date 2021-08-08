@@ -1,33 +1,66 @@
 main{
     
-    .btn1{
-        border-color: $second_text_color;
-        color: $second_text_color;
-        padding: 32px 48px 28px;
-        margin-left: 640px;
-        margin-bottom: 100px;
+    .owl-carousel{
+        width: 100%;
+        height: 90vh;
     }
-    .btn2{
-        border-color: $second_text_color;
-        color: $second_text_color;
-        padding: 32px 48px 28px;
-        margin-right: 640px;
-        margin-bottom: 100px;
+    .slide{
+        width: 100%;
+        height: 80vh;
+        position: relative;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+ 
     }
-    .btn3{
-        border-color: $second_text_color;
-        color: $second_text_color;
-        padding: 32px 48px 28px;
-        margin-right: 640px;
-        margin-bottom: 100px;
-    }
-    .btn4{
-        border-color: $second_text_color;
-        color: $second_text_color;
-        padding: 32px 48px 28px;
-        margin-left: 640px;
-        margin-bottom: 100px;
-    }
+     .slide-1{
+         
+        button{
+            
+            position: relative;
+            left: 900px;
+            top: 450px;
+            border: 1px solid $second_text_color;
+            background-color: $second_text_color;
+            padding: 13px;
+        }
+     }
+     .slide-2{
+         
+        button{
+            
+            position: relative;
+            left: 900px;
+            top: 450px;
+            border: 1px solid $second_text_color;
+            background-color: $second_text_color;
+            padding: 13px;
+        }
+     }
+     .slide-3{
+         
+        button{
+            
+            position: relative;
+            left: 270px;
+            top: 450px;
+            border: 1px solid $second_text_color;
+            background-color: $second_text_color;
+            padding: 13px;
+        }
+     }
+     .slide-4{
+         
+        button{
+            
+            position: relative;
+            left: 270px;
+            top: 450px;
+            border: 1px solid $second_text_color;
+            background-color: $second_text_color;
+            padding: 13px;
+        }
+     }
     .featuredproducts{
         font-family: $firstfontfamily;
         text-align: center;

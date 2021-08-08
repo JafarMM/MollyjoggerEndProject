@@ -190,36 +190,58 @@ header nav .nav-links .createacc {
   display: none;
 }
 
-main .btn1 {
-  border-color: #a8a476;
-  color: #a8a476;
-  padding: 32px 48px 28px;
-  margin-left: 640px;
-  margin-bottom: 100px;
+main .owl-carousel {
+  width: 100%;
+  height: 90vh;
 }
 
-main .btn2 {
-  border-color: #a8a476;
-  color: #a8a476;
-  padding: 32px 48px 28px;
-  margin-right: 640px;
-  margin-bottom: 100px;
+main .slide {
+  width: 100%;
+  height: 80vh;
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
-main .btn3 {
-  border-color: #a8a476;
-  color: #a8a476;
-  padding: 32px 48px 28px;
-  margin-right: 640px;
-  margin-bottom: 100px;
+main .slide-1 button {
+  position: relative;
+  left: 900px;
+  top: 450px;
+  border: 1px solid #a8a476;
+  background-color: #a8a476;
+  padding: 13px;
 }
 
-main .btn4 {
-  border-color: #a8a476;
-  color: #a8a476;
-  padding: 32px 48px 28px;
-  margin-left: 640px;
-  margin-bottom: 100px;
+main .slide-2 button {
+  position: relative;
+  left: 900px;
+  top: 450px;
+  border: 1px solid #a8a476;
+  background-color: #a8a476;
+  padding: 13px;
+}
+
+main .slide-3 button {
+  position: relative;
+  left: 270px;
+  top: 450px;
+  border: 1px solid #a8a476;
+  background-color: #a8a476;
+  padding: 13px;
+}
+
+main .slide-4 {
+  background-image: url(../Images/homepage_hero_image_4.jpg);
+}
+
+main .slide-4 button {
+  position: relative;
+  left: 270px;
+  top: 450px;
+  border: 1px solid #a8a476;
+  background-color: #a8a476;
+  padding: 13px;
 }
 
 main .featuredproducts {
@@ -766,6 +788,18 @@ footer .secondpartfooter .bankcards img {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+  }
+  main .owl-carousel {
+    width: 100%;
+    height: 30vh;
+  }
+  main .slide {
+    width: 100%;
+    height: 30vh;
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
   }
   footer .footeremail .emailinput {
     display: -webkit-box;

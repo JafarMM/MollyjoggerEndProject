@@ -1,8 +1,95 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+    HomeViewModel homeViewModel = Model;
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<!--Main part of the page start-->
+<main>
+    <div class="owl-carousel owl-theme">
+        @foreach (var item in homeViewModel.sliderImages)
+        {
+            <div class="slide slide-1" style="background-image: url(~/..EndProject/Images/@item.Image);">
+                <div class="slide-content">
+                    <button>SHOP NOW</button>
+                </div>
+            </div>
+        }
+
+    </div>
+
+
+    <div class="container">
+        <div class="featuredproducts">
+            <h4>FEATURED PRODUCTS</h4>
+            <a href="#">SHOP ALL PRODUCTS</a>
+        </div>
+
+        <div class="products">
+            <div class="row">
+                @foreach (var item in homeViewModel.Products)
+                {
+                    <div class="col-md-3 col-sm-6">
+                        <a href="#">
+                            <img src="~/EndProject/Images/productimages/@item.Image1" alt="">
+                            <div class="hoverimg1">
+                                <img src="~/EndProject/Images/productimages/@item.Image2" alt="">
+                            </div>
+                        </a>
+                        <a href="#">@item.ProductName</a>
+                    </div>
+                }
+
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="shoppart">
+            <div class="row">
+                <div class="col-md-4 col-sm-12">
+                    <div class="shopimg1">
+                        <img src="~/EndProject/Images/productimages/shop1.jpg" alt="">
+                        <a href="#">SHOP</a>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-12">
+                    <div class="shopimg2">
+                        <img src="~/EndProject/Images/productimages/shop2.jpg" alt="">
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-12">
+                    <div class="shopimg3">
+                        <img src="~/EndProject/Images/productimages/shop3.jpg" alt="">
+                        <a href="#">DIY <br> SCRIMSHAW</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="aboutus">
+            <div class="row">
+                <div class="col-md-6 col-sm-12">
+                    <div class="teamphoto">
+                        <img src="~/EndProject/Images/Home-AboutUs_f0e70350-c20f-4c3a-9063-b76a0f2f6833.jpg" alt="">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="textaboutus">
+                        <h3>About Us</h3>
+                        <br>
+                        <h2>MOLLYJOGGER STORY</h2>
+                        <br>
+                        <p>
+                            Mollyjogger™ is an authentic American heritage <br>
+                            brand, based in the Ozark Mountains, celebrating <br>
+                            the region’s unique history of outdoor recreation,<br>
+                            sporting and folklore.
+                        </p>
+                        <a href="#" class="buttonaboutus">Read Our Story</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+<!--Main part of the page end-->
