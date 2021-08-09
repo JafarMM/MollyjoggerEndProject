@@ -25,10 +25,14 @@ namespace MollyjoggerBackend.Controllers
         {
             var sliderimages = _dbContext.SliderImages.ToList();
             var products = _dbContext.Products.ToList();
+            var shoppartreklam = _dbContext.Shoppartreklams.ToList();
+            var aboutus = _dbContext.AboutUs.FirstOrDefault();
             var homeViewModel = new HomeViewModel
             {
                 sliderImages = sliderimages,
-                Products=products
+                Products=products,
+                Shoppartreklams=shoppartreklam,
+                AboutUs=aboutus
             };
             return View(homeViewModel);
         }

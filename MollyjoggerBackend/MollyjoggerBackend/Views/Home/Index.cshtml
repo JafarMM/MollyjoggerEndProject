@@ -45,44 +45,32 @@
     <div class="container-fluid">
         <div class="shoppart">
             <div class="row">
-                <div class="col-md-4 col-sm-12">
-                    <div class="shopimg1">
-                        <img src="~/EndProject/Images/productimages/shop1.jpg" alt="">
-                        <a href="#">SHOP</a>
+                @foreach (var item in homeViewModel.Shoppartreklams)
+                {
+                    <div class="col-md-4 col-sm-12">
+                        <div class="shopimg1">
+                            <img src="~/EndProject/Images/productimages/@item.Image" alt="">
+                            <a href="#">@item.ButtonTitle</a>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-4 col-sm-12">
-                    <div class="shopimg2">
-                        <img src="~/EndProject/Images/productimages/shop2.jpg" alt="">
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-12">
-                    <div class="shopimg3">
-                        <img src="~/EndProject/Images/productimages/shop3.jpg" alt="">
-                        <a href="#">DIY <br> SCRIMSHAW</a>
-                    </div>
-                </div>
-
+                } 
             </div>
         </div>
         <div class="aboutus">
             <div class="row">
                 <div class="col-md-6 col-sm-12">
                     <div class="teamphoto">
-                        <img src="~/EndProject/Images/Home-AboutUs_f0e70350-c20f-4c3a-9063-b76a0f2f6833.jpg" alt="">
+                        <img src="~/EndProject/Images/@homeViewModel.AboutUs.Image" alt="">
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="textaboutus">
                         <h3>About Us</h3>
                         <br>
-                        <h2>MOLLYJOGGER STORY</h2>
+                        <h2>@homeViewModel.AboutUs.Title</h2>
                         <br>
                         <p>
-                            Mollyjogger™ is an authentic American heritage <br>
-                            brand, based in the Ozark Mountains, celebrating <br>
-                            the region’s unique history of outdoor recreation,<br>
-                            sporting and folklore.
+                            @Html.Raw(homeViewModel.AboutUs.Description)
                         </p>
                         <a href="#" class="buttonaboutus">Read Our Story</a>
                     </div>

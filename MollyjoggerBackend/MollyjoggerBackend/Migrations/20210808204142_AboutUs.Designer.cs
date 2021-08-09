@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MollyjoggerBackend.DataAccesLayer;
 
 namespace MollyjoggerBackend.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210808204142_AboutUs")]
+    partial class AboutUs
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -37,36 +39,6 @@ namespace MollyjoggerBackend.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("AboutUs");
-                });
-
-            modelBuilder.Entity("MollyjoggerBackend.Models.Bio", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("FacebookLink")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("FooterAddressImg")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("InstagramLink")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Logofooter")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Logoheader")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PinterestLink")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Bio");
                 });
 
             modelBuilder.Entity("MollyjoggerBackend.Models.Products", b =>

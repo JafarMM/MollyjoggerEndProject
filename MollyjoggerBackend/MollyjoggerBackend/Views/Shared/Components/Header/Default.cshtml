@@ -1,0 +1,87 @@
+﻿@model Bio
+<!--Header start-->
+<header>
+    <div class="container-fluid">
+
+        <div class="row loginaccount">
+            <div class="flexbox">
+                <div class="searchpart">
+                    <img src="~/EndProject/Images/@Model.Logoheader" alt="">
+                    <a href="#">Search</a>
+                </div>
+                <div class="logincreatepart">
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li><a asp-controller="Account" asp-action="Logout">@User.Identity.Name | Logout</a></li>
+                    }
+                    else
+                    {
+                        <li><a asp-controller="Account" asp-action="Login">Log in</a></li>
+                    }
+                    <a href="#">Create account</a>
+                </div>
+                <div class="cart">
+                    <a href="#">
+                        <div class="cart1">
+                            <img src="~/EndProject/Images/wicker-basket.svg" alt="">
+                            <span>0</span>
+                            <span>Cart</span>
+
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="row freeshopping">
+            <div class="col-md-12">
+                <p>FREE SHIPPING FOR ORDERS OVER $49</p>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row navbarm">
+            <nav>
+                <a href="index.html"><img src="https://cdn.shopify.com/s/files/1/0156/0327/t/11/assets/logo.png?v=4254627150272435766" alt="No picture"></a>
+                <div class="nav-links" id="navLinks">
+                    <i class="fa fa-times" onclick="hideMenu()"></i>
+                    <ul>
+                        <div class="loginacc">
+                        <li>
+                            <a href="#">Log in</a>
+                        </li>
+                </div>
+                <div class="createacc">
+                    <li>
+                        <a href="#">Create</a>
+                    </li>
+                </div>
+                <div class="shop">
+                    <li>
+                        <a href="shop.html">SHOP</a>
+                        <div class="sub-menu">
+                            <ul>
+                                <li id="firstchild"><a href="#">SHOP</a></li>
+                                <li><a href="#">CAMPING</a></li>
+                                <li><a href="#">FISHING</a></li>
+                                <li><a href="#">KNIFE</a></li>
+                                <li><a href="#">WRITING</a></li>
+                                <li><a href="#">GIFTS</a></li>
+                                <li><a href="#">APPAREL</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </div>
+                <div class="about">
+                    <li><a href="about.html">ABOUT</a></li>
+                </div>
+                <div class="contact">
+                    <li><a href="contact.html">CONTACT</a></li>
+                </div>
+                </ul>
+        </div>
+        <i id="fa1" class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+    </div>
+    </div>
+</header>
+<!--Header end-->

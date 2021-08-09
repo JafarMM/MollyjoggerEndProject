@@ -11,5 +11,8 @@ namespace MollyjoggerBackend.ViewModels
        
         public List<SliderImages> sliderImages { get; set; }
         public List<Products> Products { get; set; }
+        public List<Shoppartreklam> Shoppartreklams { get; set; }
+        public AboutUs AboutUs { get; set; }
+        public Bio Bio { get; set; }
     }
 }
