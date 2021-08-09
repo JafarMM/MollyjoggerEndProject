@@ -1,0 +1,72 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    ShopViewModel shopViewModel = Model;
+}
+<!--Main start-->
+<main>
+    <div class="container-fluid">
+        <div class="shopsection">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="productscategory">
+                        <div class="browse" id="browse">
+                            <h5>BROWSE</h5>
+                        </div>
+                        <hr>
+                        <div class="browsecategory">
+                            <ul class="browseul" id="browseul">
+                                <li>
+                                    <a href="#">All Products</a>
+                                </li>
+                                <li>
+                                    <a href="#">Knife Kits</a>
+                                </li>
+                                <li>
+                                    <a href="#">Apparel</a>
+                                </li>
+                                <li>
+                                    <a href="#">Camping</a>
+                                </li>
+                                <li>
+                                    <a href="#">Fishing</a>
+                                </li>
+                                <li>
+                                    <a href="#">Writing</a>
+                                </li>
+                                <li>
+                                    <a href="#">Gifts</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="col-md-9 col-sm-12">
+                    <div class="products">
+                        <div class="row">
+                            <h1>INVENTORY</h1>
+                            @foreach (var item in shopViewModel.shopOfProducts)
+                            {
+                                <div class="col-md-4">
+
+                                    <a href="productdetails.html">
+                                        <img src="~/EndProject/Images/productimages/@item.Image1" alt="">
+                                        <div class="hoverimg1">
+                                            <img src="~/EndProject/Images/productimages/@item.Image2" alt="">
+                                        </div>
+                                    </a>
+                                    <a href="#">@item.ProductName</a>
+                                    <p>$@item.Price</p>
+                                </div>
+                            }
+                             
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<!--Main end-->

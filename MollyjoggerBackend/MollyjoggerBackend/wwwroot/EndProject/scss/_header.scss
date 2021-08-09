@@ -22,7 +22,8 @@
        
        .logincreatepart{
            padding-right: 15px;
-        a{
+        a{  
+            display:inline-block;
             text-decoration: none;
             color: $second_text_color;
         }

@@ -6,17 +6,17 @@
         <div class="row loginaccount">
             <div class="flexbox">
                 <div class="searchpart">
-                    <img src="~/EndProject/Images/@Model.Logoheader" alt="">
+                    <img src="~/EndProject/Images/loupe (1).svg" alt="">
                     <a href="#">Search</a>
                 </div>
                 <div class="logincreatepart">
                     @if (User.Identity.IsAuthenticated)
                     {
-                        <li><a asp-controller="Account" asp-action="Logout">@User.Identity.Name | Logout</a></li>
+                        <a asp-controller="Account" asp-action="Logout">@User.Identity.Name | Logout</a>
                     }
                     else
                     {
-                        <li><a asp-controller="Account" asp-action="Login">Log in</a></li>
+                        <a asp-controller="Account" asp-action="Login">Log in |</a>
                     }
                     <a href="#">Create account</a>
                 </div>
@@ -41,7 +41,7 @@
     <div class="container-fluid">
         <div class="row navbarm">
             <nav>
-                <a href="index.html"><img src="https://cdn.shopify.com/s/files/1/0156/0327/t/11/assets/logo.png?v=4254627150272435766" alt="No picture"></a>
+                <a href="index.html"><img src="@Model.Logoheader" alt="No picture"></a>
                 <div class="nav-links" id="navLinks">
                     <i class="fa fa-times" onclick="hideMenu()"></i>
                     <ul>
@@ -57,7 +57,7 @@
                 </div>
                 <div class="shop">
                     <li>
-                        <a href="shop.html">SHOP</a>
+                        <a asp-controller="Shop" asp-action="Index">SHOP</a>
                         <div class="sub-menu">
                             <ul>
                                 <li id="firstchild"><a href="#">SHOP</a></li>
