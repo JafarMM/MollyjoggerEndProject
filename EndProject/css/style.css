@@ -827,6 +827,9 @@ footer .secondpartfooter .bankcards img {
 }
 
 @media only screen and (min-width: 768px) {
+  main #HideMenu {
+    display: none;
+  }
   footer .footerlogo {
     padding-top: 30px;
   }

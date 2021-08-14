@@ -12,6 +12,12 @@ function hideMenu(){
     navLinks.style.right="-100%";
 }
 
+function showCategories(){
+    browseul.style.display="block"
+}
+function hideCategories(){
+    browseul.style.display="none"
+}
 
 var MainImg=document.getElementById("MainImg");
 var smallimg=document.getElementsByClassName('small-img');
