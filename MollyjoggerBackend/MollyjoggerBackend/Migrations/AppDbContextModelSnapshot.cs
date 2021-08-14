@@ -69,6 +69,24 @@ namespace MollyjoggerBackend.Migrations
                     b.ToTable("Bio");
                 });
 
+            modelBuilder.Entity("MollyjoggerBackend.Models.Category", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Categories");
+                });
+
             modelBuilder.Entity("MollyjoggerBackend.Models.Products", b =>
                 {
                     b.Property<int>("Id")
@@ -97,11 +115,17 @@ namespace MollyjoggerBackend.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Image1")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Image2")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
 
                     b.Property<double>("Price")
                         .HasColumnType("float");
@@ -110,6 +134,8 @@ namespace MollyjoggerBackend.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("CategoryId");
 
                     b.ToTable("ShopOfProducts");
                 });
@@ -145,6 +171,22 @@ namespace MollyjoggerBackend.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("SliderImages");
+                });
+
+            modelBuilder.Entity("MollyjoggerBackend.Models.ShopOfProducts", b =>
+                {
+                    b.HasOne("MollyjoggerBackend.Models.Category", "Category")
+                        .WithMany("ShopOfProducts")
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Category");
+                });
+
+            modelBuilder.Entity("MollyjoggerBackend.Models.Category", b =>
+                {
+                    b.Navigation("ShopOfProducts");
                 });
 #pragma warning restore 612, 618
         }

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using MollyjoggerBackend.DataAccesLayer;
 using MollyjoggerBackend.ViewModels;
 using System;
@@ -11,20 +12,33 @@ namespace MollyjoggerBackend.Controllers
     public class ShopController : Controller
     {
         private readonly AppDbContext _dbContext;
-
+        private readonly int _productsCount;
         public ShopController(AppDbContext dbContext)
         {
             _dbContext = dbContext;
+            _productsCount = _dbContext.ShopOfProducts.Count();
         }
 
         public IActionResult Index()
         {
-            var shopofproducts = _dbContext.ShopOfProducts.ToList();
-            var shopViewModel = new ShopViewModel
+
+            ViewBag.ProductCount = _productsCount;
+
+            var products = _dbContext.ShopOfProducts.Include(x => x.Category).OrderByDescending(x => x.Id).Take(6).ToList();
+            return View(products);
+        }
+        public IActionResult Load(int skip)
+        {
+            if (skip >= _productsCount)
             {
-                shopOfProducts=shopofproducts
-            };
-            return View(shopViewModel);
+                return Content("Error");
+            }
+
+            var products = _dbContext.ShopOfProducts.Include(x => x.Category).OrderByDescending(x => x.Id).Skip(skip).Take(6).ToList();
+
+            return PartialView("_ProductPartial", products);
+
+          
         }
     }
 }

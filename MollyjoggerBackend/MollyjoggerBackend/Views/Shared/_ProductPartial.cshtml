@@ -1,0 +1,20 @@
+﻿@{ 
+    List<ShopOfProducts> products = Model;
+}
+
+@foreach (var item in products)
+{
+    <div class="col-md-4">
+        <div class="product-item" data-id="@item.Category.Name.ToLower()">
+            <a href="productdetails.html">
+                <img src="~/EndProject/Images/productimages/@item.Image1" alt="">
+                <div class="hoverimg1">
+                    <img src="~/EndProject/Images/productimages/@item.Image2" alt="">
+                </div>
+            </a>
+            <a href="#">@item.ProductName</a>
+            <p>$@item.Price</p>
+        </div>
+
+    </div>
+}
