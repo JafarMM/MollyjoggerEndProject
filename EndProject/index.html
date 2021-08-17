@@ -28,10 +28,19 @@
     <div class="container-fluid">
       
         <div class="row loginaccount">
+            <div class="searchdown" id="searchDown">
+                <input id="home-input-search" type="search" placeholder="Search here...">
+               <a href="#">
+                <img onclick="hideSearch()" src="./Images/close.svg" alt="">
+               </a>  
+                <div id="searchResult"></div>
+            </div>
             <div class="flexbox">
-                <div class="searchpart">
-                    <img src="./Images/loupe (1).svg" alt="">
-                    <a href="#">Search</a>
+                <div class="searchpart" id="searchMain">
+                   <a href="#">
+                    <img onclick="showSearch()" src="./Images/loupe (1).svg" alt="">
+                   </a> 
+                    <a onclick="showSearch()" href="#">Search</a>
                 </div>   
                 <div class="logincreatepart">
                     <a href="#">Log in |</a>

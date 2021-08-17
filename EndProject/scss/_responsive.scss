@@ -95,12 +95,19 @@
           }
            .browse{
             display: block;
-        }
+          }
+
            
+
           .browseul{
             display: none;
             width: 100%;
             flex-direction: column;
+             
+                #HideCategory{
+                    display: block;
+                }
+              
         }
         .browseul.show{
             display: flex;
@@ -148,9 +155,7 @@
 
  @media only screen and (min-width: 768px) {
      main{
-         #HideMenu{
-             display: none;
-         }
+         
      }
      footer{
         .footerlogo{

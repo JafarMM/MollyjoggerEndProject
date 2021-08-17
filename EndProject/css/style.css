@@ -1,3 +1,33 @@
+header .searchdown {
+  border: solid 10px #252823;
+  display: none;
+  width: 100%;
+  height: 90px;
+  background-color: white;
+  position: absolute;
+  z-index: 1000;
+  font-size: 11px;
+}
+
+header .searchdown img {
+  position: absolute;
+  width: 3%;
+  top: 15px;
+  right: 50px;
+}
+
+header .searchdown input {
+  width: 90%;
+  margin-top: 10px;
+  height: 50px;
+}
+
+header .searchdown #searchResult {
+  width: 90%;
+  height: 63px;
+  background-color: white;
+}
+
 header .flexbox {
   font-family: 'Libre Franklin', sans-serif;
   font-weight: 400;
@@ -574,6 +604,11 @@ footer .secondpartfooter .bankcards img {
   color: black;
 }
 
+.shopsection .productscategory .browsecategory #HideCategory {
+  display: none;
+  max-width: 10%;
+}
+
 .shopsection .links h5 {
   padding-left: 30px;
 }
@@ -780,6 +815,9 @@ footer .secondpartfooter .bankcards img {
         -ms-flex-direction: column;
             flex-direction: column;
   }
+  main .browseul #HideCategory {
+    display: block;
+  }
   main .browseul.show {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -827,9 +865,6 @@ footer .secondpartfooter .bankcards img {
 }
 
 @media only screen and (min-width: 768px) {
-  main #HideMenu {
-    display: none;
-  }
   footer .footerlogo {
     padding-top: 30px;
   }
