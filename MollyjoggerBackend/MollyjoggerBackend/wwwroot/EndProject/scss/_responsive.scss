@@ -1,167 +1,190 @@
 
 @media only screen and (max-width: 768px) {
-     
-    body{
+
+    body {
         overflow-x: hidden;
     }
+
     header {
-        .logincreatepart{
+        .logincreatepart {
             display: none;
         }
-        .freeshopping{
+
+        .freeshopping {
             font-size: smaller;
         }
-        .searchpart{
-            
-           a{
-               font-size: smaller;
-           }
-        }
-        .logincreatepart{
-            a{
+
+        .searchpart {
+
+            a {
                 font-size: smaller;
             }
         }
-        .cart{
+
+        .logincreatepart {
+            a {
+                font-size: smaller;
+            }
+        }
+
+        .cart {
             font-size: smaller;
         }
-        
-        nav{
-            img{
+
+        nav {
+            img {
                 width: 280px;
             }
-            
-            .nav-links{
-               position: fixed;
-               background: $main_text_color;
-               height: 100vh;
-               width: 200px;
-               top: 0;
-               right: -100%;
-               text-align: left;
-               z-index: 2;
-               transition: 0.8s;
-               ul{
-                   padding: 20px;
-               }
-               li{
-                   display: block;
-               }
-               .shop{
-                   font-size: 15px;
-                   padding-left: 30px;
-                  :hover{
-                      .sub-menu{
-                          display: none;
-                      }
-                  }
-               }
-               .about{
-                   padding-left: 30px;
-                   font-size: 15px;
-               }
-               .contact{
-                   font-size: 15px;
-                   padding-left: 30px;
-               }
-               .loginacc{
-                display: block;
-                padding-left: 30px;
-               }
-               .createacc{
-                display: block;
-                padding-left: 30px;
-               }
-              
+
+            .nav-links {
+                position: fixed;
+                background: $main_text_color;
+                height: 100vh;
+                width: 200px;
+                top: 0;
+                right: -100%;
+                text-align: left;
+                z-index: 2;
+                transition: 0.8s;
+
+                ul {
+                    padding: 20px;
+                }
+
+                li {
+                    display: block;
+                }
+
+                .shop {
+                    font-size: 15px;
+                    padding-left: 30px;
+
+                    :hover {
+                        .sub-menu {
+                            display: none;
+                        }
+                    }
+                }
+
+                .about {
+                    padding-left: 30px;
+                    font-size: 15px;
+                }
+
+                .contact {
+                    font-size: 15px;
+                    padding-left: 30px;
+                }
+
+                .loginacc {
+                    display: block;
+                    padding-left: 30px;
+                }
+
+                .createacc {
+                    display: block;
+                    padding-left: 30px;
+                }
             }
-            .fa{
+
+            .fa {
                 display: block;
                 color: #fff;
                 margin: 10px;
                 font-size: 22px;
                 cursor: pointer;
             }
-            
-            
         }
-        #fa1{
+
+        #fa1 {
             display: block;
             color: black;
         }
-      }
-      main{
-          .aboutus{
-              text-align: center;
-          }
-           .browse{
+    }
+
+    main {
+        .aboutus {
+            text-align: center;
+        }
+
+        .browse {
             display: block;
         }
-           
-          .browseul{
+
+
+
+        .browseul {
             display: none;
             width: 100%;
             flex-direction: column;
+
+            #HideCategory {
+                display: block;
+            }
         }
-        .browseul.show{
+
+        .browseul.show {
             display: flex;
         }
-        .owl-carousel{
+
+        .owl-carousel {
             width: 100%;
             height: 30vh;
         }
-        .slide{
+
+        .slide {
             width: 100%;
             height: 30vh;
             position: relative;
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center center;
-     
         }
-      }
-      footer{
-          .footeremail{   
-              .emailinput{
-                  display: flex;
-                  justify-content: center;
-              }
-              
-          }
-          .footercontact{
-              text-align: center;
-               .socialmedia{
-                    display: flex;
-                    justify-content: center;
-               }
-          }
-          .footerlogo{
-              display: flex;
-              justify-content: center;
-          }
-          
-      }
+    }
 
- }
+    footer {
+        .footeremail {
+            .emailinput {
+                display: flex;
+                justify-content: center;
+            }
+        }
 
- 
- 
+        .footercontact {
+            text-align: center;
 
- @media only screen and (min-width: 768px) {
-     footer{
-        .footerlogo{
+            .socialmedia {
+                display: flex;
+                justify-content: center;
+            }
+        }
+
+        .footerlogo {
+            display: flex;
+            justify-content: center;
+        }
+    }
+}
+
+
+
+
+@media only screen and (min-width: 768px) {
+    main {
+    }
+
+    footer {
+        .footerlogo {
             padding-top: 30px;
-            img{
+
+            img {
                 max-width: 120%;
-                 
             }
         }
-        .footeremail{
-            .emailinput{
-                 
+
+        .footeremail {
+            .emailinput {
             }
         }
-     }
- }
- 
- 
-  
+    }
+}

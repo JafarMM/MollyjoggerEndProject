@@ -68,6 +68,8 @@ $(document).ready(function () {
 
 
 var navLinks = document.getElementById("navLinks");
+var browseul = document.getElementById("browseul");
+var HideCategory = document.getElementById("HideCategory")
 
 function showMenu() {
     navLinks.style.right = "0%";
@@ -75,4 +77,13 @@ function showMenu() {
 
 function hideMenu() {
     navLinks.style.right = "-100%";
+}
+
+function showCategories() {
+    browseul.style.display = "block"
+    HideCategory.style.display = "block"
+}
+function hideCategories() {
+    browseul.style.display = "none"
+    HideCategory.style.display = "none"
 }

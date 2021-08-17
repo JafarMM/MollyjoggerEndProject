@@ -10,7 +10,7 @@
                 <div class="col-md-3">
                     <div class="productscategory">
                         <div class="browse" id="browse">
-                            <h5>BROWSE</h5>
+                            <h5 onclick="showCategories()">BROWSE</h5>
                         </div>
                         <hr>
                         <div class="browsecategory">
@@ -25,6 +25,9 @@
                                         <a href="" data-id="@item.Category.Name.ToLower()">@item.Category.Name</a>
                                     </li>
                                 }
+                             <li>
+                                <img src="./Images/up-arrow.png" alt="" id="HideCategory" onclick="hideCategories()">
+                            </li>
                             </ul>
                         </div>
 
