@@ -36,19 +36,20 @@ namespace MollyjoggerBackend.Controllers
             };
             return View(homeViewModel);
         }
-        //public IActionResult Search(string search)
-        //{
-        //    if (string.IsNullOrEmpty(search))
-        //    {
-        //        return Content("Error");
-        //    }
+        public IActionResult Search(string search)
+        {
+            if (string.IsNullOrEmpty(search))
+            {
+                return Content("Error");
+            }
 
-        //    var products = _dbContext.ShopOfProducts.OrderByDescending(x => x.Id).Where(x => x.ProductName.Contains(search.ToLower())).Take(3).ToList();
-        //    var searchViewModel = new SearchViewModel
-        //    {
-        //        ShopOfProducts = products
-        //    };
-        //}
+            var products = _dbContext.ShopOfProducts.OrderByDescending(x => x.Id).Where(x => x.ProductName.Contains(search.ToLower())).Take(3).ToList();
+            var searchViewModel = new SearchViewModel
+            {
+                ShopOfProducts = products
+            };
+            return PartialView("_SearchGlobalPartial", searchViewModel);
+        }
        
     }
 }

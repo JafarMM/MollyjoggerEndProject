@@ -1,4 +1,11 @@
-﻿
-@*
-    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@{ 
+    SearchViewModel searchViewModel = Model;
+}
+<ul>
+    @foreach (var item in searchViewModel.ShopOfProducts)
+    {
+        <li>
+            <a asp-controller="Shop" asp-action="Details" asp-route-id="@item.Id">@item.ProductName</a>
+        </li>
+    }
+</ul>

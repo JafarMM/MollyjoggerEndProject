@@ -4,10 +4,19 @@
     <div class="container-fluid">
 
         <div class="row loginaccount">
+            <div class="searchdown" id="searchDown">
+                <input id="home-input-search" type="search" placeholder="Search here...">
+                <a href="#">
+                    <img onclick="hideSearch()" src="./Images/close.svg" alt="">
+                </a>
+                <div id="searchResult"></div>
+            </div>
             <div class="flexbox">
-                <div class="searchpart">
-                    <img src="~/EndProject/Images/loupe (1).svg" alt="">
-                    <a href="#">Search</a>
+                <div class="searchpart" id="searchMain">
+                    <a href="#">
+                        <img onclick="showSearch()" src="~/Images/loupe (1).svg" alt="">
+                    </a>
+                    <a onclick="showSearch()" href="#">Search</a>
                 </div>
                 <div class="logincreatepart">
                     @if (User.Identity.IsAuthenticated)
@@ -23,7 +32,7 @@
                 <div class="cart">
                     <a href="#">
                         <div class="cart1">
-                            <img src="~/EndProject/Images/wicker-basket.svg" alt="">
+                            <img src="~/Images/wicker-basket.svg" alt="">
                             <span>0</span>
                             <span>Cart</span>
 

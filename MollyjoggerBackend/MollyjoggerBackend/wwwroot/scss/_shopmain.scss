@@ -1,115 +1,97 @@
-.shopsection {
-    padding-bottom: 80px;
-
-    .productscategory {
-        h5 {
+.shopsection{
+     padding-bottom: 80px;
+    .productscategory{
+        h5{
             padding-left: 30px;
             padding-top: 100px;
         }
-
-        ul {
+        ul{
             list-style-type: none;
-
-            a {
+            a{
                 text-decoration: none;
                 color: black;
             }
         }
-
-        .browsecategory {
-            #HideCategory {
-                 
-                max-width: 10%;
-            }
+        .browsecategory{
+           #HideCategory{
+               display: none;
+               max-width: 10%;
+           }
         }
     }
-
-    .links {
-        h5 {
-            padding-left: 30px;
+    .links{
+        h5{
+            padding-left: 30px; 
         }
-
-        ul {
+        ul{
             list-style-type: none;
-
-            a {
+            a{
                 text-decoration: none;
                 color: black;
             }
         }
+    
     }
 
-    .products {
-        button{
-            width:200px;
-        }
-        h1 {
+    .products{
+        h1{
             padding-top: 50px;
             padding-left: 30px;
         }
-
-        a {
+        a{
             display: block;
             text-align: center;
             margin-top: 40px;
         }
-
-        a:hover {
-            img {
+        a:hover{
+            img{
                 display: none;
             }
-
-            .hoverimg1 {
-                img {
+            .hoverimg1{
+                img{
                     display: block;
                 }
             }
-
-            .hoverimg2 {
-                img {
+            .hoverimg2{
+                img{
                     display: block;
                 }
             }
-
-            .hoverimg3 {
-                img {
+            .hoverimg3{
+                img{
                     display: block;
                 }
             }
-
-            .hoverimg4 {
-                img {
+            .hoverimg4{
+                img{
                     display: block;
                 }
             }
         }
-
-        img {
+        img{
             max-width: 100%;
         }
-
-        .hoverimg1 {
-            img {
+        .hoverimg1{
+            img{
                 display: none;
             }
         }
-
-        .hoverimg2 {
-            img {
+        .hoverimg2{
+            img{
                 display: none;
             }
         }
-
-        .hoverimg3 {
-            img {
+        .hoverimg3{
+            img{
                 display: none;
             }
         }
-
-        .hoverimg4 {
-            img {
+        .hoverimg4{
+            img{
                 display: none;
             }
         }
     }
 }
+
+ 

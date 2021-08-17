@@ -1,4 +1,3 @@
-
 $(document).ready(function () {
 
     // PRODUCT
@@ -64,13 +63,16 @@ $(document).ready(function () {
         });
     });
 
+     
+
 });
 
 
 var navLinks = document.getElementById("navLinks");
 var browseul = document.getElementById("browseul");
 var HideCategory = document.getElementById("HideCategory")
-
+var searchDown = document.getElementById("searchDown")
+var searchMain = document.getElementById("searchMain")
 function showMenu() {
     navLinks.style.right = "0%";
 }
@@ -87,3 +89,32 @@ function hideCategories() {
     browseul.style.display = "none"
     HideCategory.style.display = "none"
 }
+
+
+function showSearch() {
+    searchDown.style.display = "block"
+}
+function hideSearch() {
+    searchDown.style.display = "none"
+}
+
+
+let search;
+$(document).on("keyup", "#home-input-search", function () {
+    search = $(this).val().trim();
+
+    $("#searchResult ul").remove();
+
+    if (search.length > 0) {
+        $.ajax({
+            url: '/Home/Search?search=' + search,
+            type: "GET",
+            success: function (res) {
+                $("#searchResult").append(res);
+            }
+        });
+    }
+});
+
+ 
+ 
