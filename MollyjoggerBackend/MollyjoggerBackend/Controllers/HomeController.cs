@@ -7,6 +7,8 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Threading.Tasks;
 
 namespace MollyjoggerBackend.Controllers
@@ -49,6 +51,68 @@ namespace MollyjoggerBackend.Controllers
                 ShopOfProducts = products
             };
             return PartialView("_SearchGlobalPartial", searchViewModel);
+        }
+
+        [HttpGet]
+        public IActionResult ContactUs()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult ContactUs(SendMailDto sendMailDto)
+        {
+
+
+            if (!ModelState.IsValid) return View();
+
+            try
+            {
+                MailMessage mail = new MailMessage();
+                
+                mail.From = new MailAddress("mollyjogger77@gmail.com");
+
+                 
+                mail.To.Add("cefer.mammadzade@bk.ru");
+
+                mail.Subject = sendMailDto.Email;
+
+                 
+
+                mail.IsBodyHtml = true;
+
+                string content = "Name : " + sendMailDto.Name;
+                
+                content += "<br/> Email : " + sendMailDto.Email;
+                content += "<br/> Phone : " + sendMailDto.PhoneNumber;
+                content += "<br/> Message : " + sendMailDto.Message;
+                mail.Body = content;
+
+
+                
+
+                
+                SmtpClient smtpClient = new SmtpClient("smtp.gmail.com");
+
+                
+                NetworkCredential networkCredential = new NetworkCredential("mollyjogger77@gmail.com", "adminadmin123");
+                smtpClient.UseDefaultCredentials = false;
+                smtpClient.Credentials = networkCredential;
+                smtpClient.Port = 587; 
+                smtpClient.EnableSsl = true;  
+                smtpClient.Send(mail);
+
+                ViewBag.Message = "Mail Send";
+
+                 
+                ModelState.Clear();
+
+            }
+            catch (Exception ex)
+            {
+                
+                ViewBag.Message = ex.Message.ToString();
+            }
+            return View();
         }
        
     }
