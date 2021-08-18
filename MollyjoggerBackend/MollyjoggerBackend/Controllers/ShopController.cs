@@ -40,5 +40,18 @@ namespace MollyjoggerBackend.Controllers
 
           
         }
+        public IActionResult Details(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            var productDetails = _dbContext.ProductDetails.Include(x => x.ShopOfProducts).FirstOrDefault(x => x.ShopOfProductsId == id);
+            if (productDetails == null)
+            {
+                return NotFound();
+            }
+            return View(productDetails);
+        }
     }
 }

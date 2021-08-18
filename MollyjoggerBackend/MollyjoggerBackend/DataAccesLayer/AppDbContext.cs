@@ -20,6 +20,7 @@ namespace MollyjoggerBackend.DataAccesLayer
         public DbSet<Bio> Bio { get; set; }
         public DbSet<ShopOfProducts> ShopOfProducts { get; set; }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<ProductDetails> ProductDetails { get; set; }
        
     }
 }

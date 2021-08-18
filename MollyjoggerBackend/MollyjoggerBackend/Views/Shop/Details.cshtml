@@ -1,0 +1,107 @@
+﻿@{ 
+    ViewData["Title"] = "Details";
+    ProductDetails productDetails = Model;
+}
+
+
+<main>
+    <div class="container-fluid">
+        <div class="productpage">
+            <div class="row">
+                <div class="col-lg-7 col-md-12 col-12">
+                    <img class="img-fluid w-100 pb-1" src="~/Images/productdetailimages/@productDetails.MainImg" id="MainImg" alt="">
+                    <div class="small-img-group">
+                         
+                        <div class="small-img-col">
+                            <img src="~/Images/productdetailimages/@productDetails.Smallimg1" class="small-img" alt="">
+                        </div>
+                        <div class="small-img-col">
+                            <img src="~/Images/productdetailimages/@productDetails.Smallimg2" class="small-img" alt="">
+                        </div>
+                        <div class="small-img-col">
+                            <img src="~/Images/productdetailimages/@productDetails.Smallimg3" class="small-img" alt="">
+                        </div>
+                        <div class="small-img-col">
+                            <img src="~/Images/productdetailimages/@productDetails.Smallimg4" class="small-img" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-12 col-12">
+                    <div class="productright1">
+                        <h1>@productDetails.ShopOfProducts.ProductName</h1>
+                        <p>$@productDetails.ShopOfProducts.Price.00</p>
+                        <hr>
+
+                        <div class="button1">
+                            <button type="button" class="add-btn">Add To Card</button>
+                        </div>
+                        <div class="button2">
+                            <button type="button" class="buy-btn">Go To Back</button>
+                        </div>
+                        <p>MORE PAYMENT OPTIONS</p>
+                        <div class="productinfo">
+                            <p>
+                               @productDetails.Description
+                            </p>
+                            <ul>
+                                @Html.Raw(productDetails.Properties)
+                            </ul>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <section id="alsoproducts">
+        <div class="container-fluid">
+            <div class="allproducts">
+                <div class="row">
+                    <h4>YOU MAY ALSO LIKE...</h4>
+                    <div class="col-md-3">
+                        <a href="productdetails.html">
+                            <img src="~/Images/productimages/img1.jpg" alt="">
+                            <div class="hoverimg1">
+                                <img src="~/Images/productimages/img1hover.jpg" alt="">
+                            </div>
+                        </a>
+                        <a href="#">Fingerling Fish Knife</a>
+                        <p>$48.50</p>
+                    </div>
+                    <div class="col-md-3">
+                        <a href="productdetails.html">
+                            <img src="~/Images/productimages/img2.jpg" alt="">
+                            <div class="hoverimg2">
+                                <img src="~/Images/productimages/img3hover.jpg" alt="">
+                            </div>
+                        </a>
+                        <a href="#">Riverside Chair</a>
+                        <p>$25.00</p>
+                    </div>
+                    <div class="col-md-3">
+                        <a href="productdetails.html">
+                            <img src="~/Images/productimages/img3.jpg" alt="">
+                            <div class="hoverimg3">
+                                <img src="~/Images/productimages/img4hover.jpg" alt="">
+                            </div>
+                        </a>
+                        <a href="#">Stag Safety Matches</a>
+                        <p>$84.50</p>
+                    </div>
+                    <div class="col-md-3">
+                        <a href="productdetails.html">
+                            <img src="~/Images/productimages/img4.jpg" alt="">
+                            <div class="hoverimg4">
+                                <img src="~/Images/productimages/img2hover.jpg" alt="">
+                            </div>
+                        </a>
+                        <a href="#">Legendary McCloud T-Shirt</a>
+                        <p>$14.50</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

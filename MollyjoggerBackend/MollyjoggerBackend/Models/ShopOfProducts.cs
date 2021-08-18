@@ -13,10 +13,10 @@ namespace MollyjoggerBackend.Models
         public string Image1 { get; set; }
         public string Image2 { get; set; }
         public string ProductName { get; set; }
-        public double Price { get; set; }
-        
+        public double Price { get; set; }        
         public int CategoryId { get; set; }
         
         public Category Category { get; set; }
+        public ProductDetails ProductDetails { get; set; }
     }
 }

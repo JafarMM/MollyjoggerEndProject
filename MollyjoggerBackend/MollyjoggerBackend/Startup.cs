@@ -26,6 +26,10 @@ namespace MollyjoggerBackend
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSession((options) =>
+            {
+                options.IdleTimeout = TimeSpan.FromMinutes(20);
+            });
             var connectionString = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<AppDbContext>(options =>
             {
@@ -54,7 +58,7 @@ namespace MollyjoggerBackend
             app.UseRouting();
 
             app.UseAuthorization();
-
+            app.UseSession();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
