@@ -2,13 +2,13 @@
     ViewData["Title"] = "Home Page";
     HomeViewModel homeViewModel = Model;
 }
-
+ 
 <!--Main part of the page start-->
 <main>
     <div class="owl-carousel owl-theme">
         @foreach (var item in homeViewModel.sliderImages)
         {
-            <div class="slide slide-1" style="background-image: url(~/..EndProject/Images/@item.Image);">
+            <div class="slide slide-1" style="background-image: url(Images/@item.Image);">
                 <div class="slide-content">
                     <button>SHOP NOW</button>
                 </div>
@@ -16,7 +16,6 @@
         }
 
     </div>
-
 
     <div class="container">
         <div class="featuredproducts">
@@ -53,7 +52,7 @@
                             <a href="#">@item.ButtonTitle</a>
                         </div>
                     </div>
-                } 
+                }
             </div>
         </div>
         <div class="aboutus">

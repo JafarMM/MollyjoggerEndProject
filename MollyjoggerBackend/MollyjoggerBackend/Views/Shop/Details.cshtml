@@ -9,20 +9,20 @@
         <div class="productpage">
             <div class="row">
                 <div class="col-lg-7 col-md-12 col-12">
-                    <img class="img-fluid w-100 pb-1" src="~/Images/productdetailimages/@productDetails.MainImg" id="MainImg" alt="">
+                    <img class="img-fluid w-100 pb-1" src="~/Images/productimages/@productDetails.MainImg" id="MainImg" alt="">
                     <div class="small-img-group">
                          
                         <div class="small-img-col">
-                            <img src="~/Images/productdetailimages/@productDetails.Smallimg1" class="small-img" alt="">
+                            <img src="~/Images/productimages/@productDetails.Smallimg1" class="small-img" alt="">
                         </div>
                         <div class="small-img-col">
-                            <img src="~/Images/productdetailimages/@productDetails.Smallimg2" class="small-img" alt="">
+                            <img src="~/Images/productimages/@productDetails.Smallimg2" class="small-img" alt="">
                         </div>
                         <div class="small-img-col">
-                            <img src="~/Images/productdetailimages/@productDetails.Smallimg3" class="small-img" alt="">
+                            <img src="~/Images/productimages/@productDetails.Smallimg3" class="small-img" alt="">
                         </div>
                         <div class="small-img-col">
-                            <img src="~/Images/productdetailimages/@productDetails.Smallimg4" class="small-img" alt="">
+                            <img src="~/Images/productimages/@productDetails.Smallimg4" class="small-img" alt="">
                         </div>
                     </div>
                 </div>
@@ -33,7 +33,7 @@
                         <hr>
 
                         <div class="button1">
-                            <button type="button" class="add-btn">Add To Card</button>
+                          <a asp-controller="Home" asp-action="AddToBasket" asp-route-id="@productDetails.ShopOfProducts.Id"><button type="button" class="add-btn">Add To Card</button></a>   
                         </div>
                         <div class="button2">
                             <button type="button" class="buy-btn">Go To Back</button>

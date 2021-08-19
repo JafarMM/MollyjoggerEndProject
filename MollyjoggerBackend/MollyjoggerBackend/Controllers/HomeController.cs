@@ -3,6 +3,7 @@ using Microsoft.Extensions.Logging;
 using MollyjoggerBackend.DataAccesLayer;
 using MollyjoggerBackend.Models;
 using MollyjoggerBackend.ViewModels;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -114,6 +115,59 @@ namespace MollyjoggerBackend.Controllers
             }
             return View();
         }
-       
+        public IActionResult AddToBasket(int? id)
+        {
+            if (id == null)
+                return NotFound();
+
+            var product = _dbContext.ShopOfProducts.First(x=>x.Id==id);
+
+            if (product == null)
+                return NotFound();
+            List<BasketViewModel> productList;
+
+            var basketCookie = Request.Cookies["basket"];
+            if (string.IsNullOrEmpty(basketCookie))
+            {
+                productList = new List<BasketViewModel>();
+            }
+            else
+            {
+                productList = JsonConvert.DeserializeObject<List<BasketViewModel>>(basketCookie);
+            }
+
+            var existProduct = productList.FirstOrDefault(x => x.Id == id);
+           
+            if (existProduct == null)
+            {              
+                productList.Add(new BasketViewModel { Id = product.Id });
+            }
+            else
+            {
+                existProduct.Count++;
+            }
+
+            var productJson = JsonConvert.SerializeObject(productList);
+            Response.Cookies.Append("basket", productJson);
+
+            return RedirectToAction("Index");
+        }
+       public IActionResult Basket()
+        {
+            var cookieBasket = Request.Cookies["basket"];
+            if (string.IsNullOrEmpty(cookieBasket))
+                return Content("No data in Basket");
+
+            var basketViewModels = JsonConvert.DeserializeObject<List<BasketViewModel>>(cookieBasket);
+
+            foreach (var basketViewModel in basketViewModels)
+            {
+                var dbProduct = _dbContext.ShopOfProducts.Find(basketViewModel.Id);
+                basketViewModel.Price = dbProduct.Price;
+                basketViewModel.Image1 = dbProduct.Image1;
+                basketViewModel.Image2 = dbProduct.Image2;
+            }
+            return Content(cookieBasket);
+        }
     }
 }
