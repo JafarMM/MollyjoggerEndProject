@@ -152,22 +152,29 @@ namespace MollyjoggerBackend.Controllers
 
             return RedirectToAction("Index");
         }
-       public IActionResult Basket()
+        public IActionResult Basket()
         {
             var cookieBasket = Request.Cookies["basket"];
             if (string.IsNullOrEmpty(cookieBasket))
                 return Content("No data in Basket");
 
             var basketViewModels = JsonConvert.DeserializeObject<List<BasketViewModel>>(cookieBasket);
-
+            var result = new List<BasketViewModel>();
             foreach (var basketViewModel in basketViewModels)
             {
                 var dbProduct = _dbContext.ShopOfProducts.Find(basketViewModel.Id);
+                if (dbProduct == null)
+                    continue; 
                 basketViewModel.Price = dbProduct.Price;
                 basketViewModel.Image1 = dbProduct.Image1;
                 basketViewModel.Image2 = dbProduct.Image2;
+                basketViewModel.ProductName = dbProduct.ProductName;
+                result.Add(basketViewModel);
             }
-            return Content(cookieBasket);
+            var basket = JsonConvert.SerializeObject(result);
+            Response.Cookies.Append("basket", basket);
+            var basketView = JsonConvert.DeserializeObject<List<BasketViewModel>>(basket);
+            return View(basketView);
         }
     }
 }

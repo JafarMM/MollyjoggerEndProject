@@ -30,10 +30,10 @@
                     <a href="#">Create account</a>
                 </div>
                 <div class="cart">
-                    <a href="#">
+                    <a asp-controller="Home" asp-action="Basket">
                         <div class="cart1">
                             <img src="~/Images/wicker-basket.svg" alt="">
-                            <span>0</span>
+                            <span>@ViewBag.BasketCount</span>
                             <span>Cart</span>
 
                         </div>

@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewData["Title"] = "Basket";
+    List<BasketViewModel> basketViewModels = Model;
+
+}
+
+<table class="table table-dark">
+    <thead>
+        <tr>
+
+            <th scope="col">Product Name</th>
+            <th scope="col">Product Price</th>
+            <th scope="col">Product Count</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in basketViewModels)
+        {
+            <tr>
+
+                <td>@item.ProductName</td>
+                <td>@item.Price</td>
+                <td>@item.Count</td>
+            </tr>
+        }
+
+    </tbody>
+</table>
