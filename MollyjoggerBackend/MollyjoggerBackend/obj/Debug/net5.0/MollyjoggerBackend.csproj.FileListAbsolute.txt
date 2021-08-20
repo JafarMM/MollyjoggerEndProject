@@ -196,3 +196,4 @@ C:\Users\User\Desktop\MollyjoggerEndProject\MollyjoggerBackend\MollyjoggerBacken
 C:\Users\User\Desktop\MollyjoggerEndProject\MollyjoggerBackend\MollyjoggerBackend\obj\Debug\net5.0\Razor\Areas\AdminPanel\Views\_ViewStart.cshtml.g.cs
 C:\Users\User\Desktop\MollyjoggerEndProject\MollyjoggerBackend\MollyjoggerBackend\obj\Debug\net5.0\Razor\Areas\AdminPanel\Views\Dashboard\Index.cshtml.g.cs
 C:\Users\User\Desktop\MollyjoggerEndProject\MollyjoggerBackend\MollyjoggerBackend\obj\Debug\net5.0\Razor\Areas\AdminPanel\Views\Shared\_AdminLayout.cshtml.g.cs
+C:\Users\User\Desktop\MollyjoggerEndProject\MollyjoggerBackend\MollyjoggerBackend\obj\Debug\net5.0\Razor\Areas\AdminPanel\Views\Category\Index.cshtml.g.cs
