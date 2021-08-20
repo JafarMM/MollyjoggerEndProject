@@ -10,7 +10,7 @@
             <div class="card-body">
                 <h4 class="card-title">@category.Name</h4>
                 <p>
-                    @category.Description
+                   @Html.Raw(category.Description) 
                 </p>
             </div>
         </div>

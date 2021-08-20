@@ -59,5 +59,48 @@ namespace MollyjoggerBackend.Areas.AdminPanel.Controllers
             await _dbContext.SaveChangesAsync();
             return RedirectToAction("Index");
         }
+        public async Task<IActionResult> Update(int? id)
+        {
+            if (id == null)
+                return NotFound();
+
+            var category = await _dbContext.Categories.FindAsync(id);
+            if (category == null)
+                return NotFound();
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Update(int? id,Category category)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+                
+
+            if (id == null)
+                return NotFound();
+
+            if (id != category.Id)
+                return BadRequest();
+
+            var dbCategory = await _dbContext.Categories.FindAsync(id);
+            if (dbCategory == null)
+                return NotFound();
+
+            var isExist = _dbContext.Categories.Any(x => x.Name.ToLower() == category.Name.ToLower() && x.Id!=id);
+            if (isExist)
+            {
+                ModelState.AddModelError("Name", "There is have already name of category");
+                return View();
+            }
+
+            dbCategory.Name = category.Name;
+            dbCategory.Description = category.Description;
+            await _dbContext.SaveChangesAsync();
+
+            return RedirectToAction("Index");
+        }
     }
 }
