@@ -102,5 +102,16 @@ namespace MollyjoggerBackend.Areas.AdminPanel.Controllers
 
             return RedirectToAction("Index");
         }
+
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null)
+                return NotFound();
+
+            var category = await _dbContext.Categories.FindAsync(id);
+            if (category == null)
+                return NotFound();
+            return View();
+        }
     }
 }
