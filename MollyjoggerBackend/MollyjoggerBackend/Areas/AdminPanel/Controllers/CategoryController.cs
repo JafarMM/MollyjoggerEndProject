@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MollyjoggerBackend.DataAccesLayer;
+using MollyjoggerBackend.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,6 +34,30 @@ namespace MollyjoggerBackend.Areas.AdminPanel.Controllers
                 return NotFound();
 
             return View(category);
+        }
+
+        public IActionResult Create()
+        {
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(Category category)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+            var isExist = _dbContext.Categories.Any(x => x.Name.ToLower() == category.Name.ToLower());
+            if (isExist)
+            {
+                ModelState.AddModelError("Name", "There is have already name of category");
+                return View();
+            }
+
+            await _dbContext.Categories.AddAsync(category);
+            await _dbContext.SaveChangesAsync();
+            return RedirectToAction("Index");
         }
     }
 }

@@ -12,6 +12,8 @@ namespace MollyjoggerBackend.Models
         public bool IsDeleted { get; set; }
         [Required,MaxLength(100)]
         public string Name { get; set; }
+        [MaxLength(100)]
+        public string Description { get; set; }
         public ICollection<ShopOfProducts> ShopOfProducts { get; set; }
     }
 }

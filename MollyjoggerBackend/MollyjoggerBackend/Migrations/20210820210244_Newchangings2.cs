@@ -16,10 +16,21 @@ namespace MollyjoggerBackend.Migrations
                 oldClrType: typeof(string),
                 oldType: "nvarchar(max)",
                 oldNullable: true);
+
+            migrationBuilder.AddColumn<string>(
+                name: "Description",
+                table: "Categories",
+                type: "nvarchar(100)",
+                maxLength: 100,
+                nullable: true);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropColumn(
+                name: "Description",
+                table: "Categories");
+
             migrationBuilder.AlterColumn<string>(
                 name: "Name",
                 table: "Categories",

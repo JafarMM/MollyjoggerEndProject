@@ -9,7 +9,7 @@ using MollyjoggerBackend.DataAccesLayer;
 namespace MollyjoggerBackend.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20210820200555_Newchangings2")]
+    [Migration("20210820210244_Newchangings2")]
     partial class Newchangings2
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -77,6 +77,10 @@ namespace MollyjoggerBackend.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Description")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
