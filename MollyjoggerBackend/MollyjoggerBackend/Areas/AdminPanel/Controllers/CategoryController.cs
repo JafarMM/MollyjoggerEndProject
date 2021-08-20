@@ -22,5 +22,17 @@ namespace MollyjoggerBackend.Areas.AdminPanel.Controllers
             var categories = _dbContext.Categories.ToList();
             return View(categories);
         }
+        public IActionResult Details(int? id)
+        {
+            if (id == null)
+                return NotFound();
+
+            var category = _dbContext.Categories.Find(id);
+
+            if (category == null)
+                return NotFound();
+
+            return View(category);
+        }
     }
 }
