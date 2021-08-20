@@ -115,6 +115,7 @@ namespace MollyjoggerBackend.Controllers
             }
             return View();
         }
+
         public IActionResult AddToBasket(int? id)
         {
             if (id == null)
