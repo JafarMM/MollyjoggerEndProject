@@ -113,5 +113,23 @@ namespace MollyjoggerBackend.Areas.AdminPanel.Controllers
                 return NotFound();
             return View();
         }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [ActionName("Delete")]
+        public async Task<IActionResult> DeleteCategory(int? id)
+        {
+            if (id == null)
+                return NotFound();
+
+            var category = await _dbContext.Categories.FindAsync(id);
+
+            if (category == null)
+                return NotFound();
+
+            _dbContext.Categories.Remove(category);
+            await _dbContext.SaveChangesAsync();
+
+            return RedirectToAction("Index");
+        }
     }
 }

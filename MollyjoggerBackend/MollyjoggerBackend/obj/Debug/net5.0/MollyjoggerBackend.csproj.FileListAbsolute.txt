@@ -200,3 +200,6 @@ C:\Users\User\Desktop\MollyjoggerEndProject\MollyjoggerBackend\MollyjoggerBacken
 C:\Users\User\Desktop\MollyjoggerEndProject\MollyjoggerBackend\MollyjoggerBackend\obj\Debug\net5.0\Razor\Areas\AdminPanel\Views\Category\Details.cshtml.g.cs
 C:\Users\User\Desktop\MollyjoggerEndProject\MollyjoggerBackend\MollyjoggerBackend\obj\Debug\net5.0\Razor\Areas\AdminPanel\Views\Category\Create.cshtml.g.cs
 C:\Users\User\Desktop\MollyjoggerEndProject\MollyjoggerBackend\MollyjoggerBackend\obj\Debug\net5.0\Razor\Areas\AdminPanel\Views\Category\Update.cshtml.g.cs
+C:\Users\User\Desktop\MollyjoggerEndProject\MollyjoggerBackend\MollyjoggerBackend\obj\Debug\net5.0\Razor\Areas\AdminPanel\Views\Category\Delete.cshtml.g.cs
+C:\Users\User\Desktop\MollyjoggerEndProject\MollyjoggerBackend\MollyjoggerBackend\obj\Debug\net5.0\Razor\Areas\AdminPanel\Views\SliderImage\Index.cshtml.g.cs
+C:\Users\User\Desktop\MollyjoggerEndProject\MollyjoggerBackend\MollyjoggerBackend\obj\Debug\net5.0\Razor\Areas\AdminPanel\Views\SliderImage\Create.cshtml.g.cs
