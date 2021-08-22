@@ -68,5 +68,42 @@ namespace MollyjoggerBackend.Areas.AdminPanel.Controllers
             return RedirectToAction("Index");
 
         }
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null)
+                return NotFound();
+
+            var sliderImages = await _dbContext.SliderImages.FindAsync(id);
+            if (sliderImages == null)
+                return NotFound();
+
+            return View(sliderImages);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [ActionName("Delete")]
+        public async Task<IActionResult> DeleteSlider(int? id)
+        {
+            if (id == null)
+                return NotFound();
+
+            var sliderImages = await _dbContext.SliderImages.FindAsync(id);
+            if (sliderImages == null)
+                return NotFound();
+
+            var fileName = $"{Guid.NewGuid()}-{sliderImages.Photo.FileName}";
+            var filePath = Path.Combine(_environment.WebRootPath, "Images", fileName);
+
+            using (var fileStream = new FileStream(filePath, FileMode.Create))
+            {
+                await sliderImages.Photo.CopyToAsync(fileStream);
+            }
+
+            sliderImages.Image = fileName;
+            _dbContext.SliderImages.Remove(sliderImages);
+            await _dbContext.SaveChangesAsync();
+
+            return RedirectToAction("Index");
+        }
     }
 }
