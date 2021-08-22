@@ -5,7 +5,8 @@ using System.Threading.Tasks;
 
 namespace MollyjoggerBackend.Areas.AdminPanel.Utils
 {
-    public class Constants
+    public static class Constants
     {
+        public static string ImageFolderPath = "";
     }
 }

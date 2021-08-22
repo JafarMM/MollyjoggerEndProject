@@ -5,9 +5,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using MollyjoggerBackend.Areas.AdminPanel.Utils;
 using MollyjoggerBackend.DataAccesLayer;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -15,10 +17,13 @@ namespace MollyjoggerBackend
 {
     public class Startup
     {
+        private readonly IConfiguration _configuration;
+        private readonly IWebHostEnvironment _environment;
 
-        public Startup(IConfiguration configuration)
+        public Startup(IConfiguration configuration, IWebHostEnvironment environment)
         {
-            Configuration = configuration;
+            _configuration = configuration;
+            _environment = environment;
         }
 
         public IConfiguration Configuration { get; }
@@ -30,13 +35,15 @@ namespace MollyjoggerBackend
             {
                 options.IdleTimeout = TimeSpan.FromMinutes(20);
             });
-            var connectionString = Configuration.GetConnectionString("DefaultConnection");
+            var connectionString = _configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<AppDbContext>(options =>
             {
                 options.UseSqlServer(connectionString);
             });
             services.AddControllersWithViews();
             services.AddMvc();
+
+            Constants.ImageFolderPath = Path.Combine(_environment.WebRootPath, "Images");
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

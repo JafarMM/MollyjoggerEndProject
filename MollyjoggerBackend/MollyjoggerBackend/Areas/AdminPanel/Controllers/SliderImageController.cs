@@ -52,14 +52,9 @@ namespace MollyjoggerBackend.Areas.AdminPanel.Controllers
                     return View();
             }
 
-     
-            var fileName = $"{Guid.NewGuid()}-{sliderImages.Photo.FileName}";
-            var filePath = Path.Combine(_environment.WebRootPath,"Images",fileName);
 
-            using(var fileStream = new FileStream(filePath, FileMode.Create))
-            {
-                await sliderImages.Photo.CopyToAsync(fileStream);
-            }
+            var fileName = await FileUtil.GenerateFileAsync(Constants.ImageFolderPath, sliderImages.Photo);
+             
 
             sliderImages.Image = fileName;
             await _dbContext.SliderImages.AddAsync(sliderImages);
@@ -68,6 +63,7 @@ namespace MollyjoggerBackend.Areas.AdminPanel.Controllers
             return RedirectToAction("Index");
 
         }
+
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -79,6 +75,8 @@ namespace MollyjoggerBackend.Areas.AdminPanel.Controllers
 
             return View(sliderImages);
         }
+
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         [ActionName("Delete")]
@@ -88,19 +86,82 @@ namespace MollyjoggerBackend.Areas.AdminPanel.Controllers
                 return NotFound();
 
             var sliderImages = await _dbContext.SliderImages.FindAsync(id);
+
             if (sliderImages == null)
                 return NotFound();
 
-            var fileName = $"{Guid.NewGuid()}-{sliderImages.Photo.FileName}";
-            var filePath = Path.Combine(_environment.WebRootPath, "Images", fileName);
+            var path = Path.Combine(Constants.ImageFolderPath, sliderImages.Image);
 
-            using (var fileStream = new FileStream(filePath, FileMode.Create))
+            if (System.IO.File.Exists(path))
             {
-                await sliderImages.Photo.CopyToAsync(fileStream);
+                System.IO.File.Delete(path);
             }
 
-            sliderImages.Image = fileName;
             _dbContext.SliderImages.Remove(sliderImages);
+            await _dbContext.SaveChangesAsync();
+
+            return RedirectToAction("Index");
+        }
+
+        public async Task<IActionResult> Update(int? id)
+        {
+            if (id == null)
+                return NotFound();
+
+            var sliderImages = await _dbContext.SliderImages.FindAsync(id);
+            if (sliderImages == null)
+                return NotFound();
+
+            return View(sliderImages);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Update(int? id, SliderImages sliderImages)
+        {
+            if (id == null)
+                return NotFound();
+
+            if (id != sliderImages.Id)
+                return BadRequest();
+
+            var SliderImages = await _dbContext.SliderImages.FindAsync(id);
+            if (SliderImages == null)
+                return NotFound();
+
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+
+            var fileName = SliderImages.Image;
+
+            if (sliderImages.Photo != null)
+            {
+                if (!sliderImages.Photo.IsImage())
+                {
+                    ModelState.AddModelError("Photo", "Yukledyiniz shekil deyildir!");
+                    return View();
+                }
+
+                if (!sliderImages.Photo.IsSizeAllowed(4000))
+                {
+                    ModelState.AddModelError("Photo", "Yuklediyiniz sheklin olchusu 4 mb dan chox olmamalidir!");
+                    return View();
+                }
+
+                var path = Path.Combine(Constants.ImageFolderPath, "sliderImages", SliderImages.Image);
+
+                if (System.IO.File.Exists(path))
+                {
+                    System.IO.File.Delete(path);
+                }
+
+                fileName = await FileUtil.GenerateFileAsync(Constants.ImageFolderPath,sliderImages.Photo);
+            }
+
+            SliderImages.Image = fileName;
+    
             await _dbContext.SaveChangesAsync();
 
             return RedirectToAction("Index");
