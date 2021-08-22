@@ -1,11 +1,11 @@
 ﻿@{ 
-    List<ShopOfProducts> products = Model;
+    List<ShopOfProducts> shopOfProducts = Model;
 }
 
-@foreach (var item in products)
+@foreach (var item in shopOfProducts)
 {
     <div class="col-md-4">
-        <div class="product-item" data-id="@item.Category.Name.ToLower()">
+        <div class="product-item" data-id="@*@item.Category.Name.ToLower()*@">
             <a asp-controller="Shop" asp-action="Details" asp-route-id="@item.Id">
                 <img src="~/Images/productimages/@item.Image1" alt="">
                 <div class="hoverimg1">

@@ -21,11 +21,4 @@
     <Folder Include="wwwroot\Images\productdetails\" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Content Update="wwwroot\Images\productimages\Screen_shot_2014-03-03_at_5.42.21_PM_1024x1024.png">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-  </ItemGroup>
-
 </Project>

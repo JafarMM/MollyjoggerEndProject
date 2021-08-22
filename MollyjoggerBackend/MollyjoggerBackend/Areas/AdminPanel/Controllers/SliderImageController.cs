@@ -166,5 +166,17 @@ namespace MollyjoggerBackend.Areas.AdminPanel.Controllers
 
             return RedirectToAction("Index");
         }
+        public IActionResult Details(int? id)
+        {
+            if (id == null)
+                return NotFound();
+
+            var sliderImages = _dbContext.SliderImages.Find(id);
+
+            if (sliderImages == null)
+                return NotFound();
+
+            return View(sliderImages);
+        }
     }
 }

@@ -24,7 +24,7 @@ namespace MollyjoggerBackend.Controllers
 
             ViewBag.ProductCount = _productsCount;
 
-            var products = _dbContext.ShopOfProducts.Include(x => x.Category).OrderByDescending(x => x.Id).Take(6).ToList();
+            var products = _dbContext.ShopOfProducts.Include(x=>x.ProductDetails).Include(x=> x.ProductCategories).ThenInclude(x=> x.Category).OrderByDescending(x => x.Id).Take(6).ToList();
             return View(products);
         }
         public IActionResult Load(int skip)
@@ -34,7 +34,7 @@ namespace MollyjoggerBackend.Controllers
                 return Content("Error");
             }
 
-            var products = _dbContext.ShopOfProducts.Include(x => x.Category).OrderByDescending(x => x.Id).Skip(skip).Take(6).ToList();
+            var products = _dbContext.ShopOfProducts.OrderByDescending(x => x.Id).Skip(skip).Take(6).ToList();
 
             return PartialView("_ProductPartial", products);
 

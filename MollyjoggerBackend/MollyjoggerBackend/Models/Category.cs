@@ -14,6 +14,6 @@ namespace MollyjoggerBackend.Models
         public string Name { get; set; }
         [MaxLength(100)]
         public string Description { get; set; }
-        public ICollection<ShopOfProducts> ShopOfProducts { get; set; }
+        public ICollection<ProductCategory> ProductCategories { get; set; }
     }
 }

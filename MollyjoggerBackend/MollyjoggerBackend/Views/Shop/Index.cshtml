@@ -1,6 +1,6 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
-    List<ShopOfProducts> products = Model;
+    List<ShopOfProducts> shopOfProducts = Model;
 }
 <!--Main start-->
 <main>
@@ -19,12 +19,12 @@
                                     <a href="#" data-id="all">All Products</a>
                                 </li>
 
-                                @foreach (var item in products)
+                                @*@foreach (var item in shopViewModel.Categories)
                                 {
                                     <li>
-                                        <a href="" data-id="@item.Category.Name.ToLower()">@item.Category.Name</a>
+                                        <a href="" data-id="@item.Name.ToLower()">@item.Name</a>
                                     </li>
-                                }
+                                }*@
                              <li>
                                 <img src="./Images/up-arrow.png" alt="" id="HideCategory" onclick="hideCategories()">
                             </li>
