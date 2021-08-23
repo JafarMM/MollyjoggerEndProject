@@ -1,0 +1,76 @@
+﻿@model ShopOfProducts
+@{
+    ViewData["Title"] = "Create Course";
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Create New Course</h4>
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <form class="forms-sample" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label asp-for="ProductName">Product Name</label>
+                    <input asp-for="ProductName" class="form-control" placeholder="Product Name">
+                    <span asp-validation-for="ProductName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Price">Price</label>
+                    <input asp-for="Price" class="form-control" placeholder="Price">
+                    <span asp-validation-for="Price" class="text-danger"></span>
+                </div>
+              
+                <div class="form-group">
+                    <label asp-for="ProductDetails.Properties">Properties</label>
+                    <input asp-for="ProductDetails.Properties" class="form-control" placeholder="Properties">
+                    <span asp-validation-for="ProductDetails.Properties" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ProductDetails.Description">Product Description</label>
+                    <input asp-for="ProductDetails.Description" class="form-control" placeholder="ProductDetail description">
+                    <span asp-validation-for="ProductDetails.Description" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Photos1">Image</label>
+                    <input asp-for="Photos1" class="form-control" accept="image/*" type="file">
+                    <span asp-validation-for="Photos1" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ProductDetails.MainImg">Details Maim Image</label>
+                    <input asp-for="ProductDetails.MainImg" class="form-control" accept="image/*" type="file">
+                    <span asp-validation-for="ProductDetails.MainImg" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ProductDetails.Smallimg1">Small img 1</label>
+                    <input asp-for="ProductDetails.Smallimg1" class="form-control" accept="image/*" type="file">
+                    <span asp-validation-for="ProductDetails.Smallimg1" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ProductDetails.Smallimg2">Small img 2</label>
+                    <input asp-for="ProductDetails.Smallimg2" class="form-control" accept="image/*" type="file">
+                    <span asp-validation-for="ProductDetails.Smallimg2" class="text-danger"></span>
+                </div><div class="form-group">
+                    <label asp-for="ProductDetails.Smallimg3">Small img 3</label>
+                    <input asp-for="ProductDetails.Smallimg3" class="form-control" accept="image/*" type="file">
+                    <span asp-validation-for="ProductDetails.Smallimg3" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ProductDetails.Smallimg4">Small img 4</label>
+                    <input asp-for="ProductDetails.Smallimg4" class="form-control" accept="image/*" type="file">
+                    <span asp-validation-for="ProductDetails.Smallimg4" class="text-danger"></span>
+                </div>
+                <div class="form-group" id="categoryInput">
+                    <label>Categories</label>
+                    <select class="form-control" name="CategoryId" id="category" multiple>
+                        @foreach (Category item in ViewBag.Categories)
+                        {
+                            <option value="@item.Id">@item.Name</option>
+                        }
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary mr-2">Add</button>
+                <a asp-action="Index" class="btn btn-light">Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>

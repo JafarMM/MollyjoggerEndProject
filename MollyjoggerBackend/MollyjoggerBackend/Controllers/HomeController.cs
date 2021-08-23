@@ -168,7 +168,6 @@ namespace MollyjoggerBackend.Controllers
                     continue; 
                 basketViewModel.Price = dbProduct.Price;
                 basketViewModel.Image1 = dbProduct.Image1;
-                basketViewModel.Image2 = dbProduct.Image2;
                 basketViewModel.ProductName = dbProduct.ProductName;
                 result.Add(basketViewModel);
             }
