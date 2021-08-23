@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mollyjogger.com</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Uchen&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,200;0,300;0,400;1,200;1,300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=STIX+Two+Math&family=Uchen&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!--Header start-->
+<header>
+    <div class="container-fluid">
+      
+        <div class="row loginaccount">
+            <div class="searchdown" id="searchDown">
+                <input id="home-input-search" type="search" placeholder="Search here...">
+               <a href="#">
+                <img onclick="hideSearch()" src="./Images/close.svg" alt="">
+               </a>  
+                <div id="searchResult"></div>
+            </div>
+            <div class="flexbox">
+                <div class="searchpart" id="searchMain">
+                   <a href="#">
+                    <img onclick="showSearch()" src="./Images/loupe (1).svg" alt="">
+                   </a> 
+                    <a onclick="showSearch()" href="#">Search</a>
+                </div>   
+                <div class="logincreatepart">
+                    <a href="login.html">Log in |</a>
+                    <a href="#">Create account</a>
+                </div>
+                <div class="cart">
+                    <a href="#">
+                        <div class="cart1">
+                            <img src="./Images/wicker-basket.svg" alt="">
+                            <span>0</span>
+                            <span>Cart</span>
+                            
+                        </div>
+                    </a>
+               </div>
+            </div> 
+        </div>
+        <div class="row freeshopping">
+            <div class="col-md-12">
+                <p>FREE SHIPPING FOR ORDERS OVER $49</p>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row navbarm">
+            <nav>
+                <a href="index.html"><img src="https://cdn.shopify.com/s/files/1/0156/0327/t/11/assets/logo.png?v=4254627150272435766" alt="No picture"></a>
+                <div class="nav-links" id="navLinks">
+                    <i class="fa fa-times" onclick="hideMenu()"></i>
+                    <ul>
+                        <div class="loginacc">
+                            <li>
+                                <a href="#">Log in</a>
+                            </li>
+                        </div>
+                        <div class="createacc">
+                            <li>
+                                <a href="#">Create</a>
+                            </li>
+                        </div>
+                        <div class="shop"> 
+                            <li><a href="shop.html">SHOP</a>
+                                <div class="sub-menu"> 
+                                    <ul>
+                                        <li id="firstchild"><a href="#">SHOP</a></li> 
+                                        <li><a href="#">CAMPING</a></li>
+                                        <li><a href="#">FISHING</a></li>
+                                        <li><a href="#">KNIFE</a></li>
+                                        <li><a href="#">WRITING</a></li>
+                                        <li><a href="#">GIFTS</a></li>
+                                        <li><a href="#">APPAREL</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </div>
+                        <div class="about">
+                            <li><a href="about.html">ABOUT</a></li>
+                        </div>
+                         <div class="contact">
+                            <li><a href="contact.html">CONTACT</a></li>
+                         </div>
+                    </ul>
+                </div>
+                <i id="fa1" class="fa fa-bars" onclick="showMenu()"></i>
+            </nav>
+        </div>
+    </div>
+</header>
+    <!--Header end-->
+
+<main>
+<h2>
+    LOGIN
+</h2>
+<div class="container">
+    <div class="LoginPage">
+        <form method="post">
+        
+            <div class="form-group">
+                <label asp-for="@Model.Email"></label>
+                <input type="email" asp-for="@Model.Email" class="form-control" placeholder="Enter Your Email" />
+                <span class="text-danger" asp-validation-for="@Model.Email"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.PhoneNumber"></label>
+                <input type="password" asp-for="@Model.PhoneNumber" class="form-control" placeholder="Enter Your Password" />
+                <span class="text-danger" asp-validation-for="@Model.PhoneNumber"></span>
+            </div>
+            <div class="forgotpassword">
+                <a href="#">Forgot your password?</a>
+            </div>
+            <button type="submit" class="btn btn-primary">Sign In</button>
+            <p>Return to Store</p>
+            <hr>
+            <p>Create Account</p>
+        </form>
+    </div>
+</div>
+ 
+</main>
+
+
+
+    <!--Footer start-->
+    <footer>
+        <div class="container-fluid">
+            <div class="firstpartfooter"> 
+                 <div class="row">    
+                    <div class="col-md-3 col-sm-12">
+                        <div class="footerlogo">
+                            <img src="./Images/footerimages/Mollyjogger-footer-logo.png" alt="">
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-12">
+                        <div class="footeremail">
+                            <h4>NEWSLETTER</h4>
+                            <p>Subscribe for exclusive offers,special <br>
+                            events and a good tall fish tale or two.</p>
+                            <div class="emailinput">
+                                <input class="email-input" type="email" aria-label="Email" placeholder="Email">                        
+                                    <button role="button" aria-label="SIGN UP">SIGN UP</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-12">
+                        <div class="footerlinks">
+                            <h4>LINKS</h4>
+                            <ul>
+                                <li><a href="shop.html">Shop</a></li>
+                                <li><a href="about.html">About Us</a></li>
+                                <li><a href="#">Shipping</a></li>
+                                <li><a href="termsofservice.html">Terms</a></li>
+                                <li><a href="#">Privacy</a></li>
+                                <li><a href="returnspage.html">Returns</a></li>
+                            </ul>
+                        </div>
+                        
+                    </div>
+                    <div class="col-md-3 col-sm-12">
+                        <div class="footercontact">
+                            <h4>GET IN TOUCH</h4>
+                            <p>Contact us <a href="#">info@mollyjogger.com</a></p>
+                            <div class="socialmedia">
+                                <ul>
+                                    <li><a href="#"><img src="./Images/footerimages/socialmedia/facebook.svg" alt=""></a></li>
+                                    <li><a href="#"><img src="./Images/footerimages/socialmedia/instagram.svg" alt=""></a></li>
+                                    <li><a href="#"><img src="./Images/footerimages/socialmedia/pinterest.svg" alt=""></a></li>
+                                </ul>
+                                 
+                            </div>
+                            <div class="footeraddress">
+                                <img src="./Images/footerimages/footer-address_12.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+            </div>
+            <div class="secondpartfooter">
+                <div class="row">
+                    <p>Accepted Payments</p>
+                </div>
+                <div class="row">
+                    <div class="bankcards">
+                        <img src="./Images/footerimages/bankcards/amex.svg" alt="">
+                        <img src="./Images/footerimages/bankcards/credit-card.svg" alt="">
+                        <img src="./Images/footerimages/bankcards/dinners-club.svg" alt="">
+                        <img src="./Images/footerimages/bankcards/discover.svg" alt="">
+                        <img src="./Images/footerimages/bankcards/jcb.svg" alt="">
+                        <img src="./Images/footerimages/bankcards/paypal.svg" alt="">
+                        <img src="./Images/footerimages/bankcards/shopify.svg" alt="">
+                    </div>
+                </div>
+                <div class="row">
+                    <p>
+                        © 2021, <a href="#">Mollyjogger</a> | Site by Jafar Mamedzade.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+        <!--Footer end-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="script/owlcarousel.js"></script>
+    <script src="script/script.js"></script>
+    </body>
+    </html>

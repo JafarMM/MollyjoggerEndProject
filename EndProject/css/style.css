@@ -1005,3 +1005,30 @@ img {
 .allproducts .hoverimg4 img {
   display: none;
 }
+
+main h2 {
+  text-align: center;
+  color: #a8a476;
+}
+
+main .LoginPage {
+  max-width: 440px;
+  margin: 0 auto 20px;
+}
+
+main .LoginPage button {
+  background-color: #007580 !important;
+  border-radius: 0%;
+  padding: 5px 20px 5px 20px;
+}
+
+main .LoginPage .forgotpassword {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+main .LoginPage .forgotpassword a {
+  margin-bottom: 30px;
+  color: #a8a476;
+}
