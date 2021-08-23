@@ -1,12 +1,14 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using MollyjoggerBackend.Areas.AdminPanel.Utils;
 using MollyjoggerBackend.DataAccesLayer;
+using MollyjoggerBackend.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -35,6 +37,17 @@ namespace MollyjoggerBackend
             {
                 options.IdleTimeout = TimeSpan.FromMinutes(20);
             });
+
+            services.AddIdentity<User, IdentityRole>(options =>
+             {
+                 options.Password.RequiredLength = 8;
+                 options.User.RequireUniqueEmail = true;
+                 options.Lockout.MaxFailedAccessAttempts = 3;
+                 options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(10);
+                 options.Lockout.AllowedForNewUsers = true;
+ 
+             }).AddEntityFrameworkStores<AppDbContext>().AddDefaultTokenProviders();
+
             var connectionString = _configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<AppDbContext>(options =>
             {

@@ -1,0 +1,42 @@
+﻿@{
+    ViewData["Title"] = "Course Detail";
+    ShopOfProducts shopOfProducts = Model;
+}
+<div class="row">
+    <div class="col-md-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h3 class="card-title">Product Detail</h3>
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="~/Images/@shopOfProducts.Image1" class="img-fluid" />
+                    </div>
+                    <div class="col-md-12">
+                        <div class="detailItem d-flex mt-2">
+                            <h4>Title:</h4>
+                            <span class="ml-2">@shopOfProducts.ProductName</span>
+                        </div>
+                        <div class="detailItem d-flex mt-3">
+                            <h4>Description:</h4>
+                            <span class="ml-2">@Html.Raw(shopOfProducts.ProductDetails.Description)</span>
+                        </div>
+                        <div class="detailItem d-flex mt-3">
+                            <h4>Price:</h4>
+                            <span class="ml-2">@Html.Raw(shopOfProducts.Price)</span>
+                        </div>
+                         
+                        <div class="detailItem d-flex mt-3">
+                            <h4>Properties:</h4>
+                            <span class="ml-2">@Html.Raw(shopOfProducts.ProductDetails.Properties)</span>
+                        </div>
+                       
+                    </div>
+                </div>
+                <hr />
+                <a asp-action="Index" class="btn btn-info text-light my-button">
+                    <i class="mdi mdi-keyboard-backspace"></i> <span>Back</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

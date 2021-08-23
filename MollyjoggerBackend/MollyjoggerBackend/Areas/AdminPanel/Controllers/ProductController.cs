@@ -258,6 +258,19 @@ namespace MollyjoggerBackend.Areas.AdminPanel.Controllers
 
             return RedirectToAction("Index");
         }
+        public async Task<IActionResult> Details(int? id)
+        {
+            if (id == null)
+                return NotFound();
+
+            var shopOfProducts = await _dbContext.ShopOfProducts.Include(x => x.ProductDetails).Include(x => x.ProductCategories)
+                .Where(x => x.ProductDetails.IsDeleted == false)
+                .FirstOrDefaultAsync(x => x.Id == id && x.IsDeleted == false);
+            if (shopOfProducts == null)
+                return NotFound();
+
+            return View(shopOfProducts);
+        }
 
     }
 }

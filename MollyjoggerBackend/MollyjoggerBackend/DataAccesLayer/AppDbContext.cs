@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MollyjoggerBackend.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MollyjoggerBackend.DataAccesLayer
 {
-    public class AppDbContext: DbContext
+    public class AppDbContext: IdentityDbContext<User>
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) :base(options)
         {
