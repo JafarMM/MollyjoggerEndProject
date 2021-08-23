@@ -1,6 +1,6 @@
 ﻿@model ShopOfProducts
 @{
-    ViewData["Title"] = "Create Product";
+    ViewData["Title"] = "Update Product";
 }
 
 <div class="col-12 grid-margin stretch-card">
@@ -19,7 +19,7 @@
                     <input asp-for="Price" class="form-control" placeholder="Price">
                     <span asp-validation-for="Price" class="text-danger"></span>
                 </div>
-              
+
                 <div class="form-group">
                     <label asp-for="ProductDetails.Properties">Properties</label>
                     <input asp-for="ProductDetails.Properties" class="form-control" placeholder="Properties">
