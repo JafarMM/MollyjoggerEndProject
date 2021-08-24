@@ -79,6 +79,7 @@ namespace MollyjoggerBackend
 
             app.UseAuthorization();
             app.UseSession();
+            app.UseAuthentication();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(

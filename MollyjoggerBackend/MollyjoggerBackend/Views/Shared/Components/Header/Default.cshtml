@@ -21,7 +21,7 @@
                 <div class="logincreatepart">
                     @if (User.Identity.IsAuthenticated)
                     {
-                        <a asp-controller="Account" asp-action="Logout">@User.Identity.Name | Logout</a>
+                        <a asp-controller="Account" asp-action="Logout">@User.Identity.Name | Logout |</a>
                     }
                     else
                     {
