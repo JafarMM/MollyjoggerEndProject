@@ -188,7 +188,6 @@ C:\Users\User\Desktop\MollyjoggerEndProject\MollyjoggerBackend\MollyjoggerBacken
 C:\Users\User\Desktop\MollyjoggerEndProject\MollyjoggerBackend\MollyjoggerBackend\obj\Debug\net5.0\Razor\Views\Shared\_ProductPartial.cshtml.g.cs
 C:\Users\User\Desktop\MollyjoggerEndProject\MollyjoggerBackend\MollyjoggerBackend\obj\Debug\net5.0\Razor\Views\Shared\_SearchGlobalPartial.cshtml.g.cs
 C:\Users\User\Desktop\MollyjoggerEndProject\MollyjoggerBackend\MollyjoggerBackend\obj\Debug\net5.0\Razor\Views\Home\ContactUs.cshtml.g.cs
-C:\Users\User\Desktop\MollyjoggerEndProject\MollyjoggerBackend\MollyjoggerBackend\bin\Debug\net5.0\Castle.Core.dll
 C:\Users\User\Desktop\MollyjoggerEndProject\MollyjoggerBackend\MollyjoggerBackend\obj\Debug\net5.0\Razor\Views\Shop\Details.cshtml.g.cs
 C:\Users\User\Desktop\MollyjoggerEndProject\MollyjoggerBackend\MollyjoggerBackend\obj\Debug\net5.0\Razor\Views\Home\Basket.cshtml.g.cs
 C:\Users\User\Desktop\MollyjoggerEndProject\MollyjoggerBackend\MollyjoggerBackend\obj\Debug\net5.0\Razor\Views\About\Index.cshtml.g.cs

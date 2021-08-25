@@ -115,6 +115,16 @@ namespace MollyjoggerBackend.Areas.AdminPanel.Controllers
             await _dbContext.AddRangeAsync(shopOfProducts, shopOfProducts.ProductDetails);
             await _dbContext.SaveChangesAsync();
 
+
+            List<Subscribe> subscribes = _dbContext.Subscribes.ToList();
+            string subject = "Create Product!";
+            string url = "https://localhost:44368/Shop/" + shopOfProducts.Id;
+            string message = $"<a href={url}>Hey!We have a new product!Click here and come on our Shop!</a>";
+            foreach (Subscribe sub in subscribes)
+            {
+                await Helper.SendMessage(subject, message, sub.Email);
+            }
+
             return RedirectToAction("Index");
         }
         public async Task<IActionResult> Update(int? id)

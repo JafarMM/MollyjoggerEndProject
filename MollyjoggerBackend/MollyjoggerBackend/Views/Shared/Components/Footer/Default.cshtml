@@ -17,8 +17,18 @@
                             events and a good tall fish tale or two.
                         </p>
                         <div class="emailinput">
-                            <input class="email-input" type="email" aria-label="Email" placeholder="Email">
-                            <button role="button" aria-label="SIGN UP">SIGN UP</button>
+                            <form id="subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                                <div id="mc_embed_signup_scroll" class="mc-form">
+                                    @if (!User.Identity.IsAuthenticated)
+                                    {
+                                        <input class="email-input" type="email" aria-label="Email" placeholder="Email" name="EMAIL" id="Email-subscribe">
+                                    }
+                                    
+                                    <button name="subscribe" type="button" id="button-subscribe" role="button" aria-label="SIGN UP">SIGN UP</button>
+                                </div>
+                                <div style="text-align:center; color:red !important" id="response-subscribe"></div>
+                            </form>
+                      
                         </div>
                     </div>
                 </div>

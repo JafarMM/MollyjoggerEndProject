@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using MollyjoggerBackend.Areas.AdminPanel.Utils;
 using MollyjoggerBackend.DataAccesLayer;
 using MollyjoggerBackend.Models;
 using MollyjoggerBackend.ViewModels;
@@ -10,6 +12,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Net.Mail;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace MollyjoggerBackend.Controllers
@@ -54,6 +57,29 @@ namespace MollyjoggerBackend.Controllers
             return PartialView("_SearchGlobalPartial", searchViewModel);
         }
 
+        public async Task<IActionResult> Subscribe(string email)
+        {
+            if (email == null)
+            {
+                return Content("You must write email address");
+            }
+            Regex regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
+            Match match = regex.Match(email);
+            if (!match.Success)
+            {
+                return Content("It is not email address!");
+            }
+            var isExist = await _dbContext.Subscribes.AnyAsync(x => x.Email == email);
+            if (isExist)
+            {
+                return Content("You are already subscribe Edu Home site");
+            }
+            Subscribe subscribe = new Subscribe { Email = email };
+            await _dbContext.Subscribes.AddAsync(subscribe);
+            await _dbContext.SaveChangesAsync();
+            return Content("Congratulations!");
+             
+        }
         [HttpGet]
         public IActionResult ContactUs()
         {

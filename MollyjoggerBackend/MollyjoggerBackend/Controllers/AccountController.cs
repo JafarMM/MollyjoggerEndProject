@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using MollyjoggerBackend.Data;
 using MollyjoggerBackend.Models;
 using MollyjoggerBackend.ViewModels;
 using System;
@@ -70,7 +71,7 @@ namespace MollyjoggerBackend.Controllers
             var newUser = new User
             {
                 UserName=register.Username,
-                
+                FullName=register.Fullname,
                 Email=register.Email
 
             };
@@ -84,9 +85,10 @@ namespace MollyjoggerBackend.Controllers
                 }
                 return View();
             }
+            await _userManager.AddToRoleAsync(newUser, RoleConstants.MemberRole);
+            await _signInManager.SignInAsync(newUser, true);
             
-            
-            return RedirectToAction("Login");
+            return RedirectToAction("Index","Home");
         }
         public async Task<IActionResult> Logout()
         {

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace MollyjoggerBackend.Areas.AdminPanel.Controllers
 {
     [Area("AdminPanel")]
-    [Authorize]
+    //[Authorize]
     public class DashboardController : Controller
     {
         public IActionResult Index()
