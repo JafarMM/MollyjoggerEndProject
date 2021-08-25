@@ -51,7 +51,10 @@ namespace MollyjoggerBackend
             var connectionString = _configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<AppDbContext>(options =>
             {
-                options.UseSqlServer(connectionString);
+                options.UseSqlServer(connectionString,builder => 
+                {
+                    builder.MigrationsAssembly(nameof(MollyjoggerBackend));
+                });
             });
             services.AddControllersWithViews();
             services.AddMvc();

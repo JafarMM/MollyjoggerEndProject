@@ -11,6 +11,16 @@ namespace MollyjoggerBackend.Models
 {
     public class User:IdentityUser
     {
-        
+
+        [Required]
+        public string FullName { get; set; }
+
+        [Required]
+        public bool IsActive { get; set; }
+
+        public string Image { get; set; }
+
+        [NotMapped]
+        public IFormFile Photo { get; set; }
     }
 }
