@@ -43,7 +43,7 @@
                         <h1>INVENTORY</h1>
                         <div class="row" id="productList">
                             <input hidden id="productsCount" value="@ViewBag.ProductCount" />
-                            @await Component.InvokeAsync("Product")
+                            <partial name="_ProductPartial" />
                         </div>
                         <div class="row">
                             <button style="width: 30%;" class="btn btn-info mt-3 mb-3" id="loadMore">Load more...</button>
