@@ -146,6 +146,93 @@ namespace MollyjoggerBackend.Areas.AdminPanel.Controllers
             return RedirectToAction("Index");
         }
 
+        public async Task<IActionResult> Detail(string id)
+        {
+            if (string.IsNullOrEmpty(id))
+            {
+                return NotFound();
+            }
+
+            var dbUser = await _userManager.FindByIdAsync(id);
+            if (dbUser == null)
+                return NotFound();
+ 
+            var userViewModel = new UserViewModel
+            {
+                Id = dbUser.Id,
+                Fullname = dbUser.FullName,
+                UserName = dbUser.UserName,
+                Email = dbUser.Email,
+                Role = (await _userManager.GetRolesAsync(dbUser)).FirstOrDefault(),
+                IsActive = dbUser.IsActive,
+            
+            };
+
+            return View(userViewModel);
+        }
+
+        public async Task<IActionResult> ChangePassword(string id)
+        {
+            if (string.IsNullOrEmpty(id))
+                return NotFound();
+
+            var user = await _userManager.FindByIdAsync(id);
+
+            if (user == null)
+                return NotFound();
+
+            var changePassViewModel = new ChangePassViewModel
+            {
+                Username = user.UserName
+            };
+
+            return View(changePassViewModel);
+        }
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ChangePassword(string id, ChangePassViewModel passwordViewModel)
+        {
+            if (string.IsNullOrEmpty(id))
+                return NotFound();
+
+
+            var dbUser = await _userManager.FindByIdAsync(id);
+
+            if (id == null)
+                return NotFound();
+
+            var changePassViewModel = new ChangePassViewModel
+            {
+                Username = dbUser.UserName
+            };
+
+            if (!ModelState.IsValid)
+            {
+                return View(changePassViewModel);
+            }
+
+            if (!await _userManager.CheckPasswordAsync(dbUser, passwordViewModel.OldPassword))
+            {
+                ModelState.AddModelError("OldPassword", "Old password isn't valid.");
+                return View(changePassViewModel);
+            }
+
+            var result = await _userManager.ChangePasswordAsync(dbUser, passwordViewModel.OldPassword, passwordViewModel.NewPassword);
+
+            if (!result.Succeeded)
+            {
+                foreach (var error in result.Errors)
+                {
+                    ModelState.AddModelError("", error.Description);
+                }
+                return View(changePassViewModel);
+            }
+
+            return RedirectToAction("Index");
+        }
+
 
         public List<string> GetRoles()
         {

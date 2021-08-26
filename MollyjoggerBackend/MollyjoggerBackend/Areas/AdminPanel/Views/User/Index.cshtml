@@ -8,8 +8,7 @@
     <div class="col-lg-12 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">Products</h4>
-                <a asp-action="Create" class="btn btn-primary">Create</a>
+              
                 <div class="table-responsive">
                     <table class="table">
                         <thead>
@@ -30,7 +29,7 @@
                                     <td>
                                         <a asp-action="Details" asp-route-id="@user.Id" class="btn btn-info">Details</a>
                                         <a asp-action="ChangeRole" asp-route-id="@user.Id" class="btn btn-warning">Change Role</a>
-                                        <a asp-action="ChangePassword" asp-route-id="@user.Id" class="btn btn-danger">Change Password</a>
+                                        <a asp-action="ChangePassword" asp-route-id="@user.Id" class="btn btn-primary">Change Password</a>
                                         @if (user.IsActive)
                                         {
                                             <a asp-action="Activity" asp-route-id="@user.Id" class="btn btn-danger">Deactivate</a>
