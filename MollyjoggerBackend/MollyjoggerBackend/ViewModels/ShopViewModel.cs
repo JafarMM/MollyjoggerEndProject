@@ -8,9 +8,7 @@ namespace MollyjoggerBackend.ViewModels
 {
     public class ShopViewModel
     {
-        public List<ShopOfProducts> shopOfProducts { get; set; }
-        public List<Category> Categories { get; set; }
-        public ProductCategory ProductCategory { get; set; }
-        public ProductDetails ProductDetails { get; set; }
+       public ShopOfProducts ShopOfProducts { get; set; }
+       public List<Category> Categories { get; set; }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MollyjoggerBackend.DataAccesLayer;
+using MollyjoggerBackend.Models;
 using MollyjoggerBackend.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -19,13 +20,34 @@ namespace MollyjoggerBackend.Controllers
             _productsCount = _dbContext.ShopOfProducts.Count();
         }
 
-        public IActionResult Index()
+        public IActionResult Index(int? categoryId,int page=1)
         {
+            var products = new List<ShopOfProducts>();
 
-            ViewBag.ProductCount = _productsCount;
+            if (categoryId == null)
+            {
+                ViewBag.PageCount = Decimal.Ceiling((decimal)_dbContext.ShopOfProducts.Where(x => x.IsDeleted == false).Take(6).Count() / 9);
+                ViewBag.Page = page;
+                if (ViewBag.PageCount < page || page <= 0)
+                    return NotFound();
 
-            var products = _dbContext.ShopOfProducts.Where(x=> x.IsDeleted==false).Include(x=>x.ProductDetails).Include(x=> x.ProductCategories).ThenInclude(x=> x.Category).OrderByDescending(x => x.Id).Take(6).ToList();
-            return View(products);
+                return View(products);
+            }
+            else
+            {
+                var productCategory = _dbContext.productCategories.Where(x => x.CategoryId == categoryId)
+                    .Include(x => x.ShopOfProducts).Where(x => x.ShopOfProducts.IsDeleted == false).OrderByDescending(x => x.ShopOfProducts.LastModificationTime);
+
+                if (productCategory.Count() == 0)
+                    return NotFound();
+                foreach (var productcategory in productCategory)
+                {
+                    products.Add(productcategory.ShopOfProducts);
+                }
+                return View(products);
+            }
+            //var products = _dbContext.ShopOfProducts.Where(x=> x.IsDeleted==false).Include(x=>x.ProductDetails).Include(x=> x.ProductCategories).ThenInclude(x=> x.Category).OrderByDescending(x => x.Id).Take(6).ToList();
+            
         }
         public IActionResult Load(int skip)
         {

@@ -19,15 +19,19 @@
                                     <a href="#" data-id="all">All Products</a>
                                 </li>
 
-                                @*@foreach (var item in shopViewModel.Categories)
+                                @foreach (var item in shopOfProducts)
                                 {
-                                    <li>
-                                        <a href="" data-id="@item.Name.ToLower()">@item.Name</a>
-                                    </li>
-                                }*@
-                             <li>
-                                <img src="./Images/up-arrow.png" alt="" id="HideCategory" onclick="hideCategories()">
-                            </li>
+                                    @foreach (var item1 in item.ProductCategories)
+                                    {
+                                        <li>
+                                            <a href="" data-id="@item1.Category.Name.ToLower()">@item1.Category.Name</a> 
+                                        </li>
+                                    }
+
+                                }
+                                <li>
+                                    <img src="./Images/up-arrow.png" alt="" id="HideCategory" onclick="hideCategories()">
+                                </li>
                             </ul>
                         </div>
 
@@ -39,10 +43,10 @@
                         <h1>INVENTORY</h1>
                         <div class="row" id="productList">
                             <input hidden id="productsCount" value="@ViewBag.ProductCount" />
-                            <partial name="_ProductPartial"/>
+                            @await Component.InvokeAsync("Product")
                         </div>
                         <div class="row">
-                            <button class="btn btn-info mt-3 mb-3" id="loadMore">Load more...</button>
+                            <button style="width: 30%;" class="btn btn-info mt-3 mb-3" id="loadMore">Load more...</button>
                         </div>
                     </div>
 

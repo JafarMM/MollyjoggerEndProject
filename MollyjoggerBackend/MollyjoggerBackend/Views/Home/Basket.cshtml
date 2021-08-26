@@ -12,17 +12,25 @@
             <th scope="col">Product Name</th>
             <th scope="col">Product Price</th>
             <th scope="col">Product Count</th>
+            <th scope="col">Total</th>
         </tr>
     </thead>
     <tbody>
         @foreach (var item in basketViewModels)
         {
-            <tr>
+        <tr>
 
-                <td>@item.ProductName</td>
-                <td>@item.Price</td>
-                <td>@item.Count</td>
-            </tr>
+            <td>@item.ProductName</td>
+            <td style="display: none;" id="hideprice">@item.Price</td>
+            <td id="price">Price: @item.Price</td>
+            <td>
+                <div id="plus" onclick="pluss()">+</div> <div id="count">@item.Count</div><div onclick="minuss()" id="minus">-</div>
+            </td>
+            <td id="total">Total : </td>
+            <td class="temizle"></td>
+            <td class="temizle"></td>
+        </tr>
+       
         }
 
     </tbody>
