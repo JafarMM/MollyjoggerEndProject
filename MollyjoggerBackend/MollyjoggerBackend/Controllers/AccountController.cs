@@ -72,7 +72,8 @@ namespace MollyjoggerBackend.Controllers
             {
                 UserName=register.Username,
                 FullName=register.Fullname,
-                Email=register.Email
+                Email=register.Email,
+                IsActive=true
 
             };
             var identityResult = await _userManager.CreateAsync(newUser, register.Password);
