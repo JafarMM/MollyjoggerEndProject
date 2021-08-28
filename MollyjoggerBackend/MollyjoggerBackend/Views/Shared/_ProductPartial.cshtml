@@ -1,4 +1,4 @@
-﻿@{ 
+﻿@{
     List<ShopOfProducts> shopOfProducts = Model;
 }
 
@@ -7,14 +7,10 @@
     <div class="col-md-4">
         <div class="product-item" data-id="@*@item.Category.Name.ToLower()*@">
             <a asp-controller="Shop" asp-action="Details" asp-route-id="@item.Id">
-                <img asp-controller="Shop" asp-action="Details" asp-route-id="@item.Id" src="~/Images/productimages/@item.Image1" alt="">
-                <div asp-controller="Shop" asp-action="Details" asp-route-id="@item.Id" class="hoverimg1">
-                    <img src="~/Images/productimages/@item.Image2" alt="">
-                </div>
+                <img asp-controller="Shop" asp-action="Details" asp-route-id="@item.Id" src="~/Images/@item.Image1" alt="">
             </a>
             <a asp-controller="Shop" asp-action="Details" asp-route-id="@item.Id">@item.ProductName</a>
             <p>$@item.Price</p>
         </div>
-
     </div>
 }

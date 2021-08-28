@@ -222,5 +222,6 @@ C:\Users\User\Desktop\MollyjoggerEndProject\MollyjoggerBackend\MollyjoggerBacken
 C:\Users\User\Desktop\MollyjoggerEndProject\MollyjoggerBackend\MollyjoggerBackend\obj\Debug\net5.0\Razor\Areas\AdminPanel\Views\AboutUs\Update.cshtml.g.cs
 C:\Users\User\Desktop\MollyjoggerEndProject\MollyjoggerBackend\MollyjoggerBackend\obj\Debug\net5.0\Razor\Areas\AdminPanel\Views\User\Index.cshtml.g.cs
 C:\Users\User\Desktop\MollyjoggerEndProject\MollyjoggerBackend\MollyjoggerBackend\obj\Debug\net5.0\Razor\Areas\AdminPanel\Views\User\ChangeRole.cshtml.g.cs
-C:\Users\User\Desktop\MollyjoggerEndProject\MollyjoggerBackend\MollyjoggerBackend\obj\Debug\net5.0\Razor\Areas\AdminPanel\Views\User\Details.cshtml.g.cs
 C:\Users\User\Desktop\MollyjoggerEndProject\MollyjoggerBackend\MollyjoggerBackend\obj\Debug\net5.0\Razor\Areas\AdminPanel\Views\User\ChangePassword.cshtml.g.cs
+C:\Users\User\Desktop\MollyjoggerEndProject\MollyjoggerBackend\MollyjoggerBackend\obj\Debug\net5.0\Razor\Areas\AdminPanel\Views\User\Detail.cshtml.g.cs
+C:\Users\User\Desktop\MollyjoggerEndProject\MollyjoggerBackend\MollyjoggerBackend\obj\Debug\net5.0\Razor\Views\Home\BuyBasket.cshtml.g.cs

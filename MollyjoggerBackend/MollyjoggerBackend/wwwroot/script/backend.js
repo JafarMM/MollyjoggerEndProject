@@ -18,23 +18,52 @@ $(document).on("click", "#button-subscribe", function () {
 })
 
 
+let tests = document.querySelectorAll(".test1");
+let tests2 = document.querySelectorAll(".test2");
+let total = document.getElementById("total");
 
-function pluss() {
-    var count = Number(document.getElementById('count').innerHTML);
-    var price = Number(document.getElementById('hideprice').innerHTML);
-    count++;
-    var total = count * price;
-    document.getElementById('count').innerHTML = count;
-    document.getElementById('total').innerHTML = "Total: "+total+ " USD";
-}
-
-function minuss() {
-    var count = Number(document.getElementById('count').innerHTML);
-    var price = Number(document.getElementById('hideprice').innerHTML);
-    if (count > 0) {
+tests.forEach(item => {
+    item.addEventListener("click", function () {
+        let count = Number(this.nextElementSibling.innerHTML)
+        count++;
+        this.nextElementSibling.innerHTML = count;
+        let td = this.parentElement
+        let price = td.previousElementSibling.innerHTML;
+        let priceValue = Number(price.split(": ")[1]);
+        //total.innerHTML = `Total: ${priceValue * count}`;
+        total.innerHTML = Number(total.innerHTML) + Number(priceValue * count);
+    });
+})
+tests2.forEach(item => {
+    item.addEventListener("click", function () {
+        let count = Number(this.previousElementSibling.innerHTML)
         count--;
+        this.previousElementSibling.innerHTML = count;
+        let td = this.parentElement
+        let price = td.previousElementSibling.innerHTML;
+        let priceValue = Number(price.split(": ")[1]);
+        //total.innerHTML = `Total: ${priceValue * count}`;
+
+        total.innerHTML = Number(total.innerHTML) - Number(priceValue * count);
+    });
+})
+
+$(document).on("click", ".category-item", function () {
+    $("#productList").empty();
+    if ($(this).hasClass("active-category")) {
+        $(this).removeClass("active-category");
+    } else {
+        $(this).addClass("active-category");
     }
-    var total = count * price;
-    document.getElementById('count').innerHTML = count;
-    document.getElementById('total').innerHTML = "Total: " + total + " USD";
-}
+
+    $.ajax({
+        type: "Get",
+        url: "Shop/Filter",
+        data: {
+            id: $(this).attr("id")
+        },
+        success: function (res) {
+            $("#productList").append(res);
+        }
+    })
+})

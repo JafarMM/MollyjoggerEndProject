@@ -1,0 +1,45 @@
+﻿
+@model SendMailBasket
+@{
+    ViewData["Title"] = "ContactUs";
+}
+
+<section id="contact">
+    <div class="contactus">
+        <h1>@ViewBag.Message</h1>
+        <h1>
+            BUY PRODUCT!
+        </h1>
+        <p>
+            Use it on happy days!
+        </p>
+        <form method="post">
+            <div class="form-group">
+                <label asp-for="@Model.Name"></label>
+                <input type="text" asp-for="@Model.Name" class="form-control" placeholder="Enter Your Name & Surname" />
+                <span class="text-danger" asp-validation-for="@Model.Name"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Address"></label>
+                <input type="text" asp-for="@Model.Address" class="form-control" placeholder="Enter Your Number" />
+                <span class="text-danger" asp-validation-for="@Model.Address"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.PostCode"></label>
+                <input type="number" asp-for="@Model.PostCode" class="form-control" placeholder="Enter Your Post Code" />
+                <span class="text-danger" asp-validation-for="@Model.PostCode"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.CardNumber"></label>
+                <input type="number" asp-for="@Model.CardNumber" class="form-control" placeholder="Enter Your Number" />
+                <span class="text-danger" asp-validation-for="@Model.CardNumber"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.CvcNumber"></label>
+                <input type="number" class="form-control" asp-for="@Model.CvcNumber" placeholder="Enter Your CVC Number"></input>
+                <span class="text-danger" asp-validation-for="@Model.CvcNumber"></span>
+            </div>
+            <button id="buyproduct" onclick="hideCount()" type="submit" class="btn btn-primary">BUY</button>
+        </form>
+    </div>
+</section>

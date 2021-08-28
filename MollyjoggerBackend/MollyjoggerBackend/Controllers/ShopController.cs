@@ -26,14 +26,25 @@ namespace MollyjoggerBackend.Controllers
             var products = _dbContext.ShopOfProducts.Where(x=> x.IsDeleted==false).Include(x=>x.ProductDetails).Include(x=> x.ProductCategories).ThenInclude(x=> x.Category).OrderByDescending(x => x.Id).Take(6).ToList();
             return View(products);
         }
-        public IActionResult Load(int skip)
+        public IActionResult Load(int skip, string id)
         {
             if (skip >= _productsCount)
             {
                 return Content("Error");
             }
 
-            var products = _dbContext.ShopOfProducts.OrderByDescending(x => x.Id).Skip(skip).Take(6).ToList();
+            var products = new List<ShopOfProducts>();
+
+            if (id == "0")
+            {
+                products = _dbContext.ShopOfProducts.OrderByDescending(x => x.Id).Skip(skip).Take(6).ToList();
+            }
+            else
+            {
+                products = _dbContext.ShopOfProducts.Include(x => x.ProductCategories)
+                .Where(x => x.ProductCategories.Any(x => x.CategoryId == Convert.ToInt32(id)))
+                .OrderByDescending(x => x.Id).Skip(skip).Take(6).ToList();
+            }
 
             return PartialView("_ProductPartial", products);
 
@@ -51,6 +62,22 @@ namespace MollyjoggerBackend.Controllers
                 return NotFound();
             }
             return View(productDetails);
+        }
+
+        public async Task<IActionResult> Filter(string id)
+        {
+            var products = new List<ShopOfProducts>();
+            if(id == "0")
+            {
+                products = await _dbContext.ShopOfProducts.Where(x => x.IsDeleted == false).ToListAsync();
+            }
+            else
+            {
+                products = await _dbContext.ShopOfProducts.Include(x => x.ProductCategories)
+                .Where(x => x.ProductCategories.Any(x => x.CategoryId == Convert.ToInt32(id)) && x.IsDeleted == false).ToListAsync();
+            }
+
+            return PartialView("_ProductPartial",products);
         }
     }
 }

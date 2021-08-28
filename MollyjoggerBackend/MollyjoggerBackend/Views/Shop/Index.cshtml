@@ -3,6 +3,7 @@
     List<ShopOfProducts> shopOfProducts = Model;
 }
 <!--Main start-->
+
 <main>
     <div class="container-fluid">
         <div class="shopsection">
@@ -16,7 +17,7 @@
                         <div class="browsecategory">
                             <ul class="browseul" id="browseul">
                                 <li>
-                                    <a href="#" data-id="all">All Products</a>
+                                    <span class="category-item" id="0" data-id="all">All Products</span>
                                 </li>
 
                                 @foreach (var item in shopOfProducts)
@@ -24,7 +25,7 @@
                                     @foreach (var item1 in item.ProductCategories)
                                     {
                                         <li>
-                                            <a href="" data-id="@item1.Category.Name.ToLower()">@item1.Category.Name</a> 
+                                            <span class="category-item" id="@item1.CategoryId" data-id="@item1.Category.Name.ToLower()">@item1.Category.Name</span>
                                         </li>
                                     }
 
@@ -41,15 +42,14 @@
                 <div class="col-md-9 col-sm-12">
                     <div class="products">
                         <h1>INVENTORY</h1>
+                        <hr />
                         <div class="row" id="productList">
-                            <input hidden id="productsCount" value="@ViewBag.ProductCount" />
                             <partial name="_ProductPartial" />
                         </div>
                         <div class="row">
                             <button style="width: 30%;" class="btn btn-info mt-3 mb-3" id="loadMore">Load more...</button>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>

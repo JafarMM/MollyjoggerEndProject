@@ -45,8 +45,17 @@ $(document).ready(function () {
 
     let skip = 6;
     $(document).on('click', '#loadMore', function () {
+        let id = $(".active-category").attr("id");
+        if (id === undefined) {
+            id = "0"
+        }
+        console.log(id);
         $.ajax({
-            url: '/Shop/Load?skip=' + skip,
+            url: '/Shop/Load',
+            data: {
+                skip: skip,
+                id: id
+            },
             type: 'GET',
             success: function (res) {
 
@@ -62,9 +71,6 @@ $(document).ready(function () {
             }
         });
     });
-
-     
-
 });
 
 
@@ -73,6 +79,8 @@ var browseul = document.getElementById("browseul");
 var HideCategory = document.getElementById("HideCategory")
 var searchDown = document.getElementById("searchDown")
 var searchMain = document.getElementById("searchMain")
+ 
+
 function showMenu() {
     navLinks.style.right = "0%";
 }
@@ -85,6 +93,7 @@ function showCategories() {
     browseul.style.display = "block"
     HideCategory.style.display = "block"
 }
+ 
 function hideCategories() {
     browseul.style.display = "none"
     HideCategory.style.display = "none"

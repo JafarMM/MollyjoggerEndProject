@@ -33,12 +33,14 @@ namespace MollyjoggerBackend.Controllers
             var products = _dbContext.Products.ToList();
             var shoppartreklam = _dbContext.Shoppartreklams.ToList();
             var aboutus = _dbContext.AboutUs.FirstOrDefault();
+            var shopofproducts = _dbContext.ShopOfProducts.OrderByDescending(x=>x.Id).Take(4).ToList();
             var homeViewModel = new HomeViewModel
             {
                 sliderImages = sliderimages,
                 Products=products,
                 Shoppartreklams=shoppartreklam,
-                AboutUs=aboutus
+                AboutUs=aboutus,
+                ShopOfProducts=shopofproducts
             };
             return View(homeViewModel);
         }
@@ -203,6 +205,67 @@ namespace MollyjoggerBackend.Controllers
             Response.Cookies.Append("basket", basket);
             var basketView = JsonConvert.DeserializeObject<List<BasketViewModel>>(basket);
             return View(basketView);
+        }
+        public IActionResult BuyBasket()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult BuyBasket(SendMailBasket sendMailBasket)
+        {
+
+
+            if (!ModelState.IsValid) return View();
+
+            try
+            {
+                MailMessage mail = new MailMessage();
+
+                mail.From = new MailAddress("mollyjogger77@gmail.com");
+
+
+                mail.To.Add("cefer.mammadzade@bk.ru");
+ 
+
+                mail.IsBodyHtml = true;
+
+                string content = "Name & Surname : " + sendMailBasket.Name;
+                content += "<br/> Surname : " + sendMailBasket.Surname;
+                content += "<br/> Address : " + sendMailBasket.Address;
+                content += "<br/> Post Code : " + sendMailBasket.PostCode;
+              
+                mail.Body = content;
+
+
+
+
+
+                SmtpClient smtpClient = new SmtpClient("smtp.gmail.com");
+
+
+                NetworkCredential networkCredential = new NetworkCredential("mollyjogger77@gmail.com", "adminadmin123");
+                smtpClient.UseDefaultCredentials = false;
+                smtpClient.Credentials = networkCredential;
+                smtpClient.Port = 587;
+                smtpClient.EnableSsl = true;
+                smtpClient.Send(mail);
+
+                ViewBag.Message = "Congratulations" +
+                    "You received the product" +
+                    "We will be contacted you and the product" +
+                    "will be delivered within 3-4 days!";
+
+
+                ModelState.Clear();
+
+            }
+            catch (Exception ex)
+            {
+
+                ViewBag.Message = ex.Message.ToString();
+            }
+            return View();
         }
     }
 }

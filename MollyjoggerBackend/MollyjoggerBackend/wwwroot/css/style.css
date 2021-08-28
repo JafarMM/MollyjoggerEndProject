@@ -316,38 +316,7 @@ main .products img {
   max-width: 100%;
   margin-bottom: 5px;
 }
-
-main .products .hoverimg1 img {
-  display: none;
-}
-
-main .products .hoverimg2 img {
-  display: none;
-}
-
-main .products .hoverimg3 img {
-  display: none;
-}
-
-main .products .hoverimg4 img {
-  display: none;
-}
-
-main .products .hoverimg5 img {
-  display: none;
-}
-
-main .products .hoverimg6 img {
-  display: none;
-}
-
-main .products .hoverimg7 img {
-  display: none;
-}
-
-main .products .hoverimg8 img {
-  display: none;
-}
+ 
 
 main .products a {
   display: block;
@@ -355,41 +324,9 @@ main .products a {
   margin-top: 40px;
 }
 
-main .products a:hover img {
-  display: none;
-}
+ 
 
-main .products a:hover .hoverimg1 img {
-  display: block;
-}
-
-main .products a:hover .hoverimg2 img {
-  display: block;
-}
-
-main .products a:hover .hoverimg3 img {
-  display: block;
-}
-
-main .products a:hover .hoverimg4 img {
-  display: block;
-}
-
-main .products a:hover .hoverimg5 img {
-  display: block;
-}
-
-main .products a:hover .hoverimg6 img {
-  display: block;
-}
-
-main .products a:hover .hoverimg7 img {
-  display: block;
-}
-
-main .products a:hover .hoverimg8 img {
-  display: block;
-}
+ 
 
 main .shoppart {
   margin-top: 60px;
@@ -592,7 +529,7 @@ footer .secondpartfooter .bankcards img {
 
 .shopsection .productscategory h5 {
   padding-left: 30px;
-  padding-top: 100px;
+  padding-top: 109px;
 }
 
 .shopsection .productscategory ul {
@@ -634,52 +571,35 @@ footer .secondpartfooter .bankcards img {
 }
 
 .shopsection .products a:hover img {
-  display: none;
+  transform:scale(1.2);
 }
 
-.shopsection .products a:hover .hoverimg1 img {
-  display: block;
-}
-
-.shopsection .products a:hover .hoverimg2 img {
-  display: block;
-}
-
-.shopsection .products a:hover .hoverimg3 img {
-  display: block;
-}
-
-.shopsection .products a:hover .hoverimg4 img {
-  display: block;
-}
+ #searchResult ul li a{
+     color:black;
+     text-decoration:none;
+ }
 
 .shopsection .products img {
   max-width: 100%;
+  transition:transform 1s;
 }
-
-.shopsection .products .hoverimg1 img {
-  display: none;
-}
-
-.shopsection .products .hoverimg2 img {
-  display: none;
-}
-
-.shopsection .products .hoverimg3 img {
-  display: none;
-}
-
-.shopsection .products .hoverimg4 img {
-  display: none;
-}
-
+ 
 #aboutmollyjogger {
   padding-left: 30px;
   padding-right: 20px;
 }
-
+#aboutmollyjogger h3{
+    padding-left:25px;
+}
+ 
+.bigtext p{
+    margin-top:30px;
+}
+.ourstory4 p {
+    padding-top: 50px;
+}
 #aboutmollyjogger .ourstory .ourstory2 img {
-  max-width: 100%;
+    max-width: 100%;
 }
 
 #aboutmollyjogger .ourstory .ourstory3 img {
@@ -702,10 +622,20 @@ footer .secondpartfooter .bankcards img {
   max-width: 100%;
 }
 
+#contact .form-group{
+    margin-top:10px;
+}
+
+#contact button{
+    margin-top:10px;
+}
+
 #aboutmollyjogger .brands .brandrow3 {
   padding-bottom: 100px;
 }
-
+.brands h4{
+    text-align:center;
+}
 #aboutmollyjogger .brands img {
   max-width: 100%;
   padding-top: 70px;
@@ -913,14 +843,28 @@ img {
       flex-basis: 24%;
   cursor: pointer;
 }
-
+.productpage img{
+    max-width:85%;
+}
 .productright1 .productinfo p {
-  text-align: left;
+    padding-top:20px;
+    text-align: left;
+}
+.productright1{
+    padding-top:50px;
+    padding-right:30px;
 }
 
+.baskettable td {
+    color:white;
+}
+.baskettable th {
+    color: white;
+}
 .productright1 .button1 {
-  text-align: center;
-  padding-bottom: 20px;
+    text-align: center;
+    padding-bottom: 20px;
+    padding-top: 20px;
 }
 
 .productright1 .button1 .add-btn {
