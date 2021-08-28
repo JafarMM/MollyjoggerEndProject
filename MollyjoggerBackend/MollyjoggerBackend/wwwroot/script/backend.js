@@ -21,17 +21,28 @@ $(document).on("click", "#button-subscribe", function () {
 let tests = document.querySelectorAll(".test1");
 let tests2 = document.querySelectorAll(".test2");
 let total = document.getElementById("total");
+let pr = document.querySelectorAll("#price");
+
+pr.forEach(item => {
+    total.innerHTML = Number(total.innerHTML) + Number(item.innerHTML.split(": ")[1]);
+})
 
 tests.forEach(item => {
     item.addEventListener("click", function () {
+        console.log(total.innerHTML);
         let count = Number(this.nextElementSibling.innerHTML)
         count++;
         this.nextElementSibling.innerHTML = count;
         let td = this.parentElement
         let price = td.previousElementSibling.innerHTML;
         let priceValue = Number(price.split(": ")[1]);
+        console.log(priceValue);
+        console.log(count);
         //total.innerHTML = `Total: ${priceValue * count}`;
-        total.innerHTML = Number(total.innerHTML) + Number(priceValue * count);
+        pr.forEach(item => {
+            total.innerHTML = Number(priceValue * count) + Number(item.innerHTML.split(": ")[1]);
+        })
+        
     });
 })
 tests2.forEach(item => {

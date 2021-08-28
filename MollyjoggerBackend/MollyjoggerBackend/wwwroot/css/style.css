@@ -236,7 +236,7 @@ main .slide {
 
 main .slide-1 button {
   position: relative;
-  left: 900px;
+  left:600px;
   top: 450px;
   border: 1px solid #a8a476;
   background-color: #a8a476;
@@ -245,7 +245,7 @@ main .slide-1 button {
 
 main .slide-2 button {
   position: relative;
-  left: 900px;
+  right: 900px;
   top: 450px;
   border: 1px solid #a8a476;
   background-color: #a8a476;
@@ -303,7 +303,9 @@ main .featuredproducts a:hover {
 main .products {
   margin-top: 35px;
 }
-
+.products img:hover {
+    transform: scale(1.2);
+}
 main .products a {
   text-decoration: none;
   font-family: "STIX Two Math", serif;
@@ -313,6 +315,7 @@ main .products a {
 }
 
 main .products img {
+    transform:translate(0.5s);
   max-width: 100%;
   margin-bottom: 5px;
 }
@@ -379,12 +382,14 @@ main .aboutus .textaboutus a {
 }
 
 main .aboutus .textaboutus h3 {
+    text-align:center;
   font-family: "STIX Two Math", serif;
   color: #818185;
   font-weight: bolder;
 }
 
 main .aboutus .textaboutus h2 {
+    text-align:center;
   font-family: "Uchen", serif;
   color: #007580 !important;
   font-weight: bolder;
@@ -392,7 +397,7 @@ main .aboutus .textaboutus h2 {
 
 main .aboutus .textaboutus p {
   font-family: "STIX Two Math", serif;
-  text-align: start;
+  text-align: center;
   color: #818185;
 }
 
@@ -625,7 +630,11 @@ footer .secondpartfooter .bankcards img {
 #contact .form-group{
     margin-top:10px;
 }
-
+.rightpart a img {
+    position: relative;
+    max-width: 10%;
+    right:43%;
+}
 #contact button{
     margin-top:10px;
 }
@@ -720,6 +729,7 @@ footer .secondpartfooter .bankcards img {
     display: block;
     padding-left: 30px;
   }
+  
   header nav .fa {
     display: block;
     color: #fff;
@@ -801,6 +811,7 @@ footer .secondpartfooter .bankcards img {
   footer .footerlogo img {
     max-width: 120%;
   }
+
 }
 
 h1 {
@@ -843,9 +854,15 @@ img {
       flex-basis: 24%;
   cursor: pointer;
 }
-.productpage img{
-    max-width:85%;
+.productpage img {
+    padding-top:60px;
+    width: 85%;
+    transition: transform 0.5s;
 }
+    .productpage img:hover {
+        -webkit-transform: scale(1.25);  
+        opacity: 1.0;
+    }
 .productright1 .productinfo p {
     padding-top:20px;
     text-align: left;

@@ -35,13 +35,13 @@
                         <img style="width:20%; border-radius:70%" src="~/Images/@item.Image1" />
                     </td>
                 </tr>
-                @(total += item.Price)
+                @*@(total += item.Price)*@
             }
         </tbody>
     </table>
     <span>
         Total :
-        <span id="total">@total</span>
+        <span id="total">@*@total*@</span>
     </span>
     <span>
        <a asp-controller="Home" asp-action="Buybasket">Buy NOW!</a>

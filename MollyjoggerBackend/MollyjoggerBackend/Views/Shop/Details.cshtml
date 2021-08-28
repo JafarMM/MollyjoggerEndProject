@@ -16,7 +16,6 @@
                         <h1>@productDetails.ShopOfProducts.ProductName</h1>
                         <p>$@productDetails.ShopOfProducts.Price.00</p>
                         <hr>
-
                         <div class="button1">
                           <a asp-controller="Home" asp-action="AddToBasket" asp-route-id="@productDetails.ShopOfProducts.Id"><button type="button" class="add-btn">Add To Card</button></a>   
                         </div>
@@ -29,7 +28,7 @@
                                @productDetails.Description
                             </p>
                             <ul>
-                                @Html.Raw(productDetails.Properties)
+                                @Html.Raw(productDetails.Properties)  
                             </ul>
                         </div>
                        
