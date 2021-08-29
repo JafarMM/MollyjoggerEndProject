@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    ReturnForm returnForm = Model;
+}
+
+<div class="row">
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Slider Images</h4>
+
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Image</th>
+                                <th>Title</th>
+                                <th>Description</th>
+                                <th>Actions</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <tr>
+                                <td>
+                                    <img src="~/Images/aboutus/@returnForm.Image" style="width:300px !important; height:500px !important;" />
+                                </td>
+                                <td>
+                                    <p>@Html.Raw(returnForm.Title)</p>
+                                </td>
+                                <td>
+                                    <p>@Html.Raw(returnForm.Description)</p>
+                                </td>
+                                <td>
+
+                                    <a style="margin-bottom:5px;" asp-action="Update" asp-route-id="@returnForm.id" class="btn btn-primary">Update</a>
+
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

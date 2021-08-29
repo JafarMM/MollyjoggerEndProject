@@ -27,6 +27,7 @@ namespace MollyjoggerBackend.Controllers
             _dbContext = dbContext;
         }
 
+        #region HomeController
         public IActionResult Index()
         {
             var sliderimages = _dbContext.SliderImages.ToList();
@@ -44,6 +45,9 @@ namespace MollyjoggerBackend.Controllers
             };
             return View(homeViewModel);
         }
+        #endregion
+
+        #region GlobalSearch
         public IActionResult Search(string search)
         {
             if (string.IsNullOrEmpty(search))
@@ -58,7 +62,9 @@ namespace MollyjoggerBackend.Controllers
             };
             return PartialView("_SearchGlobalPartial", searchViewModel);
         }
+        #endregion
 
+        #region Subscribe
         public async Task<IActionResult> Subscribe(string email)
         {
             if (email == null)
@@ -84,6 +90,9 @@ namespace MollyjoggerBackend.Controllers
             return Content("Congratulations!");
              
         }
+        #endregion
+
+        #region ContactUst
         [HttpGet]
         public IActionResult ContactUs()
         {
@@ -145,7 +154,55 @@ namespace MollyjoggerBackend.Controllers
             }
             return View();
         }
+        #endregion
 
+        #region Removefrombasket
+        public async Task<IActionResult> RemoveAtBasket(int? id)
+        {
+            if (id == null)
+                return BadRequest();
+
+            var product = await _dbContext.ShopOfProducts.FirstOrDefaultAsync(x => x.Id == id);
+            if (product == null)
+                return NotFound();
+
+            var basketCookie = Request.Cookies["Basket"];
+
+            List<BasketViewModel> productList;
+
+            productList = JsonConvert.DeserializeObject<List<BasketViewModel>>(basketCookie);
+
+            var exsistProduct = productList.FirstOrDefault(x => x.Id == id);
+
+            if (exsistProduct.Count > 1)
+            {
+                exsistProduct.Count--;
+            }
+            else
+            {
+                productList.Remove(exsistProduct);
+            }
+
+            foreach (var item in productList)
+            {
+                item.Price *= item.Count;
+            }
+
+            var productJson = JsonConvert.SerializeObject(productList);
+            if (productList.Count == 0)
+            {
+                Response.Cookies.Append("Basket", productJson);
+                Response.Cookies.Delete("Basket");
+                return RedirectToAction("Basket");
+            }
+
+            Response.Cookies.Append("Basket", productJson);
+
+            return Json(id);
+        }
+        #endregion
+
+        #region Addtobasket
         public IActionResult AddToBasket(int? id)
         {
             if (id == null)
@@ -183,6 +240,9 @@ namespace MollyjoggerBackend.Controllers
 
             return RedirectToAction("Index");
         }
+        #endregion
+
+        #region Basket
         public IActionResult Basket()
         {
             var cookieBasket = Request.Cookies["basket"];
@@ -206,6 +266,9 @@ namespace MollyjoggerBackend.Controllers
             var basketView = JsonConvert.DeserializeObject<List<BasketViewModel>>(basket);
             return View(basketView);
         }
+        #endregion
+
+        #region BuyBasket
         public IActionResult BuyBasket()
         {
             return View();
@@ -259,6 +322,23 @@ namespace MollyjoggerBackend.Controllers
 
                 ModelState.Clear();
 
+                var basketCookie = Request.Cookies["basket"];
+
+                List<BasketViewModel> productList;
+
+                productList = JsonConvert.DeserializeObject<List<BasketViewModel>>(basketCookie);
+
+                productList.Clear();
+
+                var productJson = JsonConvert.SerializeObject(productList);
+                if (productList.Count == 0)
+                {
+                    Response.Cookies.Append("basket", productJson);
+                    Response.Cookies.Delete("basket");
+                }
+
+                Response.Cookies.Append("basket", productJson);
+
             }
             catch (Exception ex)
             {
@@ -267,5 +347,6 @@ namespace MollyjoggerBackend.Controllers
             }
             return View();
         }
+        #endregion
     }
 }

@@ -20,12 +20,16 @@ namespace MollyjoggerBackend.Controllers
             _productsCount = _dbContext.ShopOfProducts.Count();
         }
 
+        #region ShopIndex
         public IActionResult Index()
         {
           
             var products = _dbContext.ShopOfProducts.Where(x=> x.IsDeleted==false).Include(x=>x.ProductDetails).Include(x=> x.ProductCategories).ThenInclude(x=> x.Category).OrderByDescending(x => x.Id).Take(6).ToList();
             return View(products);
         }
+        #endregion
+
+        #region LoadMore
         public IActionResult Load(int skip, string id)
         {
             if (skip >= _productsCount)
@@ -50,6 +54,9 @@ namespace MollyjoggerBackend.Controllers
 
           
         }
+        #endregion
+
+        #region ShopDetails
         public IActionResult Details(int? id)
         {
             if (id == null)
@@ -63,7 +70,9 @@ namespace MollyjoggerBackend.Controllers
             }
             return View(productDetails);
         }
+        #endregion
 
+        #region FilterShopCategory
         public async Task<IActionResult> Filter(string id)
         {
             var products = new List<ShopOfProducts>();
@@ -79,5 +88,6 @@ namespace MollyjoggerBackend.Controllers
 
             return PartialView("_ProductPartial",products);
         }
+        #endregion
     }
 }

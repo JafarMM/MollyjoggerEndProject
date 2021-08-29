@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using MollyjoggerBackend.Areas.AdminPanel.Utils;
 using MollyjoggerBackend.Data;
 using MollyjoggerBackend.Models;
 using MollyjoggerBackend.ViewModels;
@@ -20,6 +21,7 @@ namespace MollyjoggerBackend.Controllers
             _signInManager = signInManager;
         }
 
+        #region AccountLogin
         public IActionResult Login()
         {
             return View();
@@ -40,7 +42,13 @@ namespace MollyjoggerBackend.Controllers
                 return View();
             }
 
-            var loginResult = await _signInManager.PasswordSignInAsync(existUser, login.Password, true, true);
+            if (existUser.IsActive == false)
+            {
+                ModelState.AddModelError("", "Your account is disabled.");
+                return View();
+            }
+
+            var loginResult = await _signInManager.PasswordSignInAsync(existUser, login.Password,login.RememberMe,true);
             if (!loginResult.Succeeded)
             {
                 ModelState.AddModelError("", "Email or password is invalid");
@@ -49,7 +57,9 @@ namespace MollyjoggerBackend.Controllers
 
             return RedirectToAction("Index", "Home");
         }
+        #endregion
 
+        #region AccountRegister
         public IActionResult Register()
         {
             return View();
@@ -91,11 +101,93 @@ namespace MollyjoggerBackend.Controllers
             
             return RedirectToAction("Index","Home");
         }
+        #endregion
+
+        #region AccountLogout
         public async Task<IActionResult> Logout()
         {
             await _signInManager.SignOutAsync();
 
             return RedirectToAction("Index", "Home");
+        }
+        #endregion
+
+
+        public IActionResult RedirectionToResetPassword()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> RedirectionToResetPassword(string email)
+        {
+            if (string.IsNullOrEmpty(email))
+                return NotFound();
+
+            var dbUser = await _userManager.FindByEmailAsync(email);
+
+            if (dbUser == null)
+                return NotFound();
+
+            var token = await _userManager.GeneratePasswordResetTokenAsync(dbUser);
+
+            var link = Url.Action("ResetPassword", "Account", new { dbUser.Id, token }, protocol: HttpContext.Request.Scheme);
+            var message = $"<a href={link}>For Reset password click here</a>";
+            await EmailUtil.SendEmailAsync(dbUser.Email, message, "ResetPassword");
+
+            return RedirectToAction("Login");
+        }
+        public async Task<IActionResult> ResetPassword(string id, string token)
+        {
+
+            if (string.IsNullOrEmpty(id))
+                return NotFound();
+
+            if (string.IsNullOrEmpty(token))
+                return BadRequest();
+
+            var dbUser = await _userManager.FindByIdAsync(id);
+
+            if (dbUser == null)
+                return NotFound();
+
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ResetPassword(string id, string token, ResetPasswordViewModel passwordViewModel)
+        {
+
+            if (string.IsNullOrEmpty(id))
+                return NotFound();
+
+            if (string.IsNullOrEmpty(token))
+                return BadRequest();
+
+            if (!ModelState.IsValid)
+            {
+                return View(passwordViewModel);
+            }
+
+            var dbUser = await _userManager.FindByIdAsync(id);
+
+            if (id == null)
+                return NotFound();
+
+            var result = await _userManager.ResetPasswordAsync(dbUser, token, passwordViewModel.NewPassword);
+
+            if (!result.Succeeded)
+            {
+                foreach (var error in result.Errors)
+                {
+                    ModelState.AddModelError("", error.Description);
+                }
+                return View(passwordViewModel);
+            }
+
+            return RedirectToAction("Login");
         }
     }
 }

@@ -310,6 +310,27 @@ namespace MollyjoggerBackend.Migrations
                     b.ToTable("Products");
                 });
 
+            modelBuilder.Entity("MollyjoggerBackend.Models.ReturnForm", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Image")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("id");
+
+                    b.ToTable("ReturnForm");
+                });
+
             modelBuilder.Entity("MollyjoggerBackend.Models.ShopOfProducts", b =>
                 {
                     b.Property<int>("Id")

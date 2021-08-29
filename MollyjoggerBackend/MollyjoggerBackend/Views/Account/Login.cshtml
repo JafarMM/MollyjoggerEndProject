@@ -23,11 +23,15 @@
                     <span asp-validation-for="Password" class="text-danger"></span>
                 </div>
                 <div class="forgotpassword">
-                    <a href="#">Forgot your password?</a>
+                    <input asp-for="RememberMe">
+                    <label asp-for="RememberMe">Remember me?</label>
+                    <a asp-action="RedirectionToResetPassword">Forgot your password?</a>
                 </div>
                 <button type="submit" class="btn btn-primary">Sign In</button>
+                @*button to return to the main page*@
                 <a asp-controller="Home" asp-action="Index">Return to Store</a>
                 <hr>
+                @*To create a new account if you do not have a login*@
                 <a id="CreateAccount" asp-controller="Account" asp-action="Register">Create Account</a>
             </form>
         </div>

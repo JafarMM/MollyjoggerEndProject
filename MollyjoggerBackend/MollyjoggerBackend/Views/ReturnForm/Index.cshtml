@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    ReturnForm returnForm = Model;
+}
+<div class="returnform">
+    <h1>
+        @returnForm.Title
+    </h1>
+    <p>
+        @returnForm.Description
+    </p>
+    <div class="formimage">
+        <a href="#">
+            <img src="./Images/aboutus/@returnForm.Image" alt="">
+        </a>
+    </div>
+</div>
+ 

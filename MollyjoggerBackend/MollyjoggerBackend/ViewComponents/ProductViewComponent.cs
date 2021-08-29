@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace MollyjoggerBackend.ViewComponents
 {
+    //ViewComponent to use on many pages of products
     public class ProductViewComponent:ViewComponent
     {
         private readonly AppDbContext _dbContext;

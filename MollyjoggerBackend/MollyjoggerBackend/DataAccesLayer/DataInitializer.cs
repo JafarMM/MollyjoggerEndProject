@@ -49,6 +49,7 @@ namespace MollyjoggerBackend.DataAccesLayer
 
             #region User Seed
 
+            //Default Admin
             var user = new User
             {
                 Email = "admin@gmail.com",

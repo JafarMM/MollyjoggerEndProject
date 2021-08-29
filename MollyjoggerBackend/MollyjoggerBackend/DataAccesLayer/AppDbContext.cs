@@ -10,6 +10,7 @@ namespace MollyjoggerBackend.DataAccesLayer
 {
     public class AppDbContext: IdentityDbContext<User>
     {
+        //Models included in the database
         public AppDbContext(DbContextOptions<AppDbContext> options) :base(options)
         {
 
@@ -23,7 +24,8 @@ namespace MollyjoggerBackend.DataAccesLayer
         public DbSet<ShopOfProducts> ShopOfProducts { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<ProductDetails> ProductDetails { get; set; }
-     
+        
+        public DbSet<ReturnForm> ReturnForm { get; set; }
         public DbSet<ProductCategory> productCategories { get; set; }
     }
 }

@@ -15,6 +15,6 @@ namespace MollyjoggerBackend.ViewModels
         public List<Shoppartreklam> Shoppartreklams { get; set; }
     
         public AboutUs AboutUs { get; set; }
-        public Bio Bio { get; set; }
+        public Bio Bio { get; set; } //Model with header and footer
     }
 }

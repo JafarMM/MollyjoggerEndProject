@@ -16,8 +16,6 @@ $(document).on("click", "#button-subscribe", function () {
     }
 
 })
-
-
 let tests = document.querySelectorAll(".test1");
 let tests2 = document.querySelectorAll(".test2");
 let total = document.getElementById("total");
@@ -29,20 +27,20 @@ pr.forEach(item => {
 
 tests.forEach(item => {
     item.addEventListener("click", function () {
-        console.log(total.innerHTML);
+        //console.log(total.innerHTML);
         let count = Number(this.nextElementSibling.innerHTML)
         count++;
         this.nextElementSibling.innerHTML = count;
         let td = this.parentElement
         let price = td.previousElementSibling.innerHTML;
         let priceValue = Number(price.split(": ")[1]);
-        console.log(priceValue);
-        console.log(count);
+        //console.log(priceValue);
+        //console.log(count);
         //total.innerHTML = `Total: ${priceValue * count}`;
         pr.forEach(item => {
             total.innerHTML = Number(priceValue * count) + Number(item.innerHTML.split(": ")[1]);
         })
-        
+
     });
 })
 tests2.forEach(item => {
@@ -57,6 +55,22 @@ tests2.forEach(item => {
 
         total.innerHTML = Number(total.innerHTML) - Number(priceValue * count);
     });
+})
+
+$(document).on("click", ".remove-button", function () {
+    $(this).parent().parent().empty();
+
+    $.ajax({
+        type: "Get",
+        url: "RemoveAtBasket",
+        data: {
+            id: parseInt($(this).attr("id"))
+        },
+        success: function (res) {
+            console.log(res);
+        }
+    })
+
 })
 
 $(document).on("click", ".category-item", function () {
