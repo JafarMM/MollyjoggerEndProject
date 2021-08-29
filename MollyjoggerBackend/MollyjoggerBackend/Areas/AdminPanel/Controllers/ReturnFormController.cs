@@ -27,6 +27,7 @@ namespace MollyjoggerBackend.Areas.AdminPanel.Controllers
             return View(returnform);
         }
 
+        #region ReturnformUpdate
         public async Task<IActionResult> Update(int? id)
         {
             if (id == null)
@@ -63,13 +64,13 @@ namespace MollyjoggerBackend.Areas.AdminPanel.Controllers
             {
                 if (!returnForm.Photo.IsImage())
                 {
-                    ModelState.AddModelError("Photo", "Yuklediyiniz shekil deyildir!!!");
+                    ModelState.AddModelError("Photo", "This is not a picture!!!");
                     return View();
                 }
 
                 if (!returnForm.Photo.IsSizeAllowed(4000))
                 {
-                    ModelState.AddModelError("Photo", "Yuklediyiniz sheklin olchusu 4 mb dan az olmalidir!!!.");
+                    ModelState.AddModelError("Photo", "Your picture not high than 4mb!!!.");
                     return View();
                 }
 
@@ -90,5 +91,6 @@ namespace MollyjoggerBackend.Areas.AdminPanel.Controllers
 
             return RedirectToAction("Index");
         }
+        #endregion
     }
 }

@@ -28,6 +28,7 @@ namespace MollyjoggerBackend.Areas.AdminPanel.Controllers
             var sliderImages = _dbContext.SliderImages.ToList();
             return View(sliderImages);
         }
+        #region SliderImageCreate
         public IActionResult Create()
         {
             return View();
@@ -63,7 +64,9 @@ namespace MollyjoggerBackend.Areas.AdminPanel.Controllers
             return RedirectToAction("Index");
 
         }
+        #endregion
 
+        #region SlideImageDelete
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -102,7 +105,9 @@ namespace MollyjoggerBackend.Areas.AdminPanel.Controllers
 
             return RedirectToAction("Index");
         }
+        #endregion
 
+        #region SliderImageUpdate
         public async Task<IActionResult> Update(int? id)
         {
             if (id == null)
@@ -166,6 +171,9 @@ namespace MollyjoggerBackend.Areas.AdminPanel.Controllers
 
             return RedirectToAction("Index");
         }
+        #endregion
+
+        #region SliderImageDetails
         public IActionResult Details(int? id)
         {
             if (id == null)
@@ -178,5 +186,6 @@ namespace MollyjoggerBackend.Areas.AdminPanel.Controllers
 
             return View(sliderImages);
         }
+        #endregion
     }
 }

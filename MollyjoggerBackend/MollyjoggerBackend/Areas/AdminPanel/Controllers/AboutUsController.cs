@@ -27,6 +27,7 @@ namespace MollyjoggerBackend.Areas.AdminPanel.Controllers
             return View(aboutus);
         }
 
+        #region AboutUsUpdate
         public async Task <IActionResult> Update(int? id)
         {
             if (id == null)
@@ -90,5 +91,6 @@ namespace MollyjoggerBackend.Areas.AdminPanel.Controllers
 
             return RedirectToAction("Index");
         }
+        #endregion
     }
 }

@@ -31,6 +31,8 @@ namespace MollyjoggerBackend.Areas.AdminPanel.Controllers
 
             return View(courses);
         }
+
+        #region CreateProduct
         public async Task<IActionResult> Create()
         {
             var categories = await _dbContext.Categories.Where(x => x.IsDeleted == false).ToListAsync();
@@ -127,6 +129,9 @@ namespace MollyjoggerBackend.Areas.AdminPanel.Controllers
 
             return RedirectToAction("Index");
         }
+        #endregion
+
+        #region UpdateProduct
         public async Task<IActionResult> Update(int? id)
         {
             if (id == null)
@@ -233,6 +238,9 @@ namespace MollyjoggerBackend.Areas.AdminPanel.Controllers
 
             return RedirectToAction("Index");
         }
+        #endregion
+
+        #region DeleteProduct
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -268,6 +276,9 @@ namespace MollyjoggerBackend.Areas.AdminPanel.Controllers
 
             return RedirectToAction("Index");
         }
+        #endregion
+
+        #region DetailsProduct
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -281,6 +292,6 @@ namespace MollyjoggerBackend.Areas.AdminPanel.Controllers
 
             return View(shopOfProducts);
         }
-
+        #endregion
     }
 }

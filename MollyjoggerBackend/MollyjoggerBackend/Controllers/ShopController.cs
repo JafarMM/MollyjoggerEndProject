@@ -23,7 +23,7 @@ namespace MollyjoggerBackend.Controllers
         #region ShopIndex
         public IActionResult Index()
         {
-          
+            //products index 
             var products = _dbContext.ShopOfProducts.Where(x=> x.IsDeleted==false).Include(x=>x.ProductDetails).Include(x=> x.ProductCategories).ThenInclude(x=> x.Category).OrderByDescending(x => x.Id).Take(6).ToList();
             return View(products);
         }
@@ -50,6 +50,7 @@ namespace MollyjoggerBackend.Controllers
                 .OrderByDescending(x => x.Id).Skip(skip).Take(6).ToList();
             }
 
+            //load more with partial view
             return PartialView("_ProductPartial", products);
 
           

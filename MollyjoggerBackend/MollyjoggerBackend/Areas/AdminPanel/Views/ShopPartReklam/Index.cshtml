@@ -1,0 +1,42 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    List<Shoppartreklam> shoppartreklams = Model;
+}
+
+<div class="row">
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Shop Part reklams</h4>
+               
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Image</th>
+                                <th>Actions</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var shop in shoppartreklams)
+                            {
+                                <tr>
+                                    <td>
+                                        <img src="~/Images/@shop.Image" style="width:200px !important; height:200px !important;" />
+                                    </td>
+                                    <td>
+                                        <a asp-action="Details" asp-route-id="@shop.Id" class="btn btn-info">Details</a>
+                                        <a asp-action="Update" asp-route-id="@shop.Id" class="btn btn-warning">Update</a>
+                                    </td>
+                                </tr>
+
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -10,7 +10,10 @@
         {
             <div class="slide slide-1" style="background-image: url(Images/@item.Image);">
                 <div class="slide-content">
-                    <button>SHOP NOW</button>
+                    <a asp-controller="Shop">
+                        <button>SHOP NOW</button>
+                    </a>
+
                 </div>
             </div>
         }
@@ -20,7 +23,7 @@
     <div class="container">
         <div class="featuredproducts">
             <h4>FEATURED PRODUCTS</h4>
-            <a href="#">SHOP ALL PRODUCTS</a>
+            <a asp-controller="Shop">SHOP ALL PRODUCTS</a>
         </div>
 
         <div class="products">
@@ -30,7 +33,7 @@
                     <div class="col-md-3 col-sm-6">
                         <a asp-controller="Shop" asp-action="Details" asp-route-id="@item.Id">
                             <img src="~/Images/@item.Image1" alt="">
-                           
+
                         </a>
                         <a href="#">@item.ProductName</a>
                     </div>
@@ -39,21 +42,8 @@
             </div>
         </div>
     </div>
+    <hr />
     <div class="container-fluid">
-        <div class="shoppart">
-            <div class="row">
-                @foreach (var item in homeViewModel.Shoppartreklams)
-                {
-                    <div class="col-md-4 col-sm-12">
-                        <div class="shopimg1">
-                            <img src="~/Images/productimages/@item.Image" alt="">
-                            <a href="#">@item.ButtonTitle</a>
-                        </div>
-                    </div>
-                }
-            </div>
-        </div>
-        <hr />
         <div class="partvideo">
             <div class="row">
                 <div class="col-md-6 col-sm-12">
@@ -80,6 +70,20 @@
             </div>
         </div>
         <hr />
+        <div class="shoppart">
+            <div class="d-flex shopreklam">
+                @foreach (var item in homeViewModel.Shoppartreklams)
+                {
+                    <div class="col-md-4 col-sm-12">
+                        <div class="shopimg1">
+                            <img src="~/Images/@item.Image" alt="">
+                            <a asp-controller="Shop">@item.ButtonTitle</a>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+        <hr />
         <div class="aboutus">
             <div class="row">
                 <div class="col-md-6 col-sm-12">
@@ -96,7 +100,7 @@
                         <p>
                             @Html.Raw(homeViewModel.AboutUs.Description)
                         </p>
-                        <a href="#" class="buttonaboutus">Read Our Story</a>
+                        <a asp-controller="About" class="buttonaboutus">Read Our Story</a>
                     </div>
                 </div>
             </div>

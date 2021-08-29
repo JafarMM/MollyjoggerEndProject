@@ -27,7 +27,7 @@ namespace MollyjoggerBackend.Controllers
             _dbContext = dbContext;
         }
 
-        #region HomeController
+        #region IndexHomeController
         public IActionResult Index()
         {
             var sliderimages = _dbContext.SliderImages.ToList();
@@ -55,7 +55,7 @@ namespace MollyjoggerBackend.Controllers
                 return Content("Error");
             }
 
-            var products = _dbContext.ShopOfProducts.OrderByDescending(x => x.Id).Where(x => x.ProductName.Contains(search.ToLower())).Take(3).ToList();
+            var products = _dbContext.ShopOfProducts.OrderByDescending(x => x.Id).Where(x => x.ProductName.Contains(search.ToLower())).Take(5).ToList();
             var searchViewModel = new SearchViewModel
             {
                 ShopOfProducts = products
@@ -73,7 +73,7 @@ namespace MollyjoggerBackend.Controllers
             }
             
 
-            Regex regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
+            Regex regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$"); //This is regex for email
             Match match = regex.Match(email);
             if (!match.Success)
             {
@@ -82,7 +82,8 @@ namespace MollyjoggerBackend.Controllers
             var isExist = await _dbContext.Subscribes.AnyAsync(x => x.Email == email);
             if (isExist)
             {
-                return Content("You are already subscribe Edu Home site");
+                return Content("You are already subscribe MollyJogger site");
+                //If user subscribe one time site,user don't subscribe 
             }
             Subscribe subscribe = new Subscribe { Email = email };
             await _dbContext.Subscribes.AddAsync(subscribe);
@@ -109,7 +110,7 @@ namespace MollyjoggerBackend.Controllers
             {
                 MailMessage mail = new MailMessage();
                 
-                mail.From = new MailAddress("mollyjogger77@gmail.com");
+                mail.From = new MailAddress("mollyjogger77@gmail.com"); //This is email address which owner site admin
 
                  
                 mail.To.Add("cefer.mammadzade@bk.ru");
@@ -134,7 +135,7 @@ namespace MollyjoggerBackend.Controllers
                 SmtpClient smtpClient = new SmtpClient("smtp.gmail.com");
 
                 
-                NetworkCredential networkCredential = new NetworkCredential("mollyjogger77@gmail.com", "adminadmin123");
+                NetworkCredential networkCredential = new NetworkCredential("mollyjogger77@gmail.com", "adminadmin123"); //Email and password
                 smtpClient.UseDefaultCredentials = false;
                 smtpClient.Credentials = networkCredential;
                 smtpClient.Port = 587; 

@@ -230,3 +230,6 @@ C:\Users\User\Desktop\MollyjoggerEndProject\MollyjoggerBackend\MollyjoggerBacken
 C:\Users\User\Desktop\MollyjoggerEndProject\MollyjoggerBackend\MollyjoggerBackend\obj\Debug\net5.0\Razor\Areas\AdminPanel\Views\ReturnForm\Update.cshtml.g.cs
 C:\Users\User\Desktop\MollyjoggerEndProject\MollyjoggerBackend\MollyjoggerBackend\obj\Debug\net5.0\Razor\Views\Account\RedirectionToResetPassword.cshtml.g.cs
 C:\Users\User\Desktop\MollyjoggerEndProject\MollyjoggerBackend\MollyjoggerBackend\obj\Debug\net5.0\Razor\Views\Account\ResetPassword.cshtml.g.cs
+C:\Users\User\Desktop\MollyjoggerEndProject\MollyjoggerBackend\MollyjoggerBackend\obj\Debug\net5.0\Razor\Areas\AdminPanel\Views\ShopPartReklam\Index.cshtml.g.cs
+C:\Users\User\Desktop\MollyjoggerEndProject\MollyjoggerBackend\MollyjoggerBackend\obj\Debug\net5.0\Razor\Areas\AdminPanel\Views\ShopPartReklam\Details.cshtml.g.cs
+C:\Users\User\Desktop\MollyjoggerEndProject\MollyjoggerBackend\MollyjoggerBackend\obj\Debug\net5.0\Razor\Areas\AdminPanel\Views\ShopPartReklam\Update.cshtml.g.cs

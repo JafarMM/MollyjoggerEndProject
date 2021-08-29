@@ -38,13 +38,13 @@ namespace MollyjoggerBackend.Controllers
             var existUser = await _userManager.FindByEmailAsync(login.Email);
             if (existUser == null)
             {
-                ModelState.AddModelError("", "Email or password is invalid");
+                ModelState.AddModelError("", "Email or password is invalid"); //if email or passwor invalid,this text ll be write on site
                 return View();
             }
 
             if (existUser.IsActive == false)
             {
-                ModelState.AddModelError("", "Your account is disabled.");
+                ModelState.AddModelError("", "Your account is disabled."); //when email is not active,this text ll be write
                 return View();
             }
 

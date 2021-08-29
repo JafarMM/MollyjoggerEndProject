@@ -1,4 +1,5 @@
-﻿let subInput;
+﻿//Subscribe ajax
+let subInput;
 $(document).on("click", "#button-subscribe", function () {
     $("#response-subscribe").empty()
     subInput = $("#Email-subscribe").val()
@@ -16,6 +17,8 @@ $(document).on("click", "#button-subscribe", function () {
     }
 
 })
+
+//Basket plus & minus 
 let tests = document.querySelectorAll(".test1");
 let tests2 = document.querySelectorAll(".test2");
 let total = document.getElementById("total");
@@ -57,6 +60,8 @@ tests2.forEach(item => {
     });
 })
 
+
+//Click remove from Basket
 $(document).on("click", ".remove-button", function () {
     $(this).parent().parent().empty();
 
@@ -73,6 +78,7 @@ $(document).on("click", ".remove-button", function () {
 
 })
 
+//Filter product for category
 $(document).on("click", ".category-item", function () {
     $("#productList").empty();
     if ($(this).hasClass("active-category")) {

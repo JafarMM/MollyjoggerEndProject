@@ -25,6 +25,7 @@ namespace MollyjoggerBackend.Areas.AdminPanel.Controllers
             _signInManager = signInManager;
         }
 
+        #region UserIndex
         public async Task<IActionResult> Index()
         {
           
@@ -55,7 +56,9 @@ namespace MollyjoggerBackend.Areas.AdminPanel.Controllers
 
             return View(users);
         }
+        #endregion
 
+        #region ChangeRoleUser
         public async Task<IActionResult> ChangeRole(string id)
         {
             if (string.IsNullOrEmpty(id))
@@ -121,8 +124,10 @@ namespace MollyjoggerBackend.Areas.AdminPanel.Controllers
             return RedirectToAction("Index");
         }
 
+        #endregion
 
 
+        #region ActivityUser
         public async Task<IActionResult> Activity(string id)
         {
             if (string.IsNullOrEmpty(id))
@@ -145,7 +150,9 @@ namespace MollyjoggerBackend.Areas.AdminPanel.Controllers
             await _userManager.UpdateAsync(user);
             return RedirectToAction("Index");
         }
+        #endregion
 
+        #region UserDetail
         public async Task<IActionResult> Detail(string id)
         {
             if (string.IsNullOrEmpty(id))
@@ -170,7 +177,9 @@ namespace MollyjoggerBackend.Areas.AdminPanel.Controllers
 
             return View(userViewModel);
         }
+        #endregion
 
+        #region ChangePasswordUser
         public async Task<IActionResult> ChangePassword(string id)
         {
             if (string.IsNullOrEmpty(id))
@@ -232,8 +241,9 @@ namespace MollyjoggerBackend.Areas.AdminPanel.Controllers
 
             return RedirectToAction("Index");
         }
+        #endregion
 
-
+        #region Roles
         public List<string> GetRoles()
         {
             List<string> roles = new List<string>();
@@ -244,5 +254,6 @@ namespace MollyjoggerBackend.Areas.AdminPanel.Controllers
 
             return roles;
         }
+        #endregion
     }
 }

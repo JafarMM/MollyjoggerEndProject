@@ -42,7 +42,7 @@ $(document).ready(function () {
     });
 
 
-
+    //Load more on Shop page
     let skip = 6;
     $(document).on('click', '#loadMore', function () {
         let id = $(".active-category").attr("id");
@@ -73,7 +73,7 @@ $(document).ready(function () {
     });
 });
 
-
+//Category hide part for mobile
 var navLinks = document.getElementById("navLinks");
 var browseul = document.getElementById("browseul");
 var HideCategory = document.getElementById("HideCategory")
@@ -107,7 +107,7 @@ function hideSearch() {
     searchDown.style.display = "none"
 }
 
-
+//Search part in Home page
 let search;
 $(document).on("keyup", "#home-input-search", function () {
     search = $(this).val().trim();

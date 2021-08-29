@@ -24,8 +24,9 @@ header .searchdown input {
 
 header .searchdown #searchResult {
   width: 90%;
-  height: 63px;
+  height: 150px;
   background-color: white;
+  border-radius:25px;
 }
 
 header .flexbox {
@@ -285,17 +286,17 @@ main .featuredproducts h4 {
 
 main .featuredproducts a {
   font-size: smaller;
-  border-color: #007580 !important;
+  border-color: #007580;
   border: 1px solid;
   padding: 10px;
   text-decoration: none;
-  color: #007580 !important;
-  border-color: black;
+  color: #007580;
+  border-color: #007580;
   border-width: 1px;
   font-size: 12px;
-}
 
-main .featuredproducts a:hover {
+}
+ main .featuredproducts a:hover {
   border-color: #a8a476;
   color: #a8a476;
 }
@@ -327,34 +328,35 @@ main .products a {
   margin-top: 40px;
 }
 
- 
-
- 
-
 main .shoppart {
   margin-top: 60px;
 }
-
+ 
 main .shoppart img {
   width: 100%;
 }
 
-main .shoppart .shopimg1 a {
-  position: absolute;
-  min-width: 240px;
-  z-index: 1;
-  left: 14%;
-  bottom: -235%;
-  text-decoration: none;
-}
+    main .shoppart .shopimg1 a {
+        position: relative;
+        min-width: 240px;
+        background-color: #007580;
+        padding: 10px 20px 10px 20px;
+        z-index: 1;
+        left: 35%;
+        bottom: 140px;
+        border-color: #007580;
+        color: rgb(168, 164, 118);
+        text-decoration: none;
+        border: solid 2px rgb(168, 164, 118);
+    }
+        main .shoppart .shopimg1 a:hover {
+            color: #007580;
+            background-color: rgb(168, 164, 118);
+            border-color: rgb(168, 164, 118);
+        }
+         
 
-main .shoppart .shopimg3 a {
-  position: absolute;
-  min-width: 240px;
-  z-index: 1;
-  right: 1%;
-  bottom: -115%;
-}
+ 
 
 main .aboutus {
   padding: 50px 0 50px 0;
@@ -364,14 +366,16 @@ main .aboutus {
 }
 
 main .aboutus img {
-  max-width: 100%;
+  max-width: 100%; 
+  border-radius:20%;
 }
 
 main .aboutus .textaboutus {
   padding-top: 18%;
-  padding-bottom: 30px;
+  padding-bottom: 50px;
+  padding-left:30px;
 }
-
+ 
 main .aboutus .textaboutus a {
   border: 1px solid;
   padding: 6px;
@@ -382,14 +386,14 @@ main .aboutus .textaboutus a {
 }
 
 main .aboutus .textaboutus h3 {
-    text-align:center;
+    text-align:start;
   font-family: "STIX Two Math", serif;
   color: #818185;
   font-weight: bolder;
 }
 
 main .aboutus .textaboutus h2 {
-    text-align:center;
+    text-align:start;
   font-family: "Uchen", serif;
   color: #007580 !important;
   font-weight: bolder;
@@ -397,7 +401,7 @@ main .aboutus .textaboutus h2 {
 
 main .aboutus .textaboutus p {
   font-family: "STIX Two Math", serif;
-  text-align: center;
+  text-align: start;
   color: #818185;
 }
 
@@ -580,13 +584,14 @@ footer .secondpartfooter .bankcards img {
 }
 #searchResult ul li{
     list-style-type:none;
+     
 }
  #searchResult ul li a{
-     color:black;
+     color:#007580!important;
      text-decoration:none;
-     font-size:11px;
+     font-size:20px;
  }
-
+ 
 .shopsection .products img {
   max-width: 100%;
   transition:transform 1s;
@@ -638,7 +643,7 @@ footer .secondpartfooter .bankcards img {
     margin-bottom:50px;
 }
 .leftpart{
-    margin-top:40px;
+    margin-top:70px;
 }
 .rightpart img {
     border-radius: 80%;
@@ -759,6 +764,7 @@ footer .secondpartfooter .bankcards img {
     display: block;
     color: black;
   }
+
   main .aboutus {
     text-align: center;
   }
@@ -796,14 +802,17 @@ footer .secondpartfooter .bankcards img {
     background-repeat: no-repeat;
     background-position: center center;
   }
-  footer .footeremail .emailinput {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
+    main .shoppart .shopreklam{
+        flex-direction:column;
+    }
+    footer .footeremail .emailinput {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
         -ms-flex-pack: center;
-            justify-content: center;
-  }
+        justify-content: center;
+    }
   footer .footercontact {
     text-align: center;
   }

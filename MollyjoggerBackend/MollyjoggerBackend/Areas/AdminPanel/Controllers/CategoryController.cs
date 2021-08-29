@@ -23,6 +23,7 @@ namespace MollyjoggerBackend.Areas.AdminPanel.Controllers
             var categories = _dbContext.Categories.ToList();
             return View(categories);
         }
+        #region CategoryDetails
         public IActionResult Details(int? id)
         {
             if (id == null)
@@ -35,7 +36,9 @@ namespace MollyjoggerBackend.Areas.AdminPanel.Controllers
 
             return View(category);
         }
+        #endregion
 
+        #region CreateCategory
         public IActionResult Create()
         {
             return View();
@@ -59,6 +62,9 @@ namespace MollyjoggerBackend.Areas.AdminPanel.Controllers
             await _dbContext.SaveChangesAsync();
             return RedirectToAction("Index");
         }
+        #endregion
+
+        #region UpdateCategory
         public async Task<IActionResult> Update(int? id)
         {
             if (id == null)
@@ -102,7 +108,9 @@ namespace MollyjoggerBackend.Areas.AdminPanel.Controllers
 
             return RedirectToAction("Index");
         }
+        #endregion
 
+        #region DeleteCategory
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -131,5 +139,6 @@ namespace MollyjoggerBackend.Areas.AdminPanel.Controllers
 
             return RedirectToAction("Index");
         }
+        #endregion
     }
 }
