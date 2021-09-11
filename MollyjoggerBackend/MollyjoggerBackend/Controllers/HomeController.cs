@@ -34,13 +34,17 @@ namespace MollyjoggerBackend.Controllers
             var products = _dbContext.Products.ToList();
             var shoppartreklam = _dbContext.Shoppartreklams.ToList();
             var aboutus = _dbContext.AboutUs.FirstOrDefault();
-            var shopofproducts = _dbContext.ShopOfProducts.OrderByDescending(x=>x.Id).Take(4).ToList();
+            var knifekit = _dbContext.KnifeKit.FirstOrDefault();
+            var bloginhome = _dbContext.Bloginhome.FirstOrDefault();
+            var shopofproducts = _dbContext.ShopOfProducts.OrderByDescending(x=>x.Id).Take(4).Where(x=> x.IsDeleted==false).ToList();
             var homeViewModel = new HomeViewModel
             {
                 sliderImages = sliderimages,
                 Products=products,
                 Shoppartreklams=shoppartreklam,
+                KnifeKit=knifekit,
                 AboutUs=aboutus,
+                Bloginhome=bloginhome,
                 ShopOfProducts=shopofproducts
             };
             return View(homeViewModel);
@@ -55,7 +59,7 @@ namespace MollyjoggerBackend.Controllers
                 return Content("Error");
             }
 
-            var products = _dbContext.ShopOfProducts.OrderByDescending(x => x.Id).Where(x => x.ProductName.Contains(search.ToLower())).Take(5).ToList();
+            var products = _dbContext.ShopOfProducts.OrderByDescending(x => x.Id).Where(x=> x.IsDeleted==false).Where(x => x.ProductName.Contains(search.ToLower())).Take(5).ToList();
             var searchViewModel = new SearchViewModel
             {
                 ShopOfProducts = products
@@ -88,12 +92,12 @@ namespace MollyjoggerBackend.Controllers
             Subscribe subscribe = new Subscribe { Email = email };
             await _dbContext.Subscribes.AddAsync(subscribe);
             await _dbContext.SaveChangesAsync();
-            return Content("Congratulations!");
+            return Content("Congratulations!Now You are subscribed our site!");
              
         }
         #endregion
 
-        #region ContactUst
+        #region ContactUs
         [HttpGet]
         public IActionResult ContactUs()
         {

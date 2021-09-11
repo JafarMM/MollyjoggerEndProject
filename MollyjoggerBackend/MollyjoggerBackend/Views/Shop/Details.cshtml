@@ -9,10 +9,13 @@
         <div class="productpage">
             <div class="row">
                 <div class="col-lg-7 col-md-12 col-12">
-                    <img class="img-fluid w-100 pb-1" src="~/Images/@productDetails.ShopOfProducts.Image1" id="MainImg" alt="">
+                   <a href="~/Images/@productDetails.ShopOfProducts.Image1">
+                       <img class="img-fluid w-100 pb-1" src="~/Images/@productDetails.ShopOfProducts.Image1" id="MainImg" alt="">
+                   </a>  
                 </div>
                 <div class="col-lg-5 col-md-12 col-12">
                     <div class="productright1">
+                        <hr />
                         <h1>@productDetails.ShopOfProducts.ProductName</h1>
                         <p>$@productDetails.ShopOfProducts.Price.00</p>
                         <hr>
@@ -20,72 +23,23 @@
                           <a asp-controller="Home" asp-action="AddToBasket" asp-route-id="@productDetails.ShopOfProducts.Id"><button type="button" class="add-btn">Add To Card</button></a>   
                         </div>
                         <div class="button2">
-                            <button type="button" class="buy-btn">Go To Back</button>
+                          <a asp-controller="Shop" asp-action="Index"><button type="button" class="buy-btn">Go To Back</button></a>   
                         </div>
                         <p>MORE PAYMENT OPTIONS</p>
                         <div class="productinfo">
                             <p>
+                                DESCRIPTION: <br />
                                @productDetails.Description
                             </p>
-                            <ul>
+                            <p>
                                 @Html.Raw(productDetails.Properties)  
-                            </ul>
+                            </p>
                         </div>
-                       
+                        <div class="ourcards">
+
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-
-
     </div>
-    <section id="alsoproducts">
-        <div class="container-fluid">
-            <div class="allproducts">
-                <div class="row">
-                    <h4>YOU MAY ALSO LIKE...</h4>
-                    <div class="col-md-3">
-                        <a href="productdetails.html">
-                            <img src="~/Images/3fa74462-0119-472a-a5c4-999c78376fb7-img1.jpg" alt="">
-                            <div class="hoverimg1">
-                                <img src="~/Images/5c401bb6-bc28-42b4-8924-212c04c223b5-img3hover.jpg" alt="">
-                            </div>
-                        </a>
-                        <a href="#">Fingerling Fish Knife</a>
-                        <p>$48.50</p>
-                    </div>
-                    <div class="col-md-3">
-                        <a href="productdetails.html">
-                            <img src="~/Images/881834c5-1e93-4568-9037-290ccd000100-img6hover.jpg" alt="">
-                            <div class="hoverimg2">
-                                <img src="~/Images/2cf3bd82-96e0-45b5-8d29-2d9beec5df91-img3hover.jpg" alt="">
-                            </div>
-                        </a>
-                        <a href="#">Riverside Chair</a>
-                        <p>$25.00</p>
-                    </div>
-                    <div class="col-md-3">
-                        <a href="productdetails.html">
-                            <img src="~/Images/5909f3f7-ba85-4d54-a871-efe4ad7233aa-img6.jpg" alt="">
-                            <div class="hoverimg3">
-                                <img src="~/Images/918c5669-a1ec-4654-98a2-c63460f8fcf4-img4.jpg" alt="">
-                            </div>
-                        </a>
-                        <a href="#">Stag Safety Matches</a>
-                        <p>$84.50</p>
-                    </div>
-                    <div class="col-md-3">
-                        <a href="productdetails.html">
-                            <img src="~/Images/125f6118-f0f4-4c3a-8855-d173340e049d-img6.jpg" alt="">
-                            <div class="hoverimg4">
-                                <img src="~/Images/0fa146b6-a7fd-4888-9817-a67812120d03-img4.jpg" alt="">
-                            </div>
-                        </a>
-                        <a href="#">Legendary McCloud T-Shirt</a>
-                        <p>$14.50</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-</main>

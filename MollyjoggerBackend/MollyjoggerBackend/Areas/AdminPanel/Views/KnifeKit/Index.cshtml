@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    KnifeKit knifeKit = Model;
+}
+
+<div class="row">
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">About Us</h4>
+
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Image</th>
+                                <th>Title</th>
+                                <th>Description</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <tr>
+                                <td>
+                                    <img src="~/Images/@knifeKit.Image" style="width:200px !important; height:200px !important;" />
+                                </td>
+                                <td>
+                                    <p>@Html.Raw(knifeKit.Title)</p>
+                                </td>
+                                <td>
+                                    <p>@Html.Raw(knifeKit.Description)</p>
+                                </td>
+                                <td>
+                                    <a style="margin-bottom:5px;" asp-action="Update" asp-route-id="@knifeKit.Id" class="btn btn-primary">Update</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

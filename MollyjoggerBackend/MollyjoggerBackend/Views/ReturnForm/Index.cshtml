@@ -8,11 +8,11 @@
         @returnForm.Title
     </h1>
     <p>
-        @returnForm.Description
+        @Html.Raw(returnForm.Description)
     </p>
     <div class="formimage">
         <a href="#">
-            <img src="./Images/aboutus/@returnForm.Image" alt="">
+            <img src="./Images/aboutus/@returnForm.Image" alt="Image" data-fancybox="Images">
         </a>
     </div>
 </div>

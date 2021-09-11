@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewData["Title"] = "Details";
+    BlogDetails blogDetails = Model;
+}
+<hr />
+<div class="blogdetail">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="blogdetailimg">
+                    <div class="d-flex justify-content-center">
+                        <img src="~/Images/@blogDetails.Blog.Image" />
+                    </div>
+                </div>
+                <div class="blogdetailtext">
+                    <div class="d-flex justify-content-center">
+                        <p>
+                            @blogDetails.Description
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

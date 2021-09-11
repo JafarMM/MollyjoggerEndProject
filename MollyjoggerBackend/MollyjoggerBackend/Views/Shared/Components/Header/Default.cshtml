@@ -49,19 +49,19 @@
     </div>
     <div class="container-fluid">
         <div class="row navbarm">
-            <nav>
+            <nav class="headerpart">
                 <a asp-controller="Home" asp-action="Index"><img src="@Model.Logoheader" alt="No picture"></a>
                 <div class="nav-links" id="navLinks">
                     <i class="fa fa-times" onclick="hideMenu()"></i>
                     <ul>
                         <div class="loginacc">
                         <li>
-                            <a href="#">Log in</a>
+                            <a asp-controller="Account" asp-action="Login">Log in</a>
                         </li>
                 </div>
                 <div class="createacc">
                     <li>
-                        <a href="#">Create</a>
+                        <a asp-controller="Account" asp-action="Register">Create</a>
                     </li>
                 </div>
                 <div class="shop">
@@ -69,25 +69,25 @@
                         <a asp-controller="Shop" asp-action="Index">SHOP</a>
                         <div class="sub-menu">
                             <ul>
-                                <li id="firstchild"><a href="#">SHOP</a></li>
-                                <li><a href="#">CAMPING</a></li>
-                                <li><a href="#">FISHING</a></li>
-                                <li><a href="#">KNIFE</a></li>
-                                <li><a href="#">WRITING</a></li>
-                                <li><a href="#">GIFTS</a></li>
-                                <li><a href="#">APPAREL</a></li>
+                                <li><a asp-controller="Shop">CAMPING</a></li>
+                                <li><a asp-controller="Shop">FISHING</a></li>
+                                <li><a asp-controller="Shop">KNIFE</a></li>
+                                <li><a asp-controller="Shop">WRITING</a></li>
+                                <li><a asp-controller="Shop">GIFTS</a></li>
+                                <li><a asp-controller="Shop">APPAREL</a></li>
                             </ul>
                         </div>
                     </li>
                 </div>
                 <div class="about">
-                    <li><a asp-controller="About" asp-action="Index">ABOUT</a></li>
+                    <li><a asp-controller="Blog" asp-action="Index">BLOG</a></li>
                 </div>
+               
                 <div class="contact">
                     <li><a asp-controller="Home" asp-action="ContactUs">CONTACT</a></li>
                 </div>
                 </ul>
-        </div>
+</div>
         <i id="fa1" class="fa fa-bars" onclick="showMenu()"></i>
         </nav>
     </div>

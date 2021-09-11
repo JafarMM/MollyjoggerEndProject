@@ -5,107 +5,130 @@
  
 <!--Main part of the page start-->
 <main>
-    <div class="owl-carousel owl-theme">
-        @foreach (var item in homeViewModel.sliderImages)
-        {
-            <div class="slide slide-1" style="background-image: url(Images/@item.Image);">
-                <div class="slide-content">
-                    <a asp-controller="Shop">
-                        <button>SHOP NOW</button>
-                    </a>
+    <div class="HomeMain" style="background-color: #e6e6e6;">
+        <div class="owl-carousel owl-theme">
+            @foreach (var item in homeViewModel.sliderImages)
+            {
+                <div class="slide slide-1" style="background-image: url(Images/@item.Image);">
+                    <div class="slide-content">
+                        <a asp-controller="Shop">
+                            SHOP NOW
+                        </a>
 
+                    </div>
                 </div>
-            </div>
-        }
+            }
 
-    </div>
-
-    <div class="container">
-        <div class="featuredproducts">
-            <h4>FEATURED PRODUCTS</h4>
-            <a asp-controller="Shop">SHOP ALL PRODUCTS</a>
         </div>
 
-        <div class="products">
-            <div class="row">
-                @foreach (var item in homeViewModel.ShopOfProducts)
-                {
-                    <div class="col-md-3 col-sm-6">
-                        <a asp-controller="Shop" asp-action="Details" asp-route-id="@item.Id">
-                            <img src="~/Images/@item.Image1" alt="">
-
-                        </a>
-                        <a href="#">@item.ProductName</a>
-                    </div>
-                }
-
+        <div class="container">
+            <div class="featuredproducts">
+                <h4>FEATURED PRODUCTS</h4>
+                <a asp-controller="Shop">SHOP ALL PRODUCTS</a>
             </div>
-        </div>
-    </div>
-    <hr />
-    <div class="container-fluid">
-        <div class="partvideo">
-            <div class="row">
-                <div class="col-md-6 col-sm-12">
-                    <div class="leftpart">
-                        <h2>
-                            SCRIMSHAW KNIFE KIT
-                        </h2>
-                        <p>
-                            I have always liked the look of scrimshaw art, so I decided I would try it out! <br />
-                            But instead of trying to hunt down all the correct tools, I just bought a kit from Mollyjogger,<br />
-                            a heritage brand that sells a ton of awesome outdoorsy products.
-                        </p>
-                    </div>
 
-                </div>
-                <div class="col-md-6 col-sm-12">
-                    <div class="rightpart">
-                        <img src="~/Images/26255d81-82f5-4abd-8ec5-b12481be6861-IMG_7361_large.jpg" />
-                        <a data-fancybox href="https://www.youtube.com/watch?v=6NRbUrgncnM&ab_channel=BravetheWoods">
-                            <img src="~/Images/aboutus/play-button (1).svg" />
-                        </a>
-                    </div>
+            <div class="products">
+                <div class="row">
+                    @foreach (var item in homeViewModel.ShopOfProducts)
+                    {
+                        <div class="col-xl-3 col-md-6 col-sm-12">
+                            <a asp-controller="Shop" asp-action="Details" asp-route-id="@item.Id">
+                                <img src="~/Images/@item.Image1" alt="">
+
+                            </a>
+                            <a href="#">@item.ProductName</a>
+                        </div>
+                    }
+
                 </div>
             </div>
         </div>
         <hr />
-        <div class="shoppart">
-            <div class="d-flex shopreklam">
-                @foreach (var item in homeViewModel.Shoppartreklams)
-                {
-                    <div class="col-md-4 col-sm-12">
-                        <div class="shopimg1">
-                            <img src="~/Images/@item.Image" alt="">
-                            <a asp-controller="Shop">@item.ButtonTitle</a>
+        <div class="container">
+            <div class="partvideo">
+                <div class="row">
+                    <div class="col-md-7 col-sm-12">
+                        <div class="leftpart">
+                            <h2>
+                                @homeViewModel.KnifeKit.Title
+                            </h2>
+                            <p>
+                                @Html.Raw(homeViewModel.KnifeKit.Description)
+                            </p>
+                        </div>
+
+                    </div>
+                    <div class="col-md-5 col-sm-12">
+                        <div class="rightpart">
+                            <img src="~/Images/@homeViewModel.KnifeKit.Image" />
+                            <a data-fancybox href="@homeViewModel.KnifeKit.Link">
+                                <img src="~/Images/aboutus/play-button (1).svg" />
+                            </a>
                         </div>
                     </div>
-                }
+                </div>
             </div>
-        </div>
-        <hr />
-        <div class="aboutus">
-            <div class="row">
-                <div class="col-md-6 col-sm-12">
-                    <div class="teamphoto">
-                        <img src="~/Images/@homeViewModel.AboutUs.Image" alt="">
+            <div class="bloginhome">
+                <div class="row">
+                    <div class="col-md-6 col-sm-12">
+                        <div class="bloginhomeimg">
+                            <img src="~/Images/@homeViewModel.Bloginhome.Image"/>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        <div class="bloginhometext">
+                            <h2>
+                                @homeViewModel.Bloginhome.Title
+                            </h2>
+                            <p>
+                                @Html.Raw(homeViewModel.Bloginhome.Description)
+                            </p>
+                            <a asp-controller="Blog">
+                                <p asp-controller="Blog">Go to blog</p>
+                            </a> 
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="textaboutus">
-                        <h3>About Us</h3>
-                        <br>
-                        <h2>@homeViewModel.AboutUs.Title</h2>
-                        <br>
-                        <p>
-                            @Html.Raw(homeViewModel.AboutUs.Description)
-                        </p>
-                        <a asp-controller="About" class="buttonaboutus">Read Our Story</a>
+            </div>
+        </div>
+            <hr />
+        <div class="container-fluid">
+            <div class="shoppart">
+                <div class="d-flex shopreklam">
+                    @foreach (var item in homeViewModel.Shoppartreklams)
+                    {
+                        <div class="col-md-4 col-sm-12">
+                            <div class="shopimg1">
+                                <img src="~/Images/@item.Image" alt="">
+                                <a asp-controller="Shop">@item.ButtonTitle</a>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+            <hr />
+            <div class="aboutus">
+                <div class="row">
+                    <div class="col-md-6 col-sm-12">
+                        <div class="teamphoto">
+                            <img src="~/Images/@homeViewModel.AboutUs.Image" alt="">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="textaboutus">
+                            <h3>About Us</h3>
+                            <br>
+                            <h2>@homeViewModel.AboutUs.Title</h2>
+                            <br>
+                            <p>
+                                @Html.Raw(homeViewModel.AboutUs.Description)
+                            </p>
+                            <a asp-controller="About" class="buttonaboutus">Read Our Story</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
 </main>
 <!--Main part of the page end-->

@@ -26,10 +26,10 @@ namespace MollyjoggerBackend.Areas.AdminPanel.Controllers
             ViewBag.PageCount = Decimal.Ceiling((decimal)_dbContext.ShopOfProducts.Where(x => x.IsDeleted == false).Count() / 5);
             
 
-            var courses = await _dbContext.ShopOfProducts.Where(x => x.IsDeleted == false)
+            var products = await _dbContext.ShopOfProducts.Where(x => x.IsDeleted == false)
                 .OrderByDescending(x => x.LastModificationTime).ToListAsync();
 
-            return View(courses);
+            return View(products);
         }
 
         #region CreateProduct

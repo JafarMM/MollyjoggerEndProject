@@ -6,36 +6,54 @@
 
 <section id="contact">
     <div class="contactus">
-        <h1>@ViewBag.Message</h1>
-        <h1>
-            CONTACT
-        </h1>
-        <p>
-            Use the form below to contact us with any questions or <br>
-            comments you may have.
-        </p>
-        <form method="post">
-            <div class="form-group">
-                <label asp-for="@Model.Name"></label>
-                <input type="text" asp-for="@Model.Name" class="form-control" placeholder="Enter Your Name" />
-                <span class="text-danger" asp-validation-for="@Model.Name"></span>
+        <div class="container-fluid">
+            <div class="map">
+                <div class="row">
+                    <div class="mapiframe" style="width: 100%">
+                        <iframe width="100%" height="300" frameborder="0" scrolling="no"
+                                marginheight="0" marginwidth="0"
+                                src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=1%20Grafton%20Street,%20Dublin,%20Ireland+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
+                        </iframe>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="@Model.Email"></label>
-                <input type="email" asp-for="@Model.Email" class="form-control" placeholder="Enter Your Email" />
-                <span class="text-danger" asp-validation-for="@Model.Email"></span>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <h1>
+                    CONTACT
+                </h1>
+                <p>
+                    Use the form below to contact us with any questions or <br>
+                    comments you may have.
+                </p>
+                <h1>@ViewBag.Message</h1>
+                <div class="col-md-12 d-flex justify-content-center">
+                    <form method="post" style="width:50%;">
+                        <div class="form-group">
+                            <label asp-for="@Model.Name"></label>
+                            <input type="text" asp-for="@Model.Name" class="form-control" placeholder="Enter Your Name" />
+                            <span class="text-danger" asp-validation-for="@Model.Name"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="@Model.Email"></label>
+                            <input type="email" asp-for="@Model.Email" class="form-control" placeholder="Enter Your Email" />
+                            <span class="text-danger" asp-validation-for="@Model.Email"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="@Model.PhoneNumber"></label>
+                            <input type="number" asp-for="@Model.PhoneNumber" class="form-control" placeholder="Enter Your Number" />
+                            <span class="text-danger" asp-validation-for="@Model.PhoneNumber"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="@Model.Message"></label>
+                            <textarea class="form-control" asp-for="@Model.Message" placeholder="Enter Your Message"></textarea>
+                            <span class="text-danger" asp-validation-for="@Model.Message"></span>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send </button>
+                    </form>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="@Model.PhoneNumber"></label>
-                <input type="number" asp-for="@Model.PhoneNumber" class="form-control" placeholder="Enter Your Number" />
-                <span class="text-danger" asp-validation-for="@Model.PhoneNumber"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="@Model.Message"></label>
-                <textarea class="form-control" asp-for="@Model.Message" placeholder="Enter Your Message"></textarea>
-                <span class="text-danger" asp-validation-for="@Model.Message"></span>
-            </div>
-            <button type="submit" class="btn btn-primary">Send </button>
-        </form>
+        </div>
     </div>
 </section>

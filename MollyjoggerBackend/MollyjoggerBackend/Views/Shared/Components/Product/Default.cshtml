@@ -3,13 +3,10 @@
 }
 @foreach (var item in shopOfProducts)
 {
-    <div class="col-md-4">
+    <div class="col-md-3">
         <div class="product-item" data-id="@*@item.Category.Name.ToLower()*@">
             <a asp-controller="Shop" asp-action="Details" asp-route-id="@item.Id">
                 <img src="~/Images/@item.Image1" alt="">
-                <div class="hoverimg1">
-                    <img src="~/Images/productimages/@item.Image2" alt="">
-                </div>
             </a>
             <a href="#">@item.ProductName</a>
             <p>$@item.Price</p>

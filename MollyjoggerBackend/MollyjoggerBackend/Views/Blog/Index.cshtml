@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    List<Blog> blog = Model;
+}
+<div class="blogpage">
+    
+    <div class="container-fluid">
+        <h2>
+            BLOG
+        </h2>
+        <div class="blog">
+            <div class="row">
+                @foreach (var item in blog)
+                {
+                    <div class="col-xl-3 col-md-4 col-sm-12">
+                        <div class="single-blog">
+                            <a asp-controller="Blog" asp-action="Details" asp-route-id="@item.Id">
+                                <img src="~/Images/@item.Image" />
+                            </a>
+                            <div class="blogtext">
+                                <h4>@item.Title</h4>
+                                <a asp-controller="Blog" asp-action="Details" asp-route-id="@item.Id">Read More...</a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+ 

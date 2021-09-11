@@ -18,7 +18,8 @@ namespace MollyjoggerBackend.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var returnform = _dbContext.ReturnForm.FirstOrDefault();
+            return View(returnform);
         }
     }
 }

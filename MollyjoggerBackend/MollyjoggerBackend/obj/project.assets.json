@@ -7260,11 +7260,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Desktop\\MollyjoggerEndProject\\MollyjoggerBackend\\MollyjoggerBackend\\MollyjoggerBackend.csproj",
+      "projectUniqueName": "C:\\Users\\User\\Desktop\\part2\\MollyjoggerEndProject\\MollyjoggerBackend\\MollyjoggerBackend\\MollyjoggerBackend.csproj",
       "projectName": "MollyjoggerBackend",
-      "projectPath": "C:\\Users\\User\\Desktop\\MollyjoggerEndProject\\MollyjoggerBackend\\MollyjoggerBackend\\MollyjoggerBackend.csproj",
+      "projectPath": "C:\\Users\\User\\Desktop\\part2\\MollyjoggerEndProject\\MollyjoggerBackend\\MollyjoggerBackend\\MollyjoggerBackend.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Desktop\\MollyjoggerEndProject\\MollyjoggerBackend\\MollyjoggerBackend\\obj\\",
+      "outputPath": "C:\\Users\\User\\Desktop\\part2\\MollyjoggerEndProject\\MollyjoggerBackend\\MollyjoggerBackend\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

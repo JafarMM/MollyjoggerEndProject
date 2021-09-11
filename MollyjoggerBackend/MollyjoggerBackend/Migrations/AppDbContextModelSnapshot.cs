@@ -201,6 +201,72 @@ namespace MollyjoggerBackend.Migrations
                     b.ToTable("Bio");
                 });
 
+            modelBuilder.Entity("MollyjoggerBackend.Models.Blog", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Image")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("LastModificationTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Blogs");
+                });
+
+            modelBuilder.Entity("MollyjoggerBackend.Models.BlogDetails", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("BlogId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BlogId")
+                        .IsUnique();
+
+                    b.ToTable("BlogDetails");
+                });
+
+            modelBuilder.Entity("MollyjoggerBackend.Models.Bloginhome", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Image")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Bloginhome");
+                });
+
             modelBuilder.Entity("MollyjoggerBackend.Models.Category", b =>
                 {
                     b.Property<int>("Id")
@@ -223,6 +289,30 @@ namespace MollyjoggerBackend.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Categories");
+                });
+
+            modelBuilder.Entity("MollyjoggerBackend.Models.KnifeKit", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Image")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Link")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("KnifeKit");
                 });
 
             modelBuilder.Entity("MollyjoggerBackend.Models.ProductCategory", b =>
@@ -538,6 +628,17 @@ namespace MollyjoggerBackend.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("MollyjoggerBackend.Models.BlogDetails", b =>
+                {
+                    b.HasOne("MollyjoggerBackend.Models.Blog", "Blog")
+                        .WithOne("BlogDetails")
+                        .HasForeignKey("MollyjoggerBackend.Models.BlogDetails", "BlogId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Blog");
+                });
+
             modelBuilder.Entity("MollyjoggerBackend.Models.ProductCategory", b =>
                 {
                     b.HasOne("MollyjoggerBackend.Models.Category", "Category")
@@ -566,6 +667,11 @@ namespace MollyjoggerBackend.Migrations
                         .IsRequired();
 
                     b.Navigation("ShopOfProducts");
+                });
+
+            modelBuilder.Entity("MollyjoggerBackend.Models.Blog", b =>
+                {
+                    b.Navigation("BlogDetails");
                 });
 
             modelBuilder.Entity("MollyjoggerBackend.Models.Category", b =>

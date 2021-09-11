@@ -41,7 +41,7 @@ namespace MollyjoggerBackend.Controllers
 
             if (id == "0")
             {
-                products = _dbContext.ShopOfProducts.OrderByDescending(x => x.Id).Skip(skip).Take(6).ToList();
+                products = _dbContext.ShopOfProducts.Where(x => x.IsDeleted == false).OrderByDescending(x => x.Id).Skip(skip).Take(6).ToList();
             }
             else
             {
@@ -64,6 +64,7 @@ namespace MollyjoggerBackend.Controllers
             {
                 return NotFound();
             }
+            
             var productDetails = _dbContext.ProductDetails.Include(x => x.ShopOfProducts).FirstOrDefault(x => x.ShopOfProductsId == id);
             if (productDetails == null)
             {

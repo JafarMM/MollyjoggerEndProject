@@ -7,4 +7,4 @@ build_property.PublishSingleFile =
 build_property.IncludeAllContentForSelfExtract = 
 build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
 build_property.RootNamespace = MollyjoggerBackend
-build_property.ProjectDir = C:\Users\User\Desktop\MollyjoggerEndProject\MollyjoggerBackend\MollyjoggerBackend\
+build_property.ProjectDir = C:\Users\User\Desktop\part2\MollyjoggerEndProject\MollyjoggerBackend\MollyjoggerBackend\

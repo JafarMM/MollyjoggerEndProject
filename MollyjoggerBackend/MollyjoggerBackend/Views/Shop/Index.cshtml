@@ -5,49 +5,85 @@
 <!--Main start-->
 
 <main>
-    <div class="container-fluid">
-        <div class="shopsection">
-            <div class="row">
-                <div class="col-md-3">
-                    <div class="productscategory">
-                        <div class="browse" id="browse">
-                            <h5 onclick="showCategories()">BROWSE</h5>
-                        </div>
-                        <hr>
-                        <div class="browsecategory">
-                            <ul class="browseul" id="browseul">
-                                <li>
-                                    <span class="category-item" id="0" data-id="all">All Products</span>
-                                </li>
+    <div class="shopsection1">
+        <div class="container-fluid">
+            <div class="shopsection">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="productscategory">
+                            <div class="browse" id="browse">
+                                <h5 onclick="showCategories()">BROWSE</h5>
+                            </div>
+                            <hr>
+                            <div class="browsecategory">
+                                <ul class="browseul" id="browseul">
+                                    <li>
+                                        <span class="category-item" id="0" data-id="all">All Products</span>
+                                    </li>
 
-                                @foreach (var item in shopOfProducts)
-                                {
-                                    @foreach (var item1 in item.ProductCategories)
+                                    @foreach (var item in shopOfProducts)
                                     {
-                                        <li>
-                                            <span class="category-item" id="@item1.CategoryId" data-id="@item1.Category.Name.ToLower()">@item1.Category.Name</span>
-                                        </li>
+                                        @foreach (var item1 in item.ProductCategories)
+                                        {
+                                            <li>
+                                                <span class="category-item" id="@item1.CategoryId" data-id="@item1.Category.Name.ToLower()">@item1.Category.Name</span>
+                                            </li>
+                                        }
+
                                     }
+                                    <li>
+                                        <img src="./Images/up-arrow.png" alt="" id="HideCategory" onclick="hideCategories()">
+                                    </li>
+                                </ul>
+                            </div>
 
-                                }
-                                <li>
-                                    <img src="./Images/up-arrow.png" alt="" id="HideCategory" onclick="hideCategories()">
-                                </li>
-                            </ul>
                         </div>
-
+                        <div class="links">
+                            <div class="browse" id="browse">
+                                <h5 onclick="showCategories()">Links</h5>
+                            </div>
+                            <hr />
+                            <div class="linksinshop">
+                                <ul>
+                                    <li>
+                                        <a asp-controller="Home">
+                                           Home
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a asp-controller="Blog">
+                                            Blog
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a asp-controller="About">
+                                            About us
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a asp-controller="Home" asp-action="ContactUs">
+                                            Contact us
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a asp-controller="ReturnForm">
+                                           Returns
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-
-                </div>
-                <div class="col-md-9 col-sm-12">
-                    <div class="products">
-                        <h1>INVENTORY</h1>
-                        <hr />
-                        <div class="row" id="productList">
-                            <partial name="_ProductPartial" />
-                        </div>
-                        <div class="row">
-                            <button style="width: 30%;" class="btn btn-info mt-3 mb-3" id="loadMore">Load more...</button>
+                    <div class="col-md-9 col-sm-12">
+                        <div class="products">
+                            <h1>INVENTORY</h1>
+                            <hr />
+                            <div class="row" id="productList">
+                                <partial name="_ProductPartial" />
+                            </div>
+                            <div class="row">
+                                <button style="width: 30%;" class="btn btn-info mt-3 mb-3" id="loadMore">Load more...</button>
+                            </div>
                         </div>
                     </div>
                 </div>

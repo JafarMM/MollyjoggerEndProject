@@ -11,7 +11,7 @@
             <form class="forms-sample" method="post" enctype="multipart/form-data">
                 <div class="form-group">
                     <label asp-for="ProductName">Product Name</label>
-                    <textarea asp-for="ProductDetails.Properties" class="form-control" rows="4"></textarea>
+                    <input asp-for="ProductName" class="form-control" placeholder="Name"></input>
                     <span asp-validation-for="ProductName" class="text-danger"></span>
                 </div>
                 <div class="form-group">
@@ -34,30 +34,6 @@
                     <label asp-for="Photos1">Image</label>
                     <input asp-for="Photos1" class="form-control" accept="image/*" type="file">
                     <span asp-validation-for="Photos1" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="ProductDetails.MainImg">Details Maim Image</label>
-                    <input asp-for="ProductDetails.MainImg" class="form-control" accept="image/*" type="file">
-                    <span asp-validation-for="ProductDetails.MainImg" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="ProductDetails.Smallimg1">Small img 1</label>
-                    <input asp-for="ProductDetails.Smallimg1" class="form-control" accept="image/*" type="file">
-                    <span asp-validation-for="ProductDetails.Smallimg1" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="ProductDetails.Smallimg2">Small img 2</label>
-                    <input asp-for="ProductDetails.Smallimg2" class="form-control" accept="image/*" type="file">
-                    <span asp-validation-for="ProductDetails.Smallimg2" class="text-danger"></span>
-                </div><div class="form-group">
-                    <label asp-for="ProductDetails.Smallimg3">Small img 3</label>
-                    <input asp-for="ProductDetails.Smallimg3" class="form-control" accept="image/*" type="file">
-                    <span asp-validation-for="ProductDetails.Smallimg3" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="ProductDetails.Smallimg4">Small img 4</label>
-                    <input asp-for="ProductDetails.Smallimg4" class="form-control" accept="image/*" type="file">
-                    <span asp-validation-for="ProductDetails.Smallimg4" class="text-danger"></span>
                 </div>
                 <div class="form-group" id="categoryInput">
                     <label>Categories</label>

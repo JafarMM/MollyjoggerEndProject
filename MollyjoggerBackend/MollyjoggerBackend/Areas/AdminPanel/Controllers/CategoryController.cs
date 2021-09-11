@@ -52,6 +52,7 @@ namespace MollyjoggerBackend.Areas.AdminPanel.Controllers
                 return View();
             }
             var isExist = _dbContext.Categories.Any(x => x.Name.ToLower() == category.Name.ToLower());
+                                                   
             if (isExist)
             {
                 ModelState.AddModelError("Name", "There is have already name of category");

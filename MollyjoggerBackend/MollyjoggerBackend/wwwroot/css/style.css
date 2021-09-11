@@ -28,7 +28,7 @@ header .searchdown #searchResult {
   background-color: white;
   border-radius:25px;
 }
-
+ 
 header .flexbox {
   font-family: 'Libre Franklin', sans-serif;
   font-weight: 400;
@@ -165,6 +165,7 @@ header nav .nav-links li :hover::after {
 header nav .nav-links .shop {
   font-size: 20px;
   display: inline-block;
+  font-family:"Uchen", serif;
 }
 
 header nav .nav-links .shop :hover .sub-menu {
@@ -206,10 +207,17 @@ header nav .nav-links .shop .sub-menu a {
 header nav .nav-links .about {
   font-size: 20px;
   display: inline-block;
+  font-family:"Uchen", serif;
+}
+header nav .nav-links .blog {
+  font-size: 20px;
+  display: inline-block;
+  font-family:"Uchen", serif;
 }
 
 header nav .nav-links .contact {
   font-size: 20px;
+  font-family:"Uchen", serif;
   display: inline-block;
 }
 
@@ -235,14 +243,20 @@ main .slide {
   background-position: center center;
 }
 
-main .slide-1 button {
-  position: relative;
-  left:580px;
-  top: 450px;
-  border: 1px solid #a8a476;
-  background-color: #a8a476;
-  padding: 13px;
+main .slide-1 a {
+    position: relative;
+    min-width: 240px;
+    background-color: rgb(168, 164, 118);
+    padding: 10px 20px 10px 20px;
+    z-index: 1;
+    left: 45%;
+    top: 440px;
+    color: #007580;
+    text-decoration: none;
+    border: solid 2px #007580;
+    font-family: "Uchen", serif;
 }
+   
 
 main .slide-2 button {
   position: relative;
@@ -302,7 +316,8 @@ main .featuredproducts a {
 }
 
 main .products {
-  margin-top: 35px;
+    margin-top: 35px;
+     
 }
 .products img:hover {
     transform: scale(1.2);
@@ -316,9 +331,10 @@ main .products a {
 }
 
 main .products img {
-    transform:translate(0.5s);
-  max-width: 100%;
-  margin-bottom: 5px;
+    transform: translate(0.5s);
+    max-width: 100%;
+    margin-bottom: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
  
 
@@ -571,6 +587,8 @@ footer .secondpartfooter .bankcards img {
 .shopsection .products h1 {
   padding-top: 50px;
   padding-left: 30px;
+  color: #626545;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .shopsection .products a {
@@ -587,30 +605,79 @@ footer .secondpartfooter .bankcards img {
      
 }
  #searchResult ul li a{
-     color:#007580!important;
+     color:#007580;
      text-decoration:none;
      font-size:20px;
  }
+  #searchResult ul li a:hover{
+     color:#06006c;
+ }
  
+.blog{
+    text-align:center;
+    margin-bottom:50px;
+    margin-top:50px;
+}
+.blogdetailimg img{
+    max-width:70%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin-top:30px;
+    margin-bottom:50px;
+}
+.single-blog{
+    padding:24px;
+    background:#fff;
+    position:relative;
+    transition: .6s ease-out;
+    box-shadow:0 10px 10px rgba(0,0,0,0.5);
+    margin-top:30px;
+}
+.blogpage {
+    background-color: #e6e6e6;
+}
+.blogpage h2 {
+    padding-top:70px;
+    text-align: center;
+    color: #626545;
+    font-family: 'Abril Fatface', cursive;
+    font-family: 'Montserrat', sans-serif;
+}
+.single-blog .blogtext a{
+    text-decoration:none;
+}
+.single-blog:hover .blogtext{
+    opacity:1;
+    transform:translateY(0);
+}
+.shopsection1 {
+    background-color: #e6e6e6;
+}
 .shopsection .products img {
-  max-width: 100%;
-  transition:transform 1s;
+    max-width: 100%;
+    transition: transform 1s;
 }
  
 #aboutmollyjogger {
   padding-left: 30px;
   padding-right: 20px;
 }
-#aboutmollyjogger h3{
-    padding-left:25px;
+#aboutmollyjogger h1{
+    color: #626545;
+    font-family: 'Montserrat', sans-serif;
 }
- 
+#aboutmollyjogger h3{
+    padding-left:21px;
+}
+.ourstory1{
+    margin-top:70px;
+}
 .bigtext p{
     margin-top:30px;
 }
 .ourstory4 p {
     padding-top: 50px;
 }
+ 
 #aboutmollyjogger .ourstory .ourstory2 img {
     max-width: 100%;
 }
@@ -640,26 +707,50 @@ footer .secondpartfooter .bankcards img {
 }
 .partvideo{
     margin-top:50px;
-    margin-bottom:50px;
+    margin-bottom:30px;
 }
-.leftpart{
-    margin-top:70px;
+.leftpart {
+    margin-top: 90px;
+    font-family: "STIX Two Math", serif;
 }
 .rightpart img {
-    border-radius: 80%;
+    max-width:100%;
+    border-radius:40px;
 }
 .rightpart a img {
     position: relative;
     max-width: 10%;
-    right:45%;
+    left:45%;
+    bottom:170px;
 }
+
 .rightpart p{
     font-family: 'STIX Two Math', serif;
     margin-top:30px;
 }
-
-#contact button{
-    margin-top:10px;
+.bloginhome .bloginhomeimg img{
+    max-width:100%;
+    height:auto;
+    border:1px solid #ddd;
+    border-radius:20px;
+}
+.bloginhome .bloginhometext h2{
+    margin-top:90px;
+    font-family: "STIX Two Math", serif;
+}
+.bloginhome .bloginhometext p {
+    margin-top: 20px;
+    font-family: "STIX Two Math", serif;
+}
+.bloginhome .bloginhometext a {
+    margin-top: 20px;
+    font-family: "STIX Two Math", serif;
+    text-decoration: none;
+    color: #007580;
+    text-align:center;
+}
+#contact button {
+    margin-top: 10px;
 }
 
 #aboutmollyjogger .brands .brandrow3 {
@@ -674,8 +765,8 @@ footer .secondpartfooter .bankcards img {
 }
 
 #contact .contactus {
-  max-width: 440px;
-  margin: 0 auto 20px;
+    margin: 0 auto 20px;
+    background-color: #e6e6e6;
 }
 
 #contact .contactus .button {
@@ -688,7 +779,11 @@ footer .secondpartfooter .bankcards img {
 #contact .contactus .contactbutton {
   padding-top: 30px;
 }
-
+.contactus h1 {
+    padding-top:30px;
+    color: #626545;
+    font-family: 'Montserrat', sans-serif;
+}
 @media only screen and (max-width: 768px) {
   body {
     overflow-x: hidden;
@@ -710,7 +805,7 @@ footer .secondpartfooter .bankcards img {
   }
   header nav img {
     width: 280px;
-  }
+  } 
   header nav .nav-links {
     position: fixed;
     background: #007580 !important;
@@ -732,11 +827,16 @@ footer .secondpartfooter .bankcards img {
   header nav .nav-links .shop {
     font-size: 15px;
     padding-left: 30px;
+    font-family:"Uchen" 
   }
   header nav .nav-links .shop :hover .sub-menu {
     display: none;
   }
   header nav .nav-links .about {
+    padding-left: 30px;
+    font-size: 15px;
+  }
+   header nav .nav-links .blog {
     padding-left: 30px;
     font-size: 15px;
   }
@@ -764,7 +864,6 @@ footer .secondpartfooter .bankcards img {
     display: block;
     color: black;
   }
-
   main .aboutus {
     text-align: center;
   }
@@ -786,6 +885,13 @@ footer .secondpartfooter .bankcards img {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+  }
+  .linksinshop ul{
+      list-style-type:none;
+  }
+  .linksinshop a{
+      text-decoration:none;
+      color:black;
   }
   main .owl-carousel {
     width: 100%;
@@ -843,7 +949,22 @@ footer .secondpartfooter .bankcards img {
   }
 
 }
-
+@media only screen and (min-device-width: 481px) and (max-device-width: 1140px) and (orientation:portrait) {
+    main .slide {
+        width: 100%;
+        height: 45vh;
+    }
+    main .owl-carousel {
+        width: 100%;
+        height: 45vh;
+    }
+    footer .socialmedia{
+        display:none;
+    }
+    .ourstory1 {
+        margin-top: 5px;
+    }
+}
  
 h4 {
   color: #646569;
@@ -878,24 +999,29 @@ img {
       flex-basis: 24%;
   cursor: pointer;
 }
+.productpage {
+    background-color: #e6e6e6;
+}
 .productpage img {
     padding-top:60px;
-    width: 85%;
-    transition: transform 0.5s;
-}
-    .productpage img:hover {
-        -webkit-transform: scale(1.25);  
-        opacity: 1.0;
-    }
-.productright1 .productinfo p {
-    padding-top:20px;
-    text-align: left;
-}
-.productright1{
-    padding-top:50px;
-    padding-right:30px;
+    width: 75%;
+    border-radius:25%;
 }
 
+.productright1 .productinfo p {
+    padding-top: 20px;
+    text-align: left;
+    font-family: 'Kaisei Tokumin', serif;
+    color: #646569;
+}
+.productright1{
+    padding-top:110px;
+    padding-right:30px;
+}
+.productright1 h1{
+    font-family:"Uchen", serif;
+    color:#a8a476;
+}
 .baskettable td {
     color:white;
 }
@@ -951,51 +1077,24 @@ img {
   color: #007580 !important;
 }
 
-.allproducts a:hover img {
-  display: none;
-}
-
-.allproducts a:hover .hoverimg1 img {
-  display: block;
-}
-
-.allproducts a:hover .hoverimg2 img {
-  display: block;
-}
-
-.allproducts a:hover .hoverimg3 img {
-  display: block;
-}
-
-.allproducts a:hover .hoverimg4 img {
-  display: block;
-}
 
 .allproducts img {
   max-width: 100%;
+  transform:translate(0.5s);
+  max-width: 100%;
+  margin-bottom: 5px;
 }
-
-.allproducts .hoverimg1 img {
-  display: none;
+.allproducts a :hover{
+ transform:scale(1.1);
 }
-
-.allproducts .hoverimg2 img {
-  display: none;
-}
-
-.allproducts .hoverimg3 img {
-  display: none;
-}
-
-.allproducts .hoverimg4 img {
-  display: none;
-}
-
 main h2 {
     text-align: center;
-    color: #007580 !important;
+    color: #007580;
 }
-
+.LoginPage h2 {
+    text-align: center;
+    color: #626545;
+}
 main .LoginPage {
   max-width: 440px;
   margin: 0 auto 20px;
@@ -1021,4 +1120,14 @@ main .LoginPage .forgotpassword {
 main .LoginPage .forgotpassword a {
   margin-bottom: 30px;
   color: #a8a476;
+}
+.redirectresetpassword h1 {
+    margin-top:180px;
+    margin-bottom: 20px;
+    color: #626545;
+    font-family: 'Montserrat', sans-serif;
+}
+.redirectresetpassword input{
+    width:250px;
+    margin-bottom:20px;
 }

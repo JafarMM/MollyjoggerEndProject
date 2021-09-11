@@ -13,7 +13,8 @@ namespace MollyjoggerBackend.ViewModels
         public List<Products> Products { get; set; }
         public List<ShopOfProducts> ShopOfProducts { get; set; }
         public List<Shoppartreklam> Shoppartreklams { get; set; }
-    
+        public KnifeKit KnifeKit { get; set; }
+        public Bloginhome Bloginhome { get; set; }
         public AboutUs AboutUs { get; set; }
         public Bio Bio { get; set; } //Model with header and footer
     }
